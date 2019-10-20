@@ -1,0 +1,54 @@
+\subsection{De compleetheid van $\mathbb{R}$}
+
+\paragraph{Maxima en minima} Van een verzameling $S\subseteq\mathbb{R}$ zijn het maximum en minimum als volgt gedefiniëerd:
+\subparagraph{Maximum} $s_{0} = \text{max}(S)$ dan en slechts dan als voor elke $s \in S$ geldt dat $s \leq s_{0}$ en $s_{0} \in S$.
+\subparagraph{Minimum}$s_{0} = \text{min}(S)$ dan en slechts dan als voor elke $s \in S$ geldt dat $s \geq s_{0}$ en $s_{0} \in S$.
+
+\paragraph{Intervallen} Een interval is een speciaal soort deelverzameling van $\mathbb{R}$, er zijn 4 verschillende intervallen:
+\begin{itemize}
+    \setlength\itemsep{0em}
+    \item $[a,b]\defeq\{x\in\mathbb{R}:a \leq x \leq b\}$ dit heet een gesloten interval. $\text{min}([a,b])=a$ en $\text{max}([a,b])=b$.
+    \item $[a,b)\defeq\{x\in\mathbb{R}:a \leq x < b\}$ dit heet een half gesloten interval. $\text{min}([a,b))=a$ en $\text{max}([a,b))$ bestaat niet.
+    \item $(a,b]\defeq\{x\in\mathbb{R}:a < x \leq b\}$ dit heet een half gesloten interval. $\text{min}((a,b])=a$ en $\text{max}((a,b])$ bestaat niet.
+    \item $(a,b)\defeq\{x\in\mathbb{R}:a < x < b\}$ dit heet een open interval. $\text{min}((a,b))$ bestaat niet en $\text{max}((a,b))$ bestaat niet.
+\end{itemize}
+
+\paragraph{Boven- en ondergrenzen} Boven- en ondergrenzen zijn als volgt gedefiniëerd: Laat $S\subseteq\mathbb{R}$ dan geldt
+
+\subparagraph{Bovengrens} Een getal $M$ is een bovengrens van $S$ als voor elke $s \in S$ geldt dat $s \leq M$. Als een verzameling een bovengrens heeft dan heet die verzameling boven begrensd.
+
+\subparagraph{Ondergrens} Een getal $m$ is een ondergrens van $S$ als voor elke $s \in S$ geldt dat $s \geq m$. Als een verzameling een ondergrens heeft dan heet die verzameling onder begrensd.
+
+\paragraph{Stellingen over boven- en ondergrenzen} De volgende stelling wordt gegeven over bovengrenzen:
+
+\subparagraph{Intervallen en begrenzingen} Als $S$ boven en beneden begrensd is, dan zijn er twee getallen $m,M\in\mathbb{R}$ zodat $S\subseteq [m,M]$.
+
+\paragraph{Suprema en infima} Het supremum en infimum van een verzameling zijn als volgt gedefiniëerd:
+
+\subparagraph{Sumpremum} $M=\text{sup}(S)$ dan en slechts dan als voor elke $s \in S$ geldt dat $s \leq M$ en voor elke $M_{1}<M$ geldt dat er een $s \in S$ is zodat $M_{1}<s$. Dan is $M$ de kleinste bovengrens van $S$.
+
+\subparagraph{Infimum} $m=\text{inf}(S)$ dan en slechts dan als voor elke $s \in S$ geldt dat $m \geq s$ en voor elke $m>m_{1}$ geldt dat er een $s \in S$ waarvoor geldt dat $s<m$. Dan is $m$ de grootste ondergrens van $S$.
+
+\paragraph{Stellingen} In paragraaf 4 van hoofdstuk 1 staan de volgende stellingen:
+
+\subparagraph{Volledigheidsaxioma van $\mathbb{R}$} Het volledgigheidsaxioma luidt als volgt: Voor elke $S\subseteq\mathbb{R}$ met $S\neq\emptyset$ met een bovengrens is er een $M\in\mathbb{R}$ zodat $M=\text{sup}(S)$. \textit{Dit is een axioma, er is geen bewijs.}
+
+\subparagraph{``Omgekeerde'' volledigheids \bq axioma\eq} Voor elke $S\in\mathbb{R}$ met $S\neq\emptyset$ met een ondergrens is er een $m\in\mathbb{R}$ zodat $m=\text{inf}(S)$. Het is geen echt axioma want het volgt uit het volledigheidsaxioma. \textit{Het bewijs staat op pagina 24-25 van het boek.}
+
+\subparagraph{Archimedische eigenschap} Zij $a,b\in\mathbb{R}^{+}$ met $a<b$. Dan geldt dat er een $n\in\mathbb{N}$ zodat $na>b$. \textit{Het bewijs staat op pagina 25 van het boek.}
+
+\subparagraph{De dichtheid van $\mathbb{Q}$} Als $a,b\in\mathbb{R}$ en $a<b$ dan is er een $r\in\mathbb{Q}$ zodat $a<r<b$. \textit{Het bewijs staat op pagina 25-26 van het boek.}
+
+\paragraph{Stellingen uit opgaven} De volgende stellingen worden bewezen in een opgave uit paragraaf $4$:
+
+\subparagraph{Opgave 4.7a} Laat $S$ en $T$ verzamelingen zijn met $S,T\subseteq\mathbb{R}$ zodat $S \subseteq T$. Dan geldt dat $\text{inf}(T)\leq\text{inf}(S)\leq\text{sup}(S)\leq\text{sup}(T)$.
+
+\subparagraph{Opgave 4.7b} Laat $S$ en $T$ verzamelingen zijn met met $S,T\subseteq\mathbb{R}$. Dan geldt dat $\text{sup}(S \cup T) = \text{max}\{\text{sup}(S), \text{sup}(T)\}$.
+
+\subparagraph{Opgave 4.8b} Laat $S$ en $T$ verzamelingen zijn zodat voor elke $s \in S$ en $t \in T$ geldt dat $s \leq t$. Dan geldt dat $\text{sup}(S)\leq\text{inf}(T)$.
+
+\subparagraph{Opgave 4.9} Laat $S$ een verzameling zijn zodat $S\subseteq\mathbb{R}$, dan geldt dat $\text{inf}(S)=-\text{sup}(-S)$.
+
+\subparagraph{Opgave 4.14a} Laat $A$ en $B$ verzamelingen zijn met $A,B\subseteq\mathbb{R}$ en $A+B=\{a+b:a \in A \text{ en } b \in B\}$. Dan geldt dat $\text{sup}(A+B)=\text{sup}(A)+\text{sup}(B)$.
+
+\subparagraph{Opgave 4.14b} Laat $A$ en $B$ verzamelingen zijn met $A,B\subseteq\mathbb{R}$. Dan geldt dat $\text{inf}(A+B)=\text{inf}(A)+\text{inf}(B)$.

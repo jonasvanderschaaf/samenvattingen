@@ -1,0 +1,33 @@
+\subsection{Limieten van rijen}
+\paragraph{Wat is een rij?} Een rij is een functie $s:A \to B$ waar $A=\{n\in\mathbb{Z}:n \geq M\}$. Een rij wordt vaak opgeschreven als $s_{n}$ in plaats van $s(n)$, andere notaties zijn $s_{n=m}^{\infty}$ of $(s_{m},s_{m+1},s_{m+2},...)$. Bij Analyse op de Lijn is een rijtje vaak een functie $s:\mathbb{N}\to\mathbb{R}$, dus voor zo'n  rijtje $s_{n}$ geldt dat $s_{n}\in\sequenceset$.
+
+\paragraph{Het limiet van een rijtje} Een rijtje $(s_{n})$ convergeert naar het getal $s\in\mathbb{R}$ dan en slechts dan als er voor elke $\epsilon>0$ een $N$ is zodat voor elke $n>N$ geldt dat $|s_{n}-s|<\epsilon$. Dit is ook te schrijven als $\liminfty{n}(s_{n})=s$. Als er geen $s\in\mathbb{R}$ is zodat $s_{n}$ naar $s$ convergeert, dan divergeert $s_{n}$.
+
+\paragraph{Het bewijzen van een limiet} Een formeel bewijs van het limiet van een rij $s_{n}$ volgt de volgende stappen:
+\begin{enumerate}
+    \setlength\itemsep{0em}
+    \item De definitie van de rij $s_{n}$.
+    \item Het definiëren van $\epsilon>0$.
+    \item Het kiezen van $N$ op basis van $\epsilon$.
+    \item Het aantonen dat $|s_{n}-s|<\epsilon$ als $n>N$.
+\end{enumerate}
+\subparagraph{Afschatten} \label{sec:afschatten}Vaak wordt een $N$ gevonden met behulp van afschatten van $|s_{n}-s|$. Afschatten houdt in dat er een rijtje $t_{n}$ gekozen wordt zodat $|s_{n}-s|<|t_{n}|$ en vervolgens wordt er aangetoond dat er een $N$ is zodat voor elke $n>N$ geldt $|t_{n}|<\epsilon$, dus geldt ook ook dat $|s_{n}-s|<\epsilon$. \bigskip
+
+\noindent Dit zijn enkele trucs voor het afschatten:
+\begin{itemize}
+    \setlength\itemsep{0em}
+    \item Als $|s_{n}-s|$ een breuk is van de vorm $|\frac{a_{n}}{b_{n}}|$, waar $a_{n},b_{n}\in\sequenceset$, dan geldt dat $|\frac{a_{n}}{b_{n}}|<|\frac{a_{n}}{c_{n}}|$  als $0<|c_{n}|<|b_{n}|$. Als het mogelijk is om een $N$ te vinden zodat voor elke $n>N$ geldt dat $|\frac{a_{n}}{c_{n}}|<\epsilon$ voor elke $\epsilon$, dan geldt dus ook dat $|s_{n}-s|=|\frac{a_{n}}{b_{n}}|<\epsilon$, dus dan convergeert $s_{n}$ naar $s$.
+    \item Als $|s_{n}-s|$ een breuk is van de vorm $|\frac{a_{n}}{b_{n}}|$, waar $a_{n},b_{n}\in\sequenceset$, dan geldt dat $|\frac{c_{n}}{b_{n}}|<|\frac{a_{n}}{b_{n}}|$ als  $|a_{n}|<|c_{n}|$. Als het dan mogelijk is om een $N$ te vinden zodat voor elke $n>N$ geldt dat $|\frac{c_{n}}{b_{n}}|<\epsilon$ voor elke $\epsilon$, dan geldt dus ook dat $|s_{n}-s|=|\frac{a_{n}}{b_{n}}|<\epsilon$, dus dan convergeert $s_{n}$ naar $s$.
+    \item Als een rijtje $s_{n}$ van de vorm is $s_{n}=\text{sin}(a_{n}) \cdot b_{n}$ met $a_{n},b_{n}\in\sequenceset$ dan geldt dat $|s_{n}|<|b_{n}|$ omdat $-1<sin(a_{n})<1$. Dus als er een $N$ is zodat voor elke $N<n$ geldt dat $|b_{n}|<\epsilon$ voor elke $\epsilon>0$, dan geldt ook $|s_{n}|<\epsilon$.
+\end{itemize}
+
+\paragraph{Stellingen uit de opgaven} De volgende stellingen worden bewezen in paragraaf $8$:
+
+\subparagraph{Opgave 8.5a} Als $a_{n},b_{n},s_{n}$ rijen zijn en voor elke $n\in\mathbb{N}$ geldt $a_{n} \leq s_{n} \leq b_{n}$ en\\ $\liminfty{n}(a_{n})=\liminfty{n}(b_{n})=s$, dan geldt ook $\liminfty{n}(s_{n})=s$.
+
+\subparagraph{Opgave 8.9a} Zij $s_{n}$ een rij. Als $s_{n} \geq a$ voor een $a\in\mathbb{R}$ voor alle behalve een eindig aantal $n\in\mathbb{N}$, dan $\liminfty{n}(s_{n}) \geq a$.
+
+\subparagraph{Opgave 8.9b} Zij $s_{n}$ een rij. Als $s_{n} \leq a$ voor een $a\in\mathbb{R}$ voor alle behalve een eindig aantal $n\in\mathbb{N}$, dan $\liminfty{n}(s_{n}) \leq a$.
+
+\subparagraph{Opgave 8.9c} Zij $s_{n}$ een rij. Als $s_{n} \in [a,b]$ voor een $a,b\in\mathbb{R}$ en voor alle behalve een eindig aantal $n\in\mathbb{N}$, dan $\liminfty{n}(s_{n}) \in [a,b]$.
+

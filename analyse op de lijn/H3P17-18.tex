@@ -1,0 +1,64 @@
+\subsection{Continuïteit}
+
+\paragraph{Wat is continuïteit} Laat $A\subseteq\mathbb{R}$ Een functie $f:A\to\mathbb{R}$ is continu op $x_{0}$ dan en slechts dan als voor elke $\epsilon>0$ er een $\delta>0$ bestaat zodat voor elke $x\in\text{dom}(f)$ geldt dat als $|x-x_{0}|<\delta$ dan $|f(x)-f(x_{0})|<\epsilon$.
+
+\subparagraph{Continuïteit met rijen} Een functie $f:A\to\mathbb{R}$ is ook continu dan en slechts dan als voor elk rijtje $x_{n}\in\text{dom}(f)^{\mathbb{N}}$ met $\liminfty{n}(x_{n})=x_{0}$ geldt dat $\liminfty{n}(f(x_{n}))=f(x_{0})$.
+
+\subparagraph{Continuïteit op een interval} Zij $f$ een functie zodat $\text{dom}(f)\subseteq\mathbb{R}$. Dan is $f$ continu op $S\subseteq\text{dom}(f)$ dan en slechts dan als voor elke $x_{0} \in S$ en $\epsilon>0$ er een $\delta>0$ zodat voor elke $x\in\text{dom}(f)$ geldt dat als $|x-x_{0}|<\delta$ dan ook $|f(x)-f(x_{0})|<\epsilon$.
+
+\paragraph{Continuïteit bewijzen} Een bewijs van continuïteit op een $x_{0}$ volgt de volgende stappen:
+
+\begin{enumerate}
+    \setlength\itemsep{0em}
+    \item Zij $\epsilon>0$.
+    \item Laat $\delta$ een combinatie zijn van $\epsilon$ en $x_{0}$.
+    \item Laat $x\in\text{dom}(f)$.
+    \item Aantonen dat als $|x-x_{0}|<\delta$ dan ook $|f(x)-f(x_{0})|<\epsilon$.
+\end{enumerate}
+
+\subparagraph{$\delta$ vinden} Om een $\delta$ te vinden voor elke $\epsilon$ en een $x_{0}$ is dit een handig stappenplan:
+
+\begin{enumerate}
+    \setlength\itemsep{0em}
+    \item Probeer eerst $|f(x)-f(x_{0})|$ om te schrijven tot $|x-x_{0}| \cdot g(x,x_{0})$, waar $g$ een functie is met $g:\mathbb{R}\times\mathbb{R}\to\mathbb{R}$.
+    \item Probeer vervolgens $g(x,x_{0})$ af te schatten tot iets dat niet afhankelijk is van $x$ volgens \hyperref[sec:afschatten]{de afschatregels voor rijtjes}.
+    \item Laat $h:\mathbb{R}\to\mathbb{R}$ de afgeschatte versie van $g(x,x_{0})$ zijn.
+    \item Dan geldt dus dat $|f(x)-f(x_{0})|<|x-x_{0}| \cdot g(x,x_{0}) < |x-x_{0}| \cdot g(x_0)$.
+    \item In het bewijs laat dan $\epsilon>0$ en kies dan $\delta=\frac{\epsilon}{g(x_{0})}$.
+    \item Als $|x-x_{0}|<\delta$, dan geldt dus $|x-x_{0}|<\frac{\epsilon}{g(x_{0}})$. Ga nu het afschat proces omgekeerd opschrijven. Door de keuzes die we gemaakt in het afschatproces hebben volgt dus $|f(x)-f(x_{0})|<\epsilon$.
+\end{enumerate}
+
+\paragraph{Stellingen over continuïteit} De volgende stellingen over continue functies zijn waar:
+
+\subparagraph{Absolute waarden, product met getallen en continuïteit} Zij $f$ een functie die continu is op $x_0$ met $\text{dom}(f)\in\mathbb{R}$. Dan geldt dat de functies $|f|$ en $k \cdot f$ met $k\in\mathbb{R}$ ook continu zijn op $x_{0}$. \textit{Het bewijs staat op pagina $128$}.
+
+\subparagraph{Combineren van functies} Zij $f,g$ functies die continu zijn in $x_{0}$. Dan geldt dat de volgende functies ook continu zijn in $x_{0}$:
+
+\begin{itemize}
+    \setlength\itemsep{0em}
+    \item $f + g$.
+    \item $f \cdot g$.
+    \item $\frac{f}{g}$ met $g(x_{0})\neq0$.
+\end{itemize}
+
+\textit{Het bewijs hiervoor staat op de bladzijde $129$}.
+
+\subparagraph{Samenstellen van functies} Zij $f,g$ functies die continu zijn op $x_{0}$, dan geldt dat $f \circ g$ ook continu is op $x_{0}$. \textit{Het bewijs hiervoor staat op pagina $129$}.
+
+\paragraph{Eigenschappen van continue functies} Voor functies die continu zijn op een bepaald interval gelden de volgende stellingen:
+
+\subparagraph{Continuïteit, maxima en minima} Laat $f$ een continue functie zijn op $[a,b]$ dan is $f$ een begrensde functie en voor alle $x\in[a,b]$ zijn er $x_{0},y_{0}\in[a,b]$ zodat $f(x_{0}) \leq f(x) \leq f(y_{0})$, oftewel $f$ bereikt haar minimum en maximum op het interval $[a,b]$. \textit{Het bewijs hiervoor staat in appendix D}.
+
+\subparagraph{Tussenwaardestelling} Als de functie $f$ continu is op een interval $I$, dan geldt dat wanneer $a<b$ voor een $a,b \in I$ en $f(a)<y<f(b)$ of $f(b)<y<f(a)$, dan is er tenminste één $x\in(a,b)$ zodat $f(x)=y$. \textit{Het bewijs hiervoor staat op pagina $134$}.
+
+\subparagraph{Gevolg van de tussenwaardestelling} Als een functie $f$ continu is op een interval $I$, dan is $f(I)$ ook een interval. \textit{Het bewijs staat op bladzijde $135$}.
+
+\subparagraph{Inverse en continuïteit} Zij $f$ een strikt stijgende continue functie, dan is $f^{-1}$ ook een continue functie. \textit{Het bewijs hiervoor staat op pagina $137$}.
+
+\subparagraph{Stijgende functie, intervallen en continue functies} Zij $g$ een strikt stijgende functie op interval $J$. Als $g(J)$ een interval is, dan is $g$ continu op $J$. \textit{Het bewijs staat op pagina $137$}.
+
+\subparagraph{Continuïteit en bijectiviteit} Zij $f$ een continuë bijectieve functie op een interval $I$. Dan is $f$ strikt stijgend of strikt dalend. \textit{Het bewijs staat op pagina $138$}.
+
+\paragraph{Stellingen uit de opgaven} De volgende stellingen worden bewezen in de opgaven van paragraaf $17$ en $18$.
+
+\subparagraph{Opgave 17.5b} Elke polynoom $p$ is continu.

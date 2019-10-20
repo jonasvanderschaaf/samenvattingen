@@ -1,0 +1,26 @@
+\subsection{Appendix A: Product van twee rijen}
+\label{sec:AA}
+\paragraph{Te bewijzen} Zij $s_{n},t_{n}\in\mathbb{R}$. Als $\liminfty{n}(s_{n})=s$ en $\liminfty{n}(t_{n})=t$ dan geldt dat $\liminfty{n}(s_{n}t_{n})=st$.
+
+\begin{proof}
+Zij $\epsilon>0$. Omdat $s_{n}$ convergeert is er een $M>0$ zodat $|s_{n}|<M$ voor elke $n\in\mathbb{N}$.\bigskip
+
+\noindent Omdat $\liminfty{n}(t_{n})=t$ is er een $N_{1}$ zodat $|t_{n}-t|<\frac{\epsilon}{2M}$. Dit is omdat ook $\frac{\epsilon}{2M}>0$ en $|t_{n}-t|$ kan willekeurig klein worden, dus ook kleiner dan $\frac{\epsilon}{2M}$. \bigskip
+
+\noindent Ook weten we dat er een $N_{2}$ is zodat $|s_{n}-s|<\frac{\epsilon}{2(|t|+1)}$. De redenering daarvoor is hetzelfde als de redenering voor $t_{n}$. \bigskip
+
+\noindent Laat nu $N=\text{max}\{N_{1},N_{2}\}$. Dan geldt dat als $n>N$ dan zowel $|t_{n}-t|<\frac{\epsilon}{2M}$ als $|s_{n}-s|<\frac{\epsilon}{2(|t|+1)}$ als $n>N$.\bigskip
+
+\noindent We weten dat $|t_{n}-t|<\frac{\epsilon}{2M}$. Daarom geldt ook dat $|s_{n}||t_{n}-t|\leq|s_{n}|\cdot\frac{\epsilon}{2M}$. Merk op dat \bq$\leq$\eq niet omgedraaid wordt omdat $|s_{n}|\geq0$. En omdat $|s_{n}|<M$ voor elke $n$ ($M$ is een bovengrens), geldt dat $|s_{n}|\cdot\frac{\epsilon}{2M}<M\cdot\frac{\epsilon}{2M}=\frac{\epsilon}{2}$ dus ook dat $|s_{n}||t_{n}-t|<\frac{\epsilon}{2}$.\bigskip
+
+\noindent Ook weten we dat $|s_{n}-s|<\frac{\epsilon}{2(|t|+1)}$, waaruit volgt dat $|t||s_{n}-s|<|t|\cdot\frac{\epsilon}{2(|t|+1)}$. Omdat $\frac{\epsilon}{2(|t|+1)}>\frac{\epsilon}{2(|t|)}$ geldt dat $|t||s_{n}-s|<|t|\cdot\frac{\epsilon}{2(|t|)}$ dus dat $|t||s_{n}-s|<\frac{\epsilon}{2}$.\bigskip
+
+\noindent Omdat $|s_{n}||t_{n}-t|<\frac{\epsilon}{2}$ en $|t||s_{n}-s|<\frac{\epsilon}{2}$ geldt ook dat $|s_{n}||t_{n}-t|+|t||s_{n}-s|<\frac{\epsilon}{2}+\frac{\epsilon}{2}=\epsilon$. \bigskip
+
+\noindent Uit stellingen over het vermenigvuldigen van absolute waarden volgt\\ $|s_{n}||t_{n}-t|+|t||s_{n}-s|=|s_{n}t_{n}-s_{n}t|+|s_{n}t-st|$. Dus $|s_{n}t_{n}-s_{n}t|+|s_{n}t-st|<\epsilon$. Volgens de driehoeks-ongelijkheid geldt dan $|s_{n}t_{n}-s_{n}t+s_{n}t-st|\leq|s_{n}t_{n}-s_{n}t|+|s_{n}t-st|$. \bigskip
+
+\noindent Omdat $|s_{n}t_{n}-s_{n}t+s_{n}t-st|=|s_{n}t_{n}-st|$ en $|s_{n}t_{n}-s_{n}t|+|s_{n}t-st|<\epsilon$ geldt dat $|s_{n}t_{n}-st|<\epsilon$ als $n>N$ met $N=\text{max}(N_{1},N_{2})$. \bigskip
+
+\noindent We hebben nu dus bewezen dat voor elke $\epsilon>0$ er een $N$ bestaat, namelijk $\text{max}(N_{1},N_{2})$, zodat voor elke $n>N$ geldt dat $|s_{n}t_{n}-st|<\epsilon$. Dit is wat we moesten bewijzen.
+
+\end{proof}

@@ -1,0 +1,84 @@
+\subsection{De verzameling $\mathbb{R}$}
+\paragraph{Algebraïsche eigenschappen}De verzameling breuken $\mathbb{Q}$ heeft de volgende algebraïsche eigenschappen:
+\begin{itemize}
+    \setlength\itemsep{0em}
+    \item[\textbf{A1.}] $a+(b+c)=(a+b)+c$ voor elke $a,b,c\in\mathbb{Q}$.
+    \item[\textbf{A2.}] $a+b=b+a$ voor alle $a,b\in\mathbb{Q}$.
+    \item[\textbf{A3.}] $a+0=0$ voor alle $a\in\mathbb{Q}$.
+    \item[\textbf{A4.}] Voor elke $a\in\mathbb{Q}$ is er een $-a\in\mathbb{Q}$ zodat $a+(-a)=0$
+    \item[\textbf{M1.}] $a(bc)=(ab)c$ voor elke $a,b,c\in\mathbb{Q}$.
+    \item[\textbf{M2.}] $ab=ba$ voor alle $a,b\in\mathbb{Q}$.
+    \item[\textbf{M3.}] $a\cdot1=a$ voor alle $a\in\mathbb{Q}$.
+    \item[\textbf{M4.}] Voor elke $a\in\mathbb{Q}$ met $a\neq0$ is er een $a^{-1}\in\mathbb{Q}$ zodat $a \cdot a^{-1} = 1$
+\end{itemize}
+De eigenschappen \textbf{A1} en \textbf{M1} zijn de \textit{associatieve} eigenschappen van $+$ en $\cdot$ en de eigenschappen \textbf{A2} en \textbf{M2} zijn de \textit{commutatieve} eigenschappen van $+$ en $\cdot$.
+
+\subparagraph{Consequenties van de veld eigenschappen} De volgende eigenschappen volgen uit de algebraïsche eigenschappen van $\mathbb{Q}$:
+
+\begin{enumerate}
+    \setlength\itemsep{0em}
+    \item Als $a+c=b+c$ dan geldt dat $a=b$.
+    \item $a\cdot0=0$ voor alle $a\in\mathbb{Q}$.
+    \item $(-a)b=-ab$ voor alle $a,b\in\mathbb{Q}$.
+    \item $(-a)(-b)=ab$ voor alle $a,b\in\mathbb{Q}$.
+    \item Als $ac=bc$ en $c\neq0$ dan $a=b$.
+    \item Als $ab=0$ dan geldt dat $a=0$ of $b=0$.
+\end{enumerate}
+\textit{De bewijzen van deze stellingen staan op pagina 16 van het boek.}
+
+\paragraph{Ordening}Ook heeft $\mathbb{Q}$ een ordening \bq$\leq$\eq die aan de volgende eigenschappen voldoet:
+\begin{itemize}
+    \setlength\itemsep{0em}
+    \item[\textbf{O1.}] Als $a,b\in\mathbb{Q}$ dan geldt dat $a \leq b$ of $b \leq a$.
+    \item[\textbf{O2.}] Als $a \leq b$ en $b \leq a$ dan $a=b$.
+    \item[\textbf{O3.}] Als $a \leq b$ en $b \leq c$ dan $a \leq c$.
+    \item[\textbf{O4.}] Als $a \leq b$ dan geldt ook dat $a+c \leq b+c$
+    \item[\textbf{O5.}] Als $a \leq b$ en $c \geq 0$, dan ook $ac \leq bc$.
+\end{itemize}
+De eigenschap \textbf{O3} heet de \textit{transitieve} eigenschap. Een veld met een ordening die voldoet aan \textbf{O1} tot en met \textbf{O5} heet een geordend veld.
+
+\subparagraph{Consequenties van de ordening ''$\leq$''}
+\begin{enumerate}
+    \setlength\itemsep{0em}
+    \item Als $a \leq b$ dan $-b \leq -a$.
+    \item Als $a \leq b$ en $c\leq0$ dan $bc \leq ac$.
+    \item Als $0 \leq a$ en $0 \leq b$ dan $0 \leq ab$.
+    \item $0 \leq a^{2}$ voor elke $a\in\mathbb{Q}$.
+    \item $0<1$.
+    \item Als $0 < a$ dan ook $0 < a^{-1}$.
+    \item Als $0<a<b$ dan geldt $0<b^{-1}<a^{-1}$.
+\end{enumerate}
+\textit{Dit wordt bewezen op pagina 16-17 van het boek.}
+
+\paragraph{Absolute waarde} De absolute waarde is gedefinieerd als volgt:
+$$
+|a|\defeq
+\begin{cases}
+    a & \text{als } a\geq 0\\
+    -a & \text{als } a<0
+\end{cases}
+$$
+\subparagraph{Stellingen over de absolute waarde} De volgende stellingen over de absolute waarde zijn waar:
+\begin{enumerate}
+    \setlength\itemsep{0em}
+    \item $|a|\geq0$.
+    \item $|ab|=|a|\cdot|b|$.
+    \item $|a+b|\leq|a|+|b|$.
+\end{enumerate}
+\textit{Dit wordt bewezen op pagina 17-18 van het boek.}
+
+\paragraph{Afstand} De afstand tussen twee getallen $a,b$ is de $\text{dist}(a,b)$ wat gedefiniëerd is als:
+$$\text{dist}(a,b)\defeq|a-b|$$
+\paragraph{Stellingen over de afstand} De volgende stelling over afstand is waar:
+
+\subparagraph{Afstand tussen de som van getallen} $\text{dist}(a,c)\leq\text{dist}(a,b)+\text{dist}(b,c)$.
+
+\textit{Dit wordt bewezen op pagina 18 van het boek.}
+
+\paragraph{Stellingen uit opgaven} De volgende handige stellingen worden bewezen in een opgave uit paragraaf $3$:
+
+\subparagraph{Opgave 3.5a} Voor elke $a,b\in\mathbb{R}$ geldt dat $|b| \leq a$ dan en slechts dan als $-a \leq b \leq a$.
+
+\subparagraph{Opgave 3.5b} Voor elke $a,b\in\mathbb{R}$ geldt dat $||b|-|a|| \leq |b-a|$.
+
+\subparagraph{Opgave 3.6b} Laat $a_{1},a_{2},...,a_{n}\in\mathbb{R}$, dan geldt dat $|\sum_{i=1}^{n}a_{i}|\leq\sum_{i=1}^{n}|a_{i}|$

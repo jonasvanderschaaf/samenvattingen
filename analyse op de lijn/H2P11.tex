@@ -1,0 +1,33 @@
+\subsection{Deelrijen}
+
+\paragraph{Wat is een deelrij?} Stel $(s_{n})_{n\in\mathbb{N}}$ is een deelrij. Dan is een deelrij van de vorm $(t_{k})_{k\in\mathbb{N}}$ waar er voor elke $k$ een getal $n_{k}\in\mathbb{N}$ is zodat $t_{k}=s_{n_{k}}$en $n_{k}<n_{k+1}$. De rij $t_{k}$ is dus een rij met een deel van de elementen van $s_{n}$ in dezelfde volgorde als in $s_{n}$.
+
+\subparagraph{Deelrijen met verzamelingen} Zij $N$ een verzameling met $N\subseteq\mathbb{N}$, en $\sigma:\mathbb{Z} \to N$ zodat $\sigma$ een oplopende bijectieve functie is. Als $s_{n}\in\sequenceset$, dan is de deelrij $t_{k}$ (ook wel $t(k)$) de functie $(s\circ\sigma)(k)$.
+
+\paragraph{Stellingen over deelrijen} De volgende stellingen zijn waar over deelrijen:
+
+\subparagraph{Limieten van deelrijen} Als $t\in\mathbb{R}$ dan is er een deelrij van $s_{n}$ die naar $t$ convergeert dan en slechts dan als de verzameling $\{n\in\mathbb{N}:|s_{n}-t|<\epsilon\}$ oneindig groot is voor elke $\epsilon>0$. \textit{Het bewijs hiervoor staat op bladzijden $68$-$69$}.
+
+\subparagraph{Boven onbegrensde deelrij en deelrijlimieten} Als een rij $s_{n}$ geen bovengrens heeft, dan is er een deelrij met limiet $+\infty$. \textit{Het bewijs staat op pagina 69}.
+
+\subparagraph{Onder onbegrensde deelrij en deelrijlimieten} Als een rij $s_{n}$ geen ondergrens heeft, dan is er een deelrij met limiet $-\infty$. \textit{Het bewijs gaat hetzelfde als het bewijs van de stelling hiervoor}.
+
+\subparagraph{Limiet van een rij en deelrijen} Als $s_{n}\in\sequenceset$ convergeert naar $s$, dan convergeert elke deelrij van $s_{n}$ naar $s$. \textit{Het bewijs hiervoor staat op pagina $71$}.
+
+\subparagraph{Monotone deelrijen} Elke rij $s_{n}$ heeft een monotone deelrij. \textit{Het bewijs hiervoor staat op pagina $71$}.
+
+\subparagraph{Bolzano-Weierstrass} Elke begrensde rij heeft een convergente deelrij. \textit{Het bewijs hiervoor staat in \hyperref[sec:AC]{appendix C}}.
+
+\paragraph{Deelrijlimieten} Een deelrijlimiet is een getal $x\in\mathbb{R}$ waarvoor geldt dat er een deelrij $s_{n_{j}}$ is met $\liminfty{j}(s_{n_{j}})=x$.
+
+\paragraph{Stellingen over deelrijlimieten} De volgende stellingen over deelrijen zijn waar:
+
+\subparagraph{Deelrijlimieten en lim inf en lim sup} Zij $s_{n}\in\sequenceset$. Er bestaan monotone deelrijen $s_{n_{m}}$ en $s_{k_{j}}$ met $\liminfty{n}(s_{n_{m}})=\limsup(s_{n})$ en $\liminfty{n}(s_{k_{j}})=\liminf(s_{n})$.
+
+\subparagraph{Grootte van deelrijlimietverzameling} Zij $s_{n}\in\sequenceset$ en $S$ de verzameling deelrijlimieten zijn. Dan geldt dat $s\neq\emptyset$.
+
+\subparagraph{Uitersten van deelrijlimietverzameling} Zij $s_{n}\in\sequenceset$ en $S$ de verzameling deelrijlimieten zijn. Dan geldt $\sup(S)=\limsup(s_{n})$ en $\inf(S)=\liminf(s_{n})$.
+
+\subparagraph{Limieten en deelrijlimieten} Zij $s_{n}\in\sequenceset$ en $S$ de verzameling deelrijlimieten zijn. Als $\liminfty{n}(s_{N})$ bestaat dan en slechts dan als $S$ precies één element heeft, namelijk $S=\{\liminfty{n}(s_{n})\}$.
+
+\subparagraph{Rijen in verzameling van deelrijlimieten} Zij $s_{n}\in\sequenceset$ en $S$ de verzameling deelrijlimieten zijn. Laat $t_{n}\in(S\cap\mathbb{R})^{\mathbb{N}}$. Als $\liminfty{n}(t_{n})=t$, dan geldt dat $t \in S$.

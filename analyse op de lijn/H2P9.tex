@@ -1,0 +1,50 @@
+\subsection{Limietstellingen voor rijen}
+\paragraph{Begrensde rijen} Een rij $s_{n}$ is begrensd als er een $M$ bestaat zodat $|s_{n}| \leq M$ voor elke $n\in\mathbb{N}$.
+
+\subparagraph{Convergent en begrensd} Als $s_{n}$ een convergente rij is, dan is er een $M$ zodat $|s_{n}| \leq M$. Als een rij convergeert dan is deze begrensd. \textit{Het bewijs hiervoor staat op bladzijde $45$ van het boek.}
+
+\paragraph{Rekenregels voor limieten} Voor limieten gelden bepaalde rekenregels. De volgende regels gelden \fontsize{13pt}{0pt}\textbf{alleen}\fontsize{11pt}{0pt} als de rijtjes $s_{n}$ en $t_{n}$ convergeren.
+
+\subparagraph{De wortel van een rij} Als $\liminfty{n}(s_{n})=s$ en $s_{n}$ is een rij met $s_{n}\in\mathbb{R}^{+}$ voor elke $n\in\mathbb{N}$. Dan geldt ook dat $\liminfty{n}(\sqrt{s_{n}})=\sqrt{s}$. \textit{Het bewijs hiervoor staat op pagina $42$ van het boek.}
+
+\subparagraph{Product van een getal en een limiet} De limiet $\liminfty{n}(k \cdot s_{n}) = k\cdot\liminfty{n}(s_{n})$ als $s_{n}$ convergeert. \textit{Het bewijs hiervoor staat op pagina $46$ van het boek}.
+
+\subparagraph{Som van limieten} De limiet $\liminfty{n}(s_{n}+t_{n}) = \liminfty{n}(s_{n})+\liminfty{n}(t_{n})$ als $s_{n}$ en $t_{n}$ convergeren. \textit{Het bewijs hiervoor staat op bladzijde 46 van het boek}.
+
+\subparagraph{Product van limieten} De limiet $\liminfty{n}(s_{n} \cdot t_{n}) = \liminfty{n}(s_{n}) \cdot \liminfty{n}(t_{n})$ als $s_{n}$ en $t_{n}$ convergeren. \textit{Het uitgewerkte bewijs hiervoor staat in \hyperref[sec:AA]{appendix A}}.
+
+\subparagraph{Het limiet van de breuk van twee rijen} De limiet $\liminfty{n}(\frac{t_{n}}{s_{n}}) = \frac{\liminfty{n}(t_{n})}{\liminfty{n}(s_{n})}$ als $s_{n}$ en $t_{n}$ convergeren en als $s_{n}\neq0$ voor alle $n\in\mathbb{N}$ en $\liminfty{n}(s_{n}) \neq 0$. \textit{Het bewijs hiervoor staat op pagina $47$ en $48$ van het boek}.
+
+\subparagraph{Enkele limieten} De limieten die hieronder staan zijn waar:
+\begin{itemize}
+    \setlength\itemsep{0em}
+    \item De limiet $\liminfty{n}(\frac{1}{n^{p}})=0$ als $p>0$.
+    \item De limiet $\liminfty{n}(a^{n})=0$ als $|a|<1$.
+    \item De limiet $\liminfty{n}(n^{\frac{1}{n}})=1$.
+    \item De limiet $\liminfty{n}(a^{\frac{1}{n}})=1$ voor $a>0$.
+\end{itemize}
+\textit{De bewijzen hiervoor staan op pagina 48-49 van het boek}.
+
+\paragraph{Limieten en oneindig} Als een limiet niet convergeert, dan divergeert deze. Maar soms divergeert een rij naar niks en soms naar $+\infty$ of $-\infty$.
+
+\subparagraph{Divergeren naar oneindig} Een rij $s_{n}$ divergeert naar oneindig dan en slechts dan als er voor elke $M>0$ een $N$ is zodat voor elke $N<n$ geldt dat $M<s_{n}$. Dit wordt opgeschreven als $\liminfty{n}(s_{n})=+\infty$.\bigskip
+
+\noindent Een rij $s_{n}$ divergeert naar $-\infty$ dan en slechts dan als er voor elke $M<0$ een $N$ is zodat voor elke $N<n$ geldt dat $s_{n}<M$. Dit wordt opgeschreven als $\liminfty{n}(s_{n})=-\infty$. \bigskip
+
+\noindent Een rij $s_{n}$ heeft een limiet als $s_{n}$ convergeert of als $s_{n}$ divergeert naar $+\infty$ of $-\infty$.
+
+\paragraph{Rekenregels voor limieten naar $\pm\infty$} Als een rijtje divergeert naar $\pm\infty$ dan kunnen de eerder genoemde rekenregels niet gebruikt worden, de volgende regels wel.
+
+\subparagraph{Het product van twee rijen} Zij $s_{n},t_{n}\in\sequenceset$ met $\liminfty{n}(s_{n})=+\infty$ en $\liminfty{n}(t_{n})>0$ ($t_{n}$ kan convergeren of divergeren naar $+\infty$). Dan geldt dat $\liminfty{n}(s_{n}t_{n})=+\infty$. \textit{Het bewijs hiervoor staat op pagina $52$-$53$}.
+
+\subparagraph{Limiet van de rij $\frac{1}{s_{n}}$} Zij $s_{n}$ een rij met $s_{n}>0$. Dan geldt $\liminfty{n}(s_{n})=+\infty$ dan en slechts dan als $\liminfty{n}(\frac{1}{s_{n}})=0$. \textit{Het bewijs staat op pagina $53$-$54$}.
+
+\paragraph{Stellingen uit de opgaven} De volgende stellingen worden bewezen in paragraaf $9$:
+
+\subparagraph{Opgave 9.9c} Zij $s_{n},t_{n}\in\sequenceset$ zodat er een $N_{0}$ is zodat $s_{n} \leq t_{n}$ voor elke $n>N_{0}$. Als $s_{n}$ en $t){n}$ convergeren dan geldt $\liminfty{n}(s_{n})\leq\liminfty{n}(t_{n})$.
+
+\subparagraph{Opgave 9.10a} Zij $s_{n}\in\sequenceset$ met $\liminfty{n}(s_{n})=+\infty$ en $k>0$. Dan geldt dat $\liminfty{n}(ks_{n})=+\infty$.
+
+\subparagraph{Opgave 9.10c} Zij $s_{n}\in\sequenceset$ met $\liminfty{n}(s_{n})=+\infty$ en $k<0$. Dan geldt dat $\liminfty{n}(ks_{n})=-\infty$.
+
+\subparagraph{Opgave 9.11c} Zij $s_{n},t_{n}\in\sequenceset$ met $\liminfty{n}(s_{n})=+\infty$ en $t_{n}$ is begrensd. Dan geldt dat\\ $\liminfty{n}(s_{n}+t_{n})=+\infty$.

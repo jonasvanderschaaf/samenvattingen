@@ -1,0 +1,32 @@
+\subsecnewpage{Appendix B: Cauchy en convergentie}
+\label{sec:AB}
+
+\paragraph{Te bewijzen} Een rij $s_{n}\in\sequenceset$. De rij $s_{n}$ convergeert dan en slechts dan als $s_{n}$ Cauchy is. \bigskip
+
+\noindent Voor dit bewijs tonen we aan dat een Cauchy rij convergeert, het bewijs de andere kant op is gegeven in een andere stelling.
+
+\paragraph{Bewijs dat een Cauchy rij convergeert}
+
+\begin{proof}[\unskip\nopunct]
+
+Zij $s_{n}\in\sequenceset$ en $s_{n}$ is Cauchy. Dan geldt dus dat er voor elke $\epsilon>0$ een $N$ bestaat zodat voor elke $m,n>N$ geldt dat $|s_{n}-s_{m}|<\epsilon$. \bigskip
+
+\noindent Omdat $|s_{n}-s_{m}|<\epsilon$ waar is, is ook $-\epsilon<s_{n}-s_{m}<\epsilon$ waar, dus $s_{n}<s_{m}+\epsilon$. Dus is $s_{m}+\epsilon$ een bovengrens voor de verzameling $\{s_{n}:n>N\}$. \bigskip
+
+\noindent Omdat $\{s_{n}:n>N\}$ een bovengrens heeft heeft het dus ook een supremum, namelijk $\text{sup}\{s_{n}:n>N\}$, we noemen dit supremum $v_{N}$. \bigskip
+
+\noindent Het supremum is altijd de kleinste bovengrens van een verzameling dus $v_{N} \leq s_{m}+\epsilon$. Maar dan geldt ook dat $v_{N} - \epsilon \leq s_{m}$, dus $v_{N} - \epsilon$ is een ondergrens van $s_{m}$. Dus geldt dat $s_{m}$ ook een infimum heeft, namelijk $v_{N}-\epsilon$. \bigskip
+
+\noindent Omdat het infimum de kleinste bovengrens is geldt dat $v_{N}-\epsilon\leq\text{inf}\{s_{m}:m>N\}$. We noemen dit infimum $u_{N}$. Dus $v_{N} \leq u_{N}+\epsilon$. \bigskip
+
+\noindent Omdat $\limsup(s_{n})\leq\text{sup}\{s_{n}:n>N\}$ en $\liminf(s_{n})+\epsilon\geq\text{inf}\{s_{n}:n>N\}+\epsilon$ weten we dat $\limsup(s_{n})\leq\text{sup}\{s_{n}:n>N\}\leq\text{inf}\{s_{n}:n>N\}+\epsilon\leq\liminf(s_{n})+\epsilon$. \bigskip
+
+\noindent We hebben nu dus bewezen dat $\limsup(s_{n})\leq\liminf(s_{n})+\epsilon$ voor een willekeurige $\epsilon>0$ als $s_{n}$ Cauchy is. Dus $\limsup(s_{n})=\liminf(s_{n})$. \bigskip
+
+\noindent We weten dat $\liminf(s_{n})\leq\limsup(s_{n})$ en $\limsup(s_{n})\leq\liminf(s_{n})$, dus moet wel gelden dat $\liminf(s_{n})=\limsup(s_{n})$. \bigskip
+
+\noindent Definieer nu $s$ als volgt $s\defeq\limsup{s_{n}}=\liminf{s_{n}}$. Omdat $\liminf{s_{n}}=\limsup{s_{n}}$ waar is, geldt ook dat $\liminfty{n}(s_{n})=s$, dus $s_{n}$ convergeert naar $s$. \bigskip
+
+\noindent We hebben nu dus bewezen dat als een rij $s_{n}$ Cauchy is,dat $s_{n}$ dan ook convergeert.
+
+\end{proof}
