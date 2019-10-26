@@ -1,2 +1,2 @@
 # samenvattingenwiskunde
-Een repository voor samenvattingen van wiskundevakken in latex.
+Een repository voor samenvattingen van vakken op de UvA in latex.
