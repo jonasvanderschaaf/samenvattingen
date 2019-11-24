@@ -1,0 +1,6 @@
+PWD /home/jonas/Documents/samenvattingenwiskunde/analyse op de lijn/H3
+INPUT /etc/texmf/web2c/texmf.cnf
+INPUT /usr/share/texmf/web2c/texmf.cnf
+INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
+INPUT H3.tex
+OUTPUT H3.log

@@ -1,0 +1,11 @@
+# Fdb version 3
+["pdflatex"] 1574598577 "H3.tex" "H3.pdf" "H3" 1574598577
+  "/etc/texmf/web2c/texmf.cnf" 1559110348 36392 27b717d9fa5a56a8f0962508b3423be8 ""
+  "/usr/share/texmf/web2c/texmf.cnf" 1559110348 36392 27b717d9fa5a56a8f0962508b3423be8 ""
+  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1574367532 4249731 8dc93c32a69056d714b6cde40d06e3a3 ""
+  "H3.aux" 1574598577 8 a94a2480d3289e625eea47cd1b285758 ""
+  "H3.tex" 1574598576 74 23261e6dfeb5fe67553a34fe280d0210 ""
+  "H3/H3P17-18.tex" 0 -1 0 ""
+  (generated)
+  "H3.log"
+  "H3.pdf"
