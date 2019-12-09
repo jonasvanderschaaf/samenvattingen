@@ -1,0 +1,33 @@
+\subsection{Limieten van functies}
+\paragraph{Definitie van de limiet van functies} De limiet van een functie is als volgt gedefiniëerd, afhankelijk van $a$ en $L$: $\lim{x}{a}(f(x))=L \Leftrightarrow$
+
+\begin{tabular}{|l|c|c|c|}\hline
+		& $a \in \mathbb{R}$ & $a = \infty$ & $a = -\infty$ \\ \hline
+		& $\forall \epsilon > 0$ $\exists \delta > 0 $ : & $\forall \epsilon > 0$ $\exists \alpha$ : & $\forall \epsilon > 0$ $\exists \alpha$ :  \\
+		$L \in \mathbb{R}$& $0<|x-a|<\delta$ & $x>\alpha$ & $x<\alpha$\\
+		& $ \Rightarrow|f(x) - L|<\epsilon$ & $\Rightarrow|f(x) - L|<\epsilon$ & $\Rightarrow|f(x) - L|<\epsilon$ \\ \hline
+		& $\forall M>0$ $\exists \delta > 0$ : & $\forall M>0$ $\exists \alpha$ : & $\forall M>0$ $\exists \alpha$ : \\
+		$L = \infty$ & $0<|x-a|<\delta$ & $x > \alpha$ & $x < \alpha$ \\
+		& $\Rightarrow f(x) > M$ & $\Rightarrow f(x) > M$ & $\Rightarrow f(x) > M$ \\ \hline
+		& $\forall M<0$ $\exists \delta > 0$ : & $\forall M<0$ $\exists \alpha$ : & $\forall M<0$ $\exists \alpha$ : \\
+		$L = -\infty$ & $0<|x-a|<\delta$ & $x > \alpha$ & $x < \alpha$ \\
+		& $\Rightarrow f(x) < M$ & $\Rightarrow f(x) < M$ & $\Rightarrow f(x) < M$ \\\hline
+	\end{tabular}\\
+
+\paragraph{Speciale limieten} Er zijn ook nog enkele speciale limieten, namelijk de volgende:
+
+\subparagraph{Limiet van beneden} De limiet van beneden wordt als volgt genoteerd $\uplim{x}{a}(f(x))=L$ of $\lim{x}{a^{-}}(f(x))=L$. Deze is als volgt gedefiniëerd: voor elke $\epsilon>0$ is er een $\delta>0$ zodat voor elke $x\in\mathbb{R}$ geldt dat als $0<a-x<\delta$, dan geldt dat $|f(x)-L|<\epsilon$.
+
+\subparagraph{Limiet van boven} De limiet van boven wordt genoteerd als volgt: $\downlim{x}{a}(f(x))=L$. Dit is zo gedefiniëerd: voor elke $\epsilon>0$ is er een $\delta>0$ zodat voor elke $x\in\mathbb{R}$ geldt dat als $0<x-a<\delta$ dan geldt dat $|f(x)-L|<\epsilon$.
+
+\subparagraph{Limiet op een verzameling} Zij $S\subseteq\mathbb{R}$ een verzameling. Dan is de limiet op die verzameling gedefiniëerd als volgt: $\lim{x}{a^{s}}(f(x))$ dan en slechts dan als voor elke $\epsilon>0$ er een $\delta>0$ is zodat voor elke $x\in S$ geldt dat als $0<|x-a|<\delta$ dan geldt ook dat $|f(x)-L|<\epsilon$. \bigskip
+
+\noindent Als $L=\infty$ of $L=-\infty$, dan geldt dit uiteraard niet maar dan moet de corresponderende voorwaarde overgenomen worden die in de tabel staat, maar alleen de voorwaarde op $x$ ($0<x-a<\delta$ of $0<a-x<\delta$) blijft dan wel staan.
+
+\paragraph{Limieten en rijen} Net als bij continuïteit is het ook mogelijk om deze limieten te definiëren met behulp van rijtjes. Hierbij is het belangrijkste punt om te maken dat het domein van het rijtje verandert, afhankelijk van welk limiet je wil berekenen. Specifieke definities ga ik hier niet opschrijven.
+
+\paragraph{Stellingen over limieten} De volgende stellingen over limieten van functies zijn waar:
+
+\subparagraph{Wanneer bestaat de limiet} Als geldt dat $\uplim{x}{a}(f(x))=L$ en $\downlim{x}{a}(f(x))=L$, dan geldt dat $\lim{x}{a}(f(x))=L$ en andersom.
+
+\subparagraph{Continuiteit en limieten} Als een functie continu is, dan geldt voor elke $a\in\text{dom}(f)$ dat \\$\lim{x}{a}(f(x))=f(a)$.
