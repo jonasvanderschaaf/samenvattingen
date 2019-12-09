@@ -5,3 +5,23 @@
 \paragraph{Stelling van Rolle} Zij $f$ een continue functie op $[a,b]$ die differentieerbaar is op $(a,b)$ met $f(a)=f(b)$. Dan is er tenminste één $x\in(a,b)$ zodat $f'(x)=0$.
 
 \paragraph{Middenwaardestelling} Zij $f$ een continue functie op $[a,b]$ die differentieerbaar is op $(a,b)$. Dan is er tenminste één $x\in(a,b)$ zodat geldt dat $f'(x)=\frac{f(b)-f(a)}{b-a}$. \textit{Het bewijs hiervoor staat in \hyperref[sec:AE]{appendix E}}.
+
+\paragraph{Gevolgen van de middenwaardestelling} De volgende stellingen zijn gevolgen van de middenwaardestelling:
+
+\subparagraph{Afgeleide gelijk aan 0} Zij $f$ een differentieerbare functie op $(a,b)$ met $f'(x)=0$ voor alle $x\in(a,b)$, dan is $f$ een constante functie.
+
+\subparagraph{Functies met gelijke afgeleides} Zij $f$ en $g$ differentieerbare functies op $(a,b)$ waarvoor geldt dat $f'=g'$ op $(a,b)$. Dan is er een $c\in\mathbb{R}$ zodat $f(x)=g(x)+c$ voor elke $x\in(a,b)$.
+
+\subparagraph{Stijgende en dalende functies} Zij $f$ een differentieerbare functie op $(a,b)$, dan geldt het volgende:
+
+\begin{enumerate}
+  \setlength\itemsep{0em}
+  \item De functie $f$ is strict stijgend, als geldt dat $f'(x)>0$ voor alle $x\in(a,b)$
+  \item De functie $f$ is strict dalend , als geldt dat $f'(x)<0$ voor alle $x\in(a,b)$
+  \item De functie $f$ is stijgend, als geldt dat $f'(x)\geq0$ voor alle $x\in(a,b)$
+  \item De functie $f$ is dalend, als geldt dat $f'(x)\leq0$ voor alle $x\in(a,b)$
+\end{enumerate}
+
+\paragraph{Tussenwaardestelling voor afgeleides} Zij $f$ een differentieerbare functie op $(a,b)$. Kies vervolgens $x_{1},x_{2}\in(a,b)$ met $x_{1}<x_{2}$. Dan is er voor elke $c$ waarvoor geldt dat $f(x_{1})<c<f(x_{2})$ dat er een $x\in(x_{1},x_{2})$ is zodat $f'(x)=c$.
+
+\paragraph{Inverses en afgeleiden} Zij $f$ een injectieve functie op een open interval $I$ en laat $J\defeq f(I)$. Als $f$ differentieerbaar is op een punt $x_{0}\in I$ en als $f'(x_{0})\neq0$, dan geldt dat $f^{-1}$ differentieerbaar is op $y_{0}$ met als afgeleide $f^{-1}(y_{0})=\frac{1}{f'(x_{0})}$.
