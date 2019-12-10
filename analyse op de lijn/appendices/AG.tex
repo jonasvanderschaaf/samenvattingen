@@ -1,0 +1,10 @@
+\subsecnewpage{Appendix G: Continue functies en integratie}
+\label{sec:AG}
+
+\begin{proof}
+  Omdat $f$ continu is op $[a,b]$ geldt ook dat $f$ uniform continu is op $[a,b]$. Daarom geldt dat voor elke $\epsilon>0$ dat er een $\delta>0$ is zodat voor elke $x,y\in[a,b]$ geldt dat als $|x-y|<\delta$ dan geldt dat $|f(x)-f(y)|<\frac{\epsilon}{b-a}$. \medskip
+
+  \noindent Zij $P$ een partitie van $[a,b]$ met $\text{mesh}(P)<\delta$. Dan geldt dat $M(f,[t_{k-1},t_{k}])-m(f,[t_{k-1},t_{k}])<\frac{\epsilon}{b-a}$. Dus geldt dat $U(f,P)-L(f,P)<\sum\limits_{k=1}^{n}\frac{\epsilon}{b-a}(t_{k}-t_{k-1})=\epsilon$. Dit is zo omdat de som een telescopische som is. \medskip
+
+  \noindent Dus geldt dat voor elke functie die continu is op $[a,b]$ dat voor elke $\epsilon>0$ er een $\delta>0$ is zodat voor elke partitie $P$ met $\text{mesh}(P)<\delta$ geldt dat $U(f,P)-L(f,P)<\epsilon$, dus is $f$ integreerbaar. \textit{Het bewijs staat op pagina $282$-$283$}.
+\end{proof}

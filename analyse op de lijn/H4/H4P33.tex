@@ -1,0 +1,30 @@
+\subsection{Eigenschappen van de Riemann integraal}
+De Riemann en Darboux integraal hebben de volgende eigenschappen:
+
+\paragraph{Monotone functies en integratie} Zij $f:\mathbb{R}\to\mathbb{R}$ een monotone functie op $[a,b]$. Dan is $f$ integreerbaar op $[a,b]$. \textit{Het bewijs staat op pagina $280$-$281$}.
+
+\paragraph{Continue functies en integratie} Zij $f:\mathbb{R}\to\mathbb{R}$ een continue functie op $[a,b]$. Dan is $f$ integreerbaar op $[a,b]$. \textit{Het bewijs hiervoor staat in \hyperref[sec:AG]{appendix G}}.
+
+\paragraph{Meerdere functies en integratie} Zij $f$ en $g$ integreerbare functies op $[a,b]$ en zij $c\in\mathbb{R}$. Dan gelden de volgende stellingen (\textit{de bewijzen staan op bladzijde $282$ t/m $285$}):
+
+\begin{itemize}
+  \setlength\itemsep{0em}
+  \item $cf$ is integreerbaar en $\int_{a}^{b}cf=c\int_{a}^{b}f$
+  \item $f+g$ is integreerbaar en $\int_{a}^{b}(f+g)=\int_{a}^{b}f+\int_{a}^{b}g$
+  \item Als $f(x)\leq g(x)$ voor elke $x\in[a,b]$, dan geldt dat $\int_{a}^{b}f\leq\int_{a}^{b}g$
+  \item Als $f$ een continue niet-negatieve functie is op $[a,b]$ en $\int_{a}^{b}f=0$, dan geldt dat $f$ identiek gelijk is aan $0$
+\end{itemize}
+
+\paragraph{Absolute waarde en integratie} Zij $f:\mathbb{R}\to\mathbb{R}$ een integreerbare functie op $[a,b]$, dan is $|f|$ ook integreerbaar en $|\int_{a}^{b}f|\leq\int_{a}^{b}|f|$. \textit{Het bewijs staat op pagina's $284$ en $285$}.
+
+\paragraph{Opsplitsen van integralen} Zij $f:\mathbb{R}\to\mathbb{R}$ en $a,b,c\in\mathbb{R}$ met $a<c<b$, als $f$ integreerbaar is op $[a,c]$ en $[b,c]$, dan is $f$ integreerbaar op $[a,b]$ en $\int_{a}^{b}f=\int_{a}^{c}f+\int_{c}^{b}f$. \textit{Het bewijs staat op pagina $285$}.
+
+\paragraph{Stuksgewijs monotoon} Een functie $f:\mathbb{R}\to\mathbb{R}$ is stuksgewijs monotoon op $[a,b]$ dan en slechts dan als er een partitie $P$ is zodat $f$ monotoon is op elk interval $(t_{k-1},t_{k})$.
+
+\paragraph{Stuksgewijs continu} Een functie $f:\mathbb{R}\to\mathbb{R}$ is stuksgewijs continu dan en slechts dan als er een partitie $P$ bestaat zodat $f$ uniform continu is op elk interval $(t_{k-1},t_{k})$.
+
+\paragraph{Stuksgewijs monotoon, continu en integreerbaar} Zij $f:\mathbb{R}\to\mathbb{R}$ stuksgewijs continu of monotoon op een interval $[a,b]$, dan is $f$ integreerbaar op $[a,b]$.
+
+\paragraph{Middenwaardestelling voor integralen} Zij $f:\mathbb{R}\to\mathbb{R}$ een continue functie op $[a,b]$, dan is er tenminste één $x\in(a,b)$ waarvoor geldt dat $f(x)=\frac{1}{b-a}\int_{a}^{b}f$.
+
+\paragraph{Gedomineerde convergentie} Zij $(f_{n})$ en rij van integreerbare functies op $[a,b]$ en voor elke $x\in[a,b]$ geldt $\liminfty{n}(f_{n})=f(x)$. Dan geldt dat $\liminfty{n}(\int_{a}^{b}f_{n})=\int_{a}^{b}(\liminfty{n}f_{n})$.
