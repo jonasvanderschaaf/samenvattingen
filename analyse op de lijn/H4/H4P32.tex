@@ -25,3 +25,17 @@
 \subparagraph{Boven en onderintegralen} Zij $f$ een begrensde functie op $[a,b]$, dan geldt dat $L(f)\leq U(f)$. \textit{Het bewijs hiervoor staat op pagina $274$}.
 
 \subparagraph{Cauchy integratie} Een functie $f$ die begrensd is op $[a,b]$ is integreerbaar als en slechts als voor elke $\epsilon>0$ er een partitie $P$ van $[a,b]$ bestaat zodat $U(f,P)-L(f,P)<\epsilon$. Het bewijs hiervoor staat in \hyperref[sec:AF]{appendix F}
+
+\paragraph{\textit{Mesh} van een partitie} De \textit{mesh} van een partitie is de maximale lengte van de deelintervallen van de partitie. Dus voor een partitie $P$ met $n$ deelintervallen geldt: $\text{mesh}(P)\defeq\text{max}\{t_{k}-t_{k-1}:k=1,2,...,n\}$.
+
+\paragraph{Nog een Cauchy-criterium} Zij $f$ een begrensde functie op $[a,b]$, dan is $f$ integreerbaar dan en slechts dan als voor elke $\epsilon>0$ er een $\delta>0$ is zodat voor elke partitie $P$ van $[a,b]$ geldt dat als $\text{mesh}(P)<\delta$ dan geldt ook dat $U(f,P)-L(f,P)<\epsilon$. \textit{Het bewijs hiervoor staat op bladzijden $275$ en $276$}.
+
+\paragraph{Riemann integratie} De Riemann integraal wordt gedefinieerd vanuit Riemann sommen, vervolgens wordt de integraal gedefinieerd.
+
+\subparagraph{Riemann sommen} Zij $f$ een begrensde functie op $[a,b]$ en $P$ een partitie van $[a,b]$. Dan is een Riemann som een som van de vorm $\sum\limits_{k=1}^{n}f(x_{k})(t_{k}-t_{k-1})$. De rij $x_{k}$ is een willekeurig gekozen rij waarvoor geldt dat voor elke $k=1,2,...,n$ geldt dat $x_{k}\in[t_{k-1},t_{k}]$. Er zijn dus oneindig veel Riemann sommen voor een functie en partitie.
+
+\subparagraph{Riemann integraal} Een functie $f:\mathbb{R}\to\mathbb{R}$ is Riemann integreerbaar dan en slechts dan als er een getal $r$ bestaat zodat voor elke $\epsilon>0$ er een $\delta>0$ is zodat voor elke Riemann som $S$ met bijbehorende partitie $P$ waarvoor geldt dat $\text{mesh}(P)<\delta$ geldt dat $|S-r|<\epsilon$. Dan zeggen we $\mathcal{R}\int_{a}^{b}f\defeq r$.
+
+\paragraph{Riemann en Darboux integralen} Een functie $f:\mathbb{R}\to\mathbb{R}$ die begrensd is op $[a,b]$ is Riemann integreerbaar dan en slechts dan als $f$ Darboux integreerbaar is, dan komen de waarden van de twee integralen overeen. Dus{ $\int_{a}^{b}f=\mathcal{R}\int_{a}^{b}f$. \textit{Het bewijs hiervoor staat op pagina's $277$-$238$}.
+
+\paragraph{Rij van Riemann sommen} Zij $f:\mathbb{R}\to\mathbb{R}$ een begrensde functie op $[a,b]$ en $(S)$ een rij Riemannsommen met voor elke $S_{n}$ bijbehorende partitie $P_{n}$ zodat $\liminfty{n}(\text{mesh}(P_{n}))=0$. Dan geldt dat $\liminfty{n}(S_{n})=\int_{a}^{b}f$. \textit{Het bewijs staat op pagina $278$-$279$}.
