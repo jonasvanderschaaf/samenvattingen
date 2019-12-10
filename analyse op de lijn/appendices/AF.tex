@@ -1,0 +1,15 @@
+\subsecnewpage{Appendix F: Cauchy integratie}
+\label{sec:AF}
+\paragraph{Te bewijzen} Zij $f:\mathbb{R}\to\mathbb{R}$ begrensd op $[a,b]$, dan is $f$ integreerbaar dan en slechts dan als voor elke $\epsilon>0$ er een partitie $P$ is zodat $U(f,P)-L(f,P)<\epsilon$.
+
+\begin{proof}
+  We bewijzen eerst dat als $f$ integreerbaar is, dat er dan voor elke $\epsilon$ een partitie $P$ bestaat zodat $U(f,P)-L(f,P)<\epsilon$. Dan zijn er partities $P_{1}$ en $P_{2}$ van $[a,b]$ waarvoor geldt dat $L(f,P_{1})>L(f)-\frac{\epsilon}{2}$ en $U(f,P_{2})<U(f)+\frac{\epsilon}{2}$. Dit is zo omdat $L(f)$ het supremum is van alle mogelijke $L(f,P)$ en $U(f)$ het infimum van de waarden van $U(f,P)$. \medskip
+
+  \noindent Zij $P=P_{1}\cup P_{2}$, dan geldt dat $U(f,P)-L(f,P)\leq U(f,P_{2})-L(f,P_{1})<U(f)+\frac{\epsilon}{2}-(L(f)-\frac{\epsilon}{2})=\epsilon+U(f)-L(f)$. En omdat $f$ integreerbaar is geldt dat $U(f)=L(f)$, dus $\epsilon+U(f)-L(f)=\epsilon$. Dus geldt dat $U(f,P)-L(f,P)<\epsilon$. \medskip
+
+  \noindent Dan is er dus voor elke $\epsilon>0$ een partitie $P$ zodat $U(f,P)-L(f,P)<\epsilon$. \medskip
+
+  \noindent Nu bewijzen we dat als voor elke $\epsilon>0$ er een partitie $P$ bestaat zodat $U(f,P)-L(f,P)<\epsilon$, dat $f$ dan integreerbaar is. We weten dat $U(f)\leq U(f,P)=U(f,P) - L(f,P) + L(f,P)<\epsilon+L(f,P)\leq\epsilon + L(f)$. Hieruit volgt dan dat voor elke $\epsilon$ geldt dat $U(f)<\epsilon+L(f)$, dus voor elke $\epsilon>0$ geldt dat $U(f)-L(f)<\epsilon$, du(s $U(f)\leq L(f)$. Omdat ook geldt dat $L(f)\leq U(f)$, weten we dat $U(f)=L(f)$, dus $f$ is integreerbaar. \medskip
+
+  \noindent We hebben nu de stelling beide kanten op bewezen, dus $f$ is integreerbaar dan en slechts dan als voor elke $\epsilon>0$ er een partitie bestaat zodat $U(f,P)-L(f,P)<\epsilon$.
+\end{proof}

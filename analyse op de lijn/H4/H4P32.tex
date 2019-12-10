@@ -1,0 +1,27 @@
+\subsection{Integratie}
+\paragraph{Definitie van de integraal} De definitie van de integraal vereist bepaalde kennis, die stap voor stap hier wordt toegelicht:
+\subparagraph{Maximum en minimum op een verzameling} Zij $f$ een functie gedefinieerd op de verzameling $[a,b]$, en zij $S\subseteq[a,b]$. Dan zijn de functies $M(f,S)$ en $m(f,S)$ als volgt gedefinieerd:
+
+\begin{itemize}
+  \setlength\itemsep{0em}
+  \item $M(f,S)\defeq\text{sup}\{f(x):x\in S\}$
+  \item $m(f,S)\defeq\text{inf}\{f(x):x\in S\}$
+\end{itemize}
+
+\subparagraph{Partities} Een partitie van een interval $[a,b]$ is een eindige verzameling van de vorm $P=\{a=t_{0}<t_{1}<...<t_{n}=b\}$.
+
+\subparagraph{Darboux sommen} De boven Darboux som $U(f,P)$ is gedefinieerd als volgt: $U(f,P)\defeq\\\sum\limits_{k=1}^{n}M(f,[t_{k-1},t_{k}])\cdot(t_{k}-t_{k-1})$. De onder Darboux som is als volgt gedefinieerd: $L(f,P)\defeq\\\sum\limits_{k=1}^{n}m(f,[t_{k-1},t_{k}])\cdot(t_{k}-t_{k-1})$.
+
+\subparagraph{Darboux integralen} De boven Darboux integraal van $f$ over $[a,b]$ $U(f)$ is gedefinieerd op de volgende wijze: $U(f)\defeq\text{inf}\{U(f,P):P\text{ is een partitie van }[a,b]\}$. Voor de onder Darboux integraal geldt dat $L(f)\defeq\text{sup}\{L(f,P):P\text{ is een partitie van }[a,b]\}$
+
+\subparagraph{Integreerbaarheid} We zeggen dat een functie $f$ integreerbaar is op een interval $[a,b]$ als geldt dat $U(f)=L(f)$, dan geldt dat $\int_a^{b}f\defeq U(f)=L(f)$. Deze specifieke definitie van de integraal heet de \textbf{Darboux integraal}.
+
+\paragraph{Stellingen over de Darboux integraal} De volgende stellingen over de Darboux integraal zijn waar:
+
+\subparagraph{Deelpartities} Zij $f:\mathbb{R}\to\mathbb{R}$ een begrensde functie op $[a,b]$ en $P$ en $Q$ partities van $[a,b]$ zodat $P\subseteq Q$, dan geldt dat $L(f,P)\leq L(f,Q)\leq U(f,Q)\leq U(f,P)$. \textit{Het bewijs hiervoor staat op pagina $273$}.
+
+\subparagraph{Boven- en ondergrenzen} Zij $f:\mathbb{R}\to\mathbb{R}$ een begrensde functie op $[a,b]$ en $P$ en $Q$ partities van $[a,b]$. Dan geldt dat $L(f,P)\leq U(f,Q)$. \textit{Het bewijs hiervoor staat op pagina $273$}.
+
+\subparagraph{Boven en onderintegralen} Zij $f$ een begrensde functie op $[a,b]$, dan geldt dat $L(f)\leq U(f)$. \textit{Het bewijs hiervoor staat op pagina $274$}.
+
+\subparagraph{Cauchy integratie} Een functie $f$ die begrensd is op $[a,b]$ is integreerbaar als en slechts als voor elke $\epsilon>0$ er een partitie $P$ van $[a,b]$ bestaat zodat $U(f,P)-L(f,P)<\epsilon$. Het bewijs hiervoor staat in \hyperref[sec:AF]{appendix F}
