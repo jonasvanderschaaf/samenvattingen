@@ -1,0 +1,14 @@
+\subsection{Hoofdstelling van de calculus}
+Er zijn $2$ verschillende versies van de integraalrekening die beiden een relatie weergeven tussen integralen en afgeleides.
+
+\paragraph{Hoofdstelling van de calculus 1} Zij $f$ een continue functie op $[a,b]$ die differentiëerbaar is op $(a,b)$ en als $g'$ integreerbaar is op $[a,b]$, dan geldt dat $\int_{a}^{b}g'=g(b)-g(a)$. \textit{Het bewijs hiervoor staat in \hyperref[sec:AH]{appendix H}}.
+
+\paragraph{Partiële integratie} Zij $u:\mathbb{R}\to\mathbb{R}$ en $v:\mathbb{R}\to\mathbb{R}$ continu op $[a,b]$ en differentiëerbaar op $(a,b)$, als $u'$ en $v'$ integreerbaar zijn op $[a,b]$, dan geldt dat $\int_{a}^{b}uv'+\int_{a}^{b}u'v=u(b)v(b)-u(a)v(a)$. \textit{Het bewijs staat op pagina $293$}.
+
+\paragraph{Hoofdstelling van de calculus 2} Zij $f:\mathbb{R}\to\mathbb{R}$ integreerbaar op $[a,b]$, laat dan de functie $F(x)=\int_{a}^{x}f$. Dan is $F$ continu op $[a,b]$. Als $f$ continu is op $x_{0}$ op $(a,b)$, dan is $F$ differentiëerbaar op $x_{0}$ en $F'(x_{0})=f(x_{0})$. \textit{Het bewijs hiervoor staat op pagina $294$ en $295$}.
+
+\paragraph{Substitutie} Zij $u:\mathbb{R}\to\mathbb{R}$ differentiëerbaar op een open interval $J$ zodat $u'$ continu is. Zij $I$ een open interval zodat $u(x)\in I$ voor alle $x\in J$. Als $f$ continu is op $I$, dan geldt dat $f\circ u$ continu is op $J$ en dat $\int_{a}^{b}(f\circ u)(x)u'(x)=\int_{u(a)}^{u(b)}f(u)$. \textit{Het bewijs hiervoor staat op bladzijde $295$}.
+
+\paragraph{Opgaven uit de paragraaf} De volgende opgaven uit paragraaf $34$ kunnen handig zijn.
+
+\subparagraph{Niet een specifieke opgave maar toch handig} Zij $f:\mathbb{R}\to\mathbb{R}$ een continue functie op $\mathbb{R}$ en $g,h:\mathbb{R}\to\mathbb{R}$ differentiëerbaar. Zij $F$ de primitieve van $f$ en zij $G(x)=\int_{g(x)}^{h(x)}f$ ($G$ is \textbf{niet} de primitieve van $g$), dan geldt dat $G'=(F\circ h)\cdot h' - (F\circ g)\cdot g'$.
