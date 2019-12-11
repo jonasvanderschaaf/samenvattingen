@@ -1,0 +1,46 @@
+\section{Exponenten en logaritmes}
+\paragraph{Logaritme base $e$} De functie $\text{log}:\mathbb{R}_{>0}\to\mathbb{R}$ is gedefiniëerd als volgt: $\text{log}(x)\defeq\int_{1}^{x}\frac{1}{t}dt$. Dit is zo gedefiniëerd omdat we \bq weten\eq dat de afgeleide van $\text{log}(x)$ de functie $\frac{1}{x}$ moet zijn en de waarde van het logaritme op $1$ moet $0$ zijn. We schrijven hier voor de logaritme in plaats van $\text{log}$ de functie $L$, maar deze zijn identiek.
+
+\subparagraph{Eigenschappen van de logaritme} De logaritme heeft bepaalde eigenschappen:
+
+  \begin{itemize}
+    \setlength\itemsep{0em}
+    \item Voor elke $y,z\in\mathbb{R}_{>0}$ geldt dat $\text{log}(yz)=\text{log}(y)+\text{log}(z)$
+    \item Voor elke $y,z\in\mathbb{R}_{>0}$ geldt dat $\text{log}(\frac{y}{z})=\text{log}(y)-\text{log}(z)$
+    \item De limieten van de logaritme hebben de volgende waarden: $\liminfty{x}\text{log}(x)=\infty$ en $\downlim{x}{0}\text{log}(x)=-\infty$.
+  \end{itemize}
+
+\paragraph{E-machten} De functie $e^{x}$ is gedefiniëerd als de inverse van $L(x)$ en we definiëren ook $e=\defeq e^{1}$. We schrijven voor de exponent $E(x)$ in plaats van $e^{x}$.
+
+\subparagraph{Eigenschappen van de e-macht} Ook de $e$-macht heeft bepaalde eigenschappen:
+
+\begin{itemize}
+  \setlength\itemsep{0em}
+  \item De functie $E$ is strict stijgend, continu en differentiëerbaar op heel $\mathbb{R}$ en $E'=E$
+  \item Voor elke $u,v\in\mathbb{R}$ geldt dat $E(u+v)=E(u)E(v)$
+  \item De limieten van $E$ zijn als volgt: $\liminfty{x}E(x)=\infty$ en $\limneginfty{x}E(x)=0$
+\end{itemize}
+
+\paragraph{Willekeurige machten} Zij $b\in\mathbb{R}_{>0}$. Dan geldt de volgende definitie: $b^{x}\defeq E(xL(b))$. Dan geldt dat $e^{x}=E(xL(e))=E(x)$, dat klopt dus.
+
+\subparagraph{Eigenschappen van willekeurige machten} De volgende eigenschappen zijn waar over willekeurige machten:
+
+\begin{itemize}
+  \setlength\itemsep{0em}
+  \item De functie $b^{x}$ is continu en differentiëerbaar op heel $\mathbb{R}$
+  \item Als $b>0$, dan geldt dat $b^{x}$ strict stijg. Als $b<0$, dan daalt $b^{x}$ strict.
+  \item Als $b\neq1$, dan bereikt $b^{x}$ heel $\mathbb{R}_{>0}$
+  \item Voor elke $u,v\in\mathbb{R}$ geldt dat $b^{u+v}=b^{u}n^{v}$
+\end{itemize}
+
+\paragraph{Logaritme met willekeurige base} De functie $\text{log}_{b}$ is gedefiniëerd als de inverse van de functie $b^{x}$ als $b\neq1$ en $b>0$.
+
+\subparagraph{Eigenschappen van de logaritme met willekeurige base} De functie $\text{log}_{b}$ heeft verscheidene eigenschappen:
+
+\begin{itemize}
+  \setlength\itemsep{0em}
+  \item De functie $\text{log}_{b}$ is continu en differentiëerbaar op heel $\mathbb{R}_{>0}$
+  \item Als $b>1$, dan is $\text{log}_{b}$ strict stijgend. Als $b<1$, dan is $\text{log}_{b}$ strict dalend
+  \item Voor alle $y,z\in\mathbb{R}_{>0}$ geldt dat $\text{log}_{b}(yz)=\text{log}_{b}(y)+\text{log}_{b}(z)$
+  \item Voor alle $y,z\in\mathbb{R}_{>0}$ geldt dat $\text{log}_{b}(\frac{y}{z})=\text{log}_{b}(y)-\text{log}_{b}(z)$
+\end{itemize}

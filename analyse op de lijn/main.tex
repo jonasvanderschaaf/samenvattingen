@@ -20,9 +20,10 @@
 \newcommand{\bq}{``}
 \newcommand{\eq}{''}
 \renewcommand{\lim}[2]{\underset{#1\to#2}{\text{lim}}}
-\newcommand{\uplim}[2]{\underset{#1\uparrow#2}{\text{lim}}}
-\newcommand{\downlim}[2]{\underset{#1\downarrow#2}{\text{lim}}}
+\newcommand{\uplim}[2]{\underset{#1\uparrow#2}{\text{lim}}\:}
+\newcommand{\downlim}[2]{\underset{#1\downarrow#2}{\text{lim}}\:}
 \newcommand{\liminfty}[1]{\lim{#1}{\infty}}
+\newcommand{\limneginfty}[1]{\lim{#1}{-\infty}}
 \newcommand{\sequenceset}{\mathbb{R}^{\mathbb{N}}}
 \newcommand{\secnewpage}[1]{\newpage\section{#1}}
 \newcommand{\subsecnewpage}[1]{\newpage\subsection{#1}}
@@ -42,6 +43,7 @@
 \input{H2/H2.tex}
 \input{H3/H3.tex}
 \input{H4/H4.tex}
+\input{H5.tex}
 \input{appendices/Appendices.tex}
 
 \end{document}
