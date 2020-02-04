@@ -1,0 +1,34 @@
+\secnewpage{Equivalentie van convergentie in de Manhattan- en Euclidische metriek}
+\label{sec:eqeucman}
+\begin{proof}
+    Stel een rij \(\sequence{x}\) convergeert in \((\rk{k},d_{2})\) naar \(x\in\rk{k}\). Dan geldt dat er voor elke \(\epsilon>0\) er een \(N\) is zodat voor alle \(n>N\) geldt dat \(d_{2}(x^{(n)},x)<\epsilon\). Laat nu \(\epsilon>0\) en kies voor \(N\) het getal zodat voor alle \(n>N\) geldt dat \(d_{2}\left(x^{(n)},x\right)<\frac{\epsilon}{k}\).
+
+    We weten dat voor alle \(a,b\in\rk{k}\) geldt dat 
+    \[
+        \left|a_{i}-b_{i}\right|\leq\sqrt{\sum\limits_{j=0}^{k}(a_{j}-b_{j})^{2}}
+    \]
+    Door dan aan beide kanten te sommeren over \(i\) krijgen we
+    \begin{align*}
+        d_{1}(a,b)&= \sum\limits_{i=1}^{k}\left|a_{i}-b_{i}\right|\\
+        &\leq \sum\limits_{i=1}^{k}\sqrt{\sum\limits_{j=0}^{k}(a_{j}-b_{j})^{2}}\\
+        &=k\cdot\sqrt{\sum\limits_{j=0}^{k}(a_{j}-b_{j})^{2}}\\
+        &=k\cdot d_{2}(a,b)
+    \end{align*}
+    Dus geldt voor alle \(a,b\in\rk{k}\) dat \(d_{1}(a,b)\leq k\cdot d_{2}(a,b)\).
+
+    Maar we hebben \(N\) zo gekozen dat voor alle \(n>N\) geldt dat \(d_{2}(x^{(n)},x)<\frac{\epsilon}{2}\). Dus geldt ook dat \(d_{1}(x^{(n)},x)\leq k\cdot d_{2}(x^{(n)},x)<\epsilon\). Dus voor elke \(\epsilon>0\) is er een \(N\) zodat voor alle \(n>N\) geldt dat \(d_{1}(x^{(n)},x)<\epsilon\). Dus als een rij convergeert in \(\rk{k}, d_{2}\), dan convergeert deze ook in \((\rk{k},d_{1})\).
+
+    Stel dat een rij \(\sequence{x}\) convergeert in \(\rk{k},d_{1}\). Dan geldt dat er voor elke \(\epsilon>0\) er een \(N\) is zodat voor alle \(n>N\) geldt dat \(d_{2}(x^{(n)},x)<\epsilon\). Laat \(\epsilon>0\) en kies \(N\) zodat voor alle \(n>N\) geldt dat \(d_{1}(x^{(k)},x)<\epsilon\).
+
+    Beschouw nu vervolgens voor \(a,b\in\rk{k}\) de afstand volgens de Manhattan-metriek en volgens de Euclidische metriek. Hiervoor geldt dat
+    \begin{align*}
+        \left(d_{2}(a,b)\right)^{2}& =\sum\limits_{i=1}^{k}(a_{i}-b_{i})^{2}\\
+        &\leq \left(\sum\limits_{i=1}^{k}(a_{i}-b_{i})\right)^{2}\\
+        &= \left(d_{1}(a,b)\right)^{2}
+    \end{align*}
+    , dus dan geldt ook dat \(d_{2}(a,b)\leq d_{1}(a,b)\) voor alle \(a,b\in\rk{k}\).
+
+    Daaruit kunnen we dan opmaken dat voor alle \(n>N\) geldt dat \(d_{2}(x^{(n)},x)\leq d_{1}(x^{(n)},x)<\epsilon\). Dus geldt dat voor elke \(\epsilon>0\) dat er een \(N\) is zodat voor alle \(n>N\) geldt dat \(d_{2}(x^{(n)},x)<\epsilon\). Dus als \(x^{(n)}\) convergeert naar \(x\) in \(\rk{k},d_{1}\), dan ook in \(\rk{k},d_{2}\).
+
+    Nu hebben we dus aangetoond dat convergentie in \(\rk{k},d_{2},d_{2}\) convergentie in \(\rk{k},d_{1}\) impliceert en andersom, en dus zijn de twee begrippen equivalent. 
+\end{proof}

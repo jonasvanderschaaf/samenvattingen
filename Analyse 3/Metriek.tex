@@ -1,0 +1,57 @@
+\section{Metrieken}
+
+\paragraph{Wat is een metrische ruimte?} Zij \(S\) een verzameling en een metriek \(d\colon S\times S\to \r_{\geq0}\) een functie met de volgende eigenschappen:
+\begin{enum}[i.]
+    \item Voor alle \(x,y\in S\) geldt dat \(d(x,y)=0\) dan en slechts dan als geldt dat \(x=y\).
+    \item Voor alle \(x,y\in S\) geldt dat \(d(x,y)=d(y,x)\).
+    \item Voor alle \(x,y,z\in S\) geldt dat \(d(x,z)\leq d(x,y)+d(y,z)\). Dit is de driehoeksongelijkheid.
+\end{enum}
+Als aan al deze eigenschappen volgaan wordt noemen we het paar \((S,d)\) een metrische ruimte.
+
+\subsection{Verschillende metrieken op \texorpdfstring{\(\rk{k}\)}{rk}}
+Het is mogelijk om op dezelfde verzameling verschillende metrieken te definiëren. Hier zijn een paar belangrijke:
+
+\paragraph{Euclidische metriek} Gegeven twee vectoren\footnote{Voor een vector \(x\in\rk{k}\) geldt dat \(x=(x_{1},\sdots,x_{k})\).} \(x,y\in\rk{k}\), is de Euclidische metriek op \(\rk{k}\) de functie:
+\[
+    d_{2}\colon\rk{k}\times\rk{k}\to\r_{\geq0}\colon(x,y)\mapsto\sqrt{\sum\limits_{i=1}^{k}(x_{i}-y_{i})^{2}}.
+\]
+Deze functie voldoet aan alle drie de eigenschappen van een metriek. Als de metriek van een ruimte \(\rk{k}\) niet vermeld wordt, wordt bedoeld dat de gebruikte metriek de Euclidische metriek is. Deze ruimte wordt ook wel de \(k\)-dimensionale Euclidische ruimte genoemd.
+
+\paragraph{Manhattan-metriek} Gegeven twee vectoren \(x,y\in\rk{k}\), is de Manhattan-metriek op \(\rk{k}\) de functie:
+\[
+    d_{1}\colon\rk{k}\times\rk{k}\colon(x,y)\mapsto\sum\limits_{i=1}^{k}|x_{i}-y_{i}|
+\]
+Convergentie volgens de Manhattan-metriek is equivalent aan convergentie volgens de Euclidische metriek. Het bewijs is te vinden in \hyperref[sec:eqeucman]{appendix A}.
+
+\paragraph{Discrete metriek} Gegeven twee vectoren \(x,y\in\rk{k}\), is de Discrete metriek op \(\rk{k}\) de functie:
+\[
+    d\colon\rk{k}\times\rk{k}\colon(x,y)\mapsto\begin{cases}
+        1,& x=y\\
+        0,& x\neq y
+    \end{cases}
+\]
+
+\subsection{Rijtjes in metrieken}
+
+\paragraph{Convergentie} Zij \(\sequence{s}\) een rij\footnote{Voor een rij in \(\rk{k}\) wordt het \(n^{e}\) element aangeduid met een superscript \(n\) (geen macht), omdat het subscript \(i\) wordt gebruikt voor het \(i^{e}\) coördinaat.} in een metrische ruimte \((S,d)\). Voor deze rij geldt dat dat deze convergeert naar een \(s\in S\) als 
+\[
+    \liminfty{n}d\left(s^{(n)},s\right)=0.
+\]
+
+\paragraph{Cauchy rijtjes} Voor een rij \(\sequence{s}\) in een metrische ruimte \((S,d)\) geldt dat \(s_{n}\) Cauchy is als voor elke \(\epsilon>0\) er een \(N\) bestaat zodat voor alle \(m,n>N\) geldt dat \(d\left(s^{(m)},s^{(n)}\right)<\epsilon\).
+
+Een metrische ruimte is \emph{volledig} als geldt dat elke Cauchy rij convergeert naar een element in de ruimte.
+
+\paragraph{Convergentie, Cauchy en Coördinaten} Zij \(\sequence{x}\) een rij in \(\rk{k}\) dan convergeert deze alleen dan en slechts dan als voor alle \(j\in\{1,\sdots,k\}\) geldt dat de rij \(x^{(n)}_{j}\) ook convergeert in \(\r\).
+
+Zij \(\sequence{x}\) een rij in \(\rk{k}\). Deze is Cauchy dan en slechts dan als elke rij \((x_{j}^{(n)})\) een Cauchy rij is.
+
+\paragraph{Begrensdheid} Voor een verzameling \(S\subseteq \rk{k}\) geldt dat deze begrensd is als er een \(M>0\) is zodat voor elke \(x\in S\) geldt dat \(\max\{|x_{j}|\colon j=1,\sdots,k\}\leq M\).
+
+Voor een rij \(\sequence{x}\) geldt dat \((x^{(n)})\) begrensd is als geldt dat de verzameling \(\{x^{(n)}\colon n\in\nz\}\) begrensd is.
+
+\subsection{Volledigheid}
+
+\paragraph{Volledigheid van \texorpdfstring{\(\rk{k}\)}{rk}} De \(k\)-dimensionale Euclidische ruimte \(\rk{k}\) is volledig, dus elke Cauchy rij \(\sequence{x}\) convergeert naar een element \(x\in\rk{k}\).
+
+\paragraph{Bolzano-Weierstrass stelling in \texorpdfstring{\(\rk{k}\)}{rk}} Zij \(\sequence{x}\) een begrensde rij in \(\rk{k}\). Dan geldt dat \(x^{(n)}\) een convergerende deelrij heeft.
