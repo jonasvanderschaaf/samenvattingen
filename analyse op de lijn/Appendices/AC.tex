@@ -1,0 +1,39 @@
+\subsecnewpage{Appendix C: Bolzano-Weierstrass}
+\label{sec:AC}
+Deze appendix bevat twee bewijzen: namelijk dat elke rij een monotone deelrij heeft ($1$), en dat elke begrensde rij een convergente deelrij heeft ($2$).
+
+\paragraph{Bewijs van 1}
+
+\begin{proof}[\unskip\nopunct]
+
+Zij $s_{n}\in\sequenceset$. De $n^{e}$ term van de rij is dominant als voor elke $m>n$ geldt dat $s_{m}<s_{n}$. \bigskip
+
+\noindent Er zijn nu twee verschillende mogelijkheden:
+
+\begin{enumerate}
+    \setlength\itemsep{0em}
+    \item Er zijn oneindig veel dominante termen.
+    \item Er zijn eindig veel dominante termen.
+\end{enumerate}
+
+\noindent Als $1$ het geval is, laat dan de functie $(s\circ\sigma)(n)$ de $n^{e}$ dominante tern zijn van $s_{n}$. Dan is de deelrij $(s\circ\sigma)$ dus monotoon dalend, want elke term van $(s\circ\sigma)$ is dominant, dus groter dan alle daaropvolgende termen. \bigskip
+
+\noindent Als $2$ het geval is dan is er dus een laatste dominante term. Oftewel een $N$, waar $s_{N}$ de laatste dominante term is, zodat voor elke $n>N$ geldt dat $s_{n}$ niet dominant is. Dus voor elke $n>N$ is er een $m>n$ zodat $s_{n} \leq s_{m}$. \bigskip
+
+\noindent Kies dan als $n_{1}$ het getal $N+1$. Dan geldt dus dat er een $n_{2}>n_{1}$ is zodat $s_{1} \leq s_{2}$. Ook $s_{n_{2}}$ is niet dominant dus er is een $n_{3}>n_{2}$ zodat $s_{n_{2}} \leq s_{n_{3}}$. Herhaal dit proces tot in het oneindige zodat je een rij krijgt $s_{n_{k}}\in\sequenceset$. Dan geldt voor die rij dat $s_{n_{i}} \leq s_{n_{j}}$ als $i<j$, dus $s_{n_{k}}$ is een monotoon stijgende rij. \bigskip
+
+\noindent We hebben nu bewezen dat in zowel geval $1$ als $2$ de rij $s_{n}$ een monotone deelrij heeft. Dus $s_{n}$ heeft altijd een monotone deelrij. Dit is wat we moesten bewijzen.
+
+\end{proof}
+
+\paragraph{Bewijs van 2}
+
+\begin{proof}[\unskip\nopunct]
+
+Zij $s_{n}\in\sequenceset$ zodat $s_{n}$ begrensd is. We weten dat $s_{n}$ begrensd is, dus elke deelrij van $s_{n}$ is ook begrensd. \bigskip
+
+\noindent Ook weten we dat $s_{n}$ een monotone deelrij $s_{n_{k}}$ heeft, die dus ook begrensd is. De rij $s_{n_{k}}$ is dus een monotone begrensde deelrij, dus $s_{n_{k}}$ convergeert. \bigskip
+
+\noindent Dus elke begrensde rij $s_{n}\in\sequenceset$ heeft een convergente deelrij, namelijk de monotone deelrij $s_{n_{k}}$. Dit is wat we moesten bewijzen.
+
+\end{proof}

@@ -1,0 +1,33 @@
+\subsecnewpage{Appendix D: Continue functies, minima en maxima}
+
+Zij $f$ een continue functie op het interval $[a,b]$, dan is $f$ een begrensde functie en $f$ neemt haar maximum en minimum aan, dus er zijn een $x_{0},y_{0}\in [a,b]$ zodat voor elke $x\in [a,b]$ geldt dat $f(x_{0}) \leq f(x) \leq f(y_{0})$. We bewijzen eerst dat $f$ begrensd is ($1$) en vervolgens dat $f$ haar maximum en minimum aanneemt ($2$).
+
+\paragraph{Bewijs van 1}
+
+\begin{proof}[\unskip\nopunct]
+
+Stel $f$ is een continue onbegrensde functie is op $[a,b]$, dan geldt voor elke $n\in\mathbb{N}$ dat er een rij $x_{n}\in[a,b]$ bestaat zodat $|f(x_{n})|>n$. \bigskip
+
+\noindent Volgens \hyperref[sec:AC]{Bolzano-Weierstrass} heeft $(x_{n_{k}})$ dan een deelrij die convergeert naar een reëel getal $x_{0}$ omdat $x_{n}$ begrensd is. \bigskip
+
+\noindent Dus $\liminfty{k}(f(x_{n_{k}}))=f(\liminfty{k}(x_{n_{k}})=f(x_{0})$, maar we hebben ook dat $\liminfty{n}(f(x_{n}))=+\infty$ omdat de rij $f(x_{n})$ boven onbegrensd is. Maar $f(x_{0})\in\mathbb{R}$ en $\infty\notin\mathbb{R}$ \bigskip
+
+\noindent Dit is een tegenspraak, dus moet wel gelden dat $f(x)$ begrensd is.
+
+\end{proof}
+
+\paragraph{Bewijs van 2}
+
+\begin{proof}[\unskip\nopunct]
+
+We weten dat $f(x)$ begrensd is dus er is een $M\defeq\text{sup}\{f(x):x\in[a,b]\}$ die eindig is. \bigskip
+
+\noindent Omdat $M$ het supremum is geldt voor dat voor elke $n\in\mathbb{N}$ er een $y_{n}\in[a,b]$ is zodat $M < \frac{1}{n}<f(y_{n}) \leq M$ omdat $M$ de kleinste bovengrens is. Volgens het \bq Squeeze Lemma\eq geldt dan dat $\liminfty{n}(f(y_{n}))=M$. \bigskip
+
+\noindent Omdat $f(x)$ continu is geldt dat $\liminfty{n}(f(y_{n}))=f(\liminfty{n}(y_{n}))$ en omdat $y_{n}\in[a,b]$ ook $y_{0}\defeq\liminfty{n}(y_{n})\in[a,b]$, dus er is een $y_{0}$ zodat $f$ op $y_{0}$ een maximum aan neent. \bigskip
+
+\noindent We weten dat $-\text{sup}\{-f(x):x\in[a,b]\}=\text{inf}\{f(x):x\in[a,b]\}$. We kunnen op dezelfde manier als hiervoor het supremum van $-f(x)$ bepalen. En dan is er dus ook een $x_{0}$ zodat $-f(x_{0})$ het supremum is van $-f(x)$. En dan is het minimum van $f$ de waarde $f(x_{0})$. \bigskip
+
+\noindent Dus als $f(x)$ continu is op $[a,b]$ neemt deze haar minimum en maximum aan op $[a,b]$. Dit is wat we moesten bewijzen.
+
+\end{proof}
