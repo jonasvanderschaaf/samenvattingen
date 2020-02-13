@@ -1,1 +1,24 @@
 \section{Open en gesloten verzamelingen}
+
+\subsection{Open verzamelingen}
+\paragraph{Bollen} Zij \((S,d)\)\footnote{In de rest van deze samenvatting wordt in elke definitie geïmpliceerd dat \((S,d)\) een metrische ruimte is zonder dat het er explicitiet bij wordt gezegd.} een metrische ruimte. Dan geeft de functie 
+\[
+    B\colon S\times\r_{>0}\to\mathcal{P}(S)\colon (s_{0},r)\mapsto \{s\in S\colon d(s_{0},s)<r\}
+\]
+een bol met straal \(r\) en middelpunt \(s_{0}\).
+
+\paragraph{Inwendige punten} Zij \(E\subseteq S\), dan geldt dat een punt \(s_{0}\in E\) inwendig is als geldt dat er een \(r>0\) is zodat
+\[
+    B(s_{0},r)\subseteq E.
+\]
+Voor de verzameling \(E\) geldt dan dat \(E^{\circ}\defeq\{s\in E\colon\text{\(s\) is inwendig}\}\). De verzameling \(E^{\circ}\) heet dan het inwendige van \(E\).
+
+\paragraph{Open verzamelingen} Een verzameling \(E\subseteq S\) heet open als geldt dat \(E=E^{\circ}\).
+
+\subparagraph{Stellingen over open verzamelingen} De volgende stellingen over open verzamelingen zijn\\ waar:
+\begin{items}
+    \item De verzameling \(S\) is open in \(S\)
+    \item De lege verzameling \(\emptyset\) is open in \(S\)
+    \item De vereniging van open verzamelingen is open\footnote{Dit geldt ook als je oneindig veel verzamelingen neemt.}.
+    \item De doorsnede van \emph{eindig} veel open verzameling is een open verzameling.
+\end{items}
