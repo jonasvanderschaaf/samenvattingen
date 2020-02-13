@@ -32,6 +32,13 @@
         \end{enumerate}
     }
 
+    \newenvironment{items}{
+        \begin{itemize}
+        \listsep
+    }{
+        \end{itemize}
+    }
+
 \renewcommand{\lim}[2]{\underset{#1\to#2}{\text{lim}}}
 \newcommand{\uplim}[2]{\underset{#1\uparrow#2}{\text{lim}}\:}
 \newcommand{\downlim}[2]{\underset{#1\downarrow#2}{\text{lim}}\:}
@@ -44,6 +51,9 @@
 \newcommand{\n}{\mathbb{N}}
 \newcommand{\nz}{\n_{0}}
 \newcommand{\rk}[1]{\r^{#1}}
+
+\let\oldemptyset\emptyset
+\let\emptyset\varnothing
 
 \newcommand{\secnewpage}[1]{\newpage\section{#1}}
 \newcommand{\subsecnewpage}[1]{\newpage\subsection{#1}}
