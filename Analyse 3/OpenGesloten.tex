@@ -1,4 +1,4 @@
-\section{Open en gesloten verzamelingen}
+\section{Open, gesloten en compacte verzamelingen}
 
 \subsection{Open verzamelingen}
 \paragraph{Bollen} Zij \((S,d)\)\footnote{In de rest van deze samenvatting wordt in elke definitie geïmpliceerd dat \((S,d)\) een metrische ruimte is zonder dat het er explicitiet bij wordt gezegd.} een metrische ruimte. Dan geeft de functie 
@@ -48,4 +48,19 @@ Merk op dat open en gesloten \emph{\textbf{niet}} tegenovergesteld aan elkaar zi
 \[
     F=\bigcup\limits_{n=1}^{\infty}F_{n}
 \]
-ook gesloten, begrensd en niet leeg is. 
+ook gesloten, begrensd en niet leeg is.
+
+\subsection{Compacte verzamelingen}
+\paragraph{Open overdekkingen} Zij \(E\subseteq S\). Dan is de familie\footnote{Een familie is een collectie van verzamelingen.} \(\mathcal{U}\) van open verzamelingen in \(S\) een open overdekking als geldt dat
+\[
+    E\subseteq\bigcup\limits_{U\in\mathcal{U}}U.
+\]
+Een deeloverdekking van \(\mathcal{U}\) is een deelfamilie van \(\mathcal{U}\) die ook een overdekking is van \(E\).
+
+Een overdekking is eindig als geldt dat deze slechts eindig veel elementen heeft.
+
+\paragraph{Compactheid} Een verzameling \(E\subseteq S\) is compact als geldt dat elke open overdekking \(\mathcal{U}\) een eindige deeloverdekking heeft van \(E\).
+
+\paragraph{Heine-Borel stelling} Een verzameling \(E\subseteq \rk{k}\) is compact dan en slechts dan als deze begrensd en gesloten is.
+
+\paragraph{Compactheid van \(k\)-cellen} Elke \(k\)-cel \([a_{1},b_{1}]\times[a_{2},b_{2}]\times\sdots\times[a_{k},b_{k}]\) in \(\rk{k}\) is compact.
