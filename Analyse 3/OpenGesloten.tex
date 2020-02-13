@@ -22,3 +22,30 @@ Voor de verzameling \(E\) geldt dan dat \(E^{\circ}\defeq\{s\in E\colon\text{\(s
     \item De vereniging van open verzamelingen is open\footnote{Dit geldt ook als je oneindig veel verzamelingen neemt.}.
     \item De doorsnede van \emph{eindig} veel open verzameling is een open verzameling.
 \end{items}
+
+\subsection{Gesloten verzamelingen}
+\paragraph{Wat is een gesloten verzameling} We noemen een verzameling \(E\subseteq S\) gesloten als het complement \(S\setminus E\) open is. Dat is equivalent met het idee dat er een open verzameling \(U\in S\) is zodat \(E=S\setminus U\).
+
+Merk op dat open en gesloten \emph{\textbf{niet}} tegenovergesteld aan elkaar zijn. Zo zijn bijvoorbeeld \(S\) en \(\emptyset\) open én gesloten, en bijvoorbeeld \([1,2)\) nog gesloten, nog open in \(\r\).
+
+\paragraph{Afsluiting van een verzameling} Gegeven een verzameling \(E\in S\) is de afsluiting \(E^{-}=\overline{E}\) de doorsnede van alle gesloten verzamelingen die \(E\) bevatten. Als formule opgeschreven betekent dat dat gegeven een \(E\subseteq S\), en \(\mathcal{F}=\{F\subseteq S\colon\text{\(E\subseteq F\) en \(F\) is gesloten}\}\) geldt dat
+\[
+    \overline{E}\defeq\bigcap\limits_{F\in\mathcal{F}}F
+\]
+\subparagraph{Stellingen over gesloten verzamelingen} De volgende stellingen over gesloten verzamelingen zijn waar:
+\begin{items}
+    \item Een verzameling \(E\) is gesloten dan en slechts dan als \(E=\overline{E}\).
+    \item Een verzameling \(E\) is gesloten dan en slechts dan als \(E\) alle limieten bevat van alle rijen in \(E\).
+    \item Een element \(s\in S\) is in \(\overline{E}\) dan en slechts dan als het de limiet is van een rijtje in \(E\).
+\end{items}
+
+\paragraph{Rand van een verzameling} Voor een verzamelingen \(E\subseteq S\) is de rand \(\partial E\) als volgt\\ gedefiniëerd:
+\[
+    \partial E\defeq \overline{E}\setminus E^{\circ}
+\]
+
+\paragraph{Rijen van gesloten verzamelingen} Zij \(\downsequence{F}\) een rij van gesloten, begrensde niet-lege verzamelingen in \(\rk{k}\) die dalend is (voor alle \(i\in\n\) geldt dat \(F_{i}\supseteq F_{i+1}\)). Dan geldt dat
+\[
+    F=\bigcup\limits_{n=1}^{\infty}F_{n}
+\]
+ook gesloten, begrensd en niet leeg is. 
