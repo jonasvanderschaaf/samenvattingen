@@ -1,0 +1,47 @@
+\secnewpage{Convergerende reeksen}
+\subsection{Reeksen}
+\paragraph{Wat is een reeks?} Gegeven een rij \(\downsequence{a}\), is de partiële som \(\downsequence{s}\) de volgende som:
+\[
+    s_{n}\defeq\bsum{i=1}{n}a_{i}
+\]
+Dan definiëren we de oneindige som als volgt:
+\[
+    \bsum{i=1}{\infty}a_{n}\defeq\liminfty{n}(s_{n}).
+\]
+We zeggen dat deze som convergeert als deze limiet convergeert.
+
+\subparagraph{Cauchy criterium} Zij \(\sum a_{n}\) een reeks. Dan voldoet deze aan het Cauchy criterium als geldt dat de rij van de partiële sommen \(s_{n}\) voldoet aan het Cauchy criterium:
+
+\begin{quotation}
+    Voor alle \(\epsilon>0\) is er een \(N\) zodat voor alle \(n,m>N\) geldt dat \(\left|s_{n}-s_{m}\right|<\epsilon\).
+\end{quotation}
+
+Omdat deze definitie symmetrisch is over \(n\) en \(m\) kunnen we aannemen dat \(n\geq m\), en dus geldt dat \(|s_{n}-s_{m}|=\left|\bsum{i=m}{i=n}a_{n}\right|<\epsilon\).
+
+Een rij convergeert dan en slechts dan als het voldoet aan het Cauchy criterium.
+
+\subparagraph{Convergentie van reeksen en rijen} Zij \(\sum a_{n}\) een reeks die convergeert, dan geldt dat\\\(\liminfty{n}a_{n}=0\).
+
+\subsection{Convergentie testen}
+Er zijn verschillende manieren om convergentie van een reeks te bepalen, hier volgen nu enkele simpele manieren:
+\paragraph{Vergelijkingstest} Gegeven een rij \(\downsequence{a}\) van positieve getallen gelden de volgende twee dingen:
+\begin{items}
+    \item Als voor een rij \(\downsequence{b}\) geldt dat \(|b_{n}|\leq a_{n}\) voor alle \(n\in\n\) dan geldt dat \(\sum b_{n}\) convergeert.
+    \item Als voor een rij \(\downsequence{b}\) geldt dat \(b_{n}\geq a_{n}\) en \(\sum a_{n}=\infty\), dan geldt dat \(\sum b_{n}=\infty\).
+\end{items}
+
+\paragraph{Absolute convergentie} Zij \(\downsequence{b}\) een rij zodat geldt dat de reeks \(\sum|b_{n}|\) convergeert, dan geldt dat \(\sum b_{n}\) ook convergeert.
+
+\paragraph{Verhoudingscriterium} Zij \(\downsequence{a}\) een rij. Dan geldt dat:
+\begin{enum}[i.]
+    \item De reeks \(\sum a_{n}\) convergeert als \(\liminfty{n}\left|\frac{a_{n+1}}{a_{n}}\right|\).
+    \item De reeks \(\sum a_{n}\) divergeert als \(\liminfty{n}\left|\frac{a_{n+1}}{a_{n}}\right|>1\).
+    \item Als geldt dat \(\liminfty{n}\left|\frac{a_{n+1}}{a_{n}}\right|=1\), dan is er niks te zeggen over de convergentie van de reeks.
+\end{enum}
+
+\paragraph{Wortercriterium} Zij \(\downsequence{a}\) een rij. Dan geldt dat:
+\begin{enum}[i.]
+    \item Als \(\limsup\left|a_{n}\right|^{\frac{1}{n}}<1\), dan convergeert de reeks \(\sum a_{n}\).
+    \item Als \(\limsup\left|a_{n}\right|^{\frac{1}{n}}>1\), dan divergeert de reeks \(\sum a_{n}\).
+    \item Net als bij het verhoudingscriterium geldt dat als \(\limsup\left|a_{n}\right|^{\frac{1}{n}}=1\), dat de test dan geen uitslag geeft.
+\end{enum}
