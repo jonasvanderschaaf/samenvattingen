@@ -1,0 +1,67 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[dutch]{babel}
+\usepackage[margin=3cm]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumerate}
+\usepackage[parfill]{parskip}
+\usepackage{fancyhdr}
+
+\usepackage{amsthm, amssymb, mathtools}
+
+\pagestyle{fancy}
+\setlength{\headheight}{13pt}
+\fancyhf{}
+\lhead{\rightmark}
+\rhead{Jonas van der Schaaf}
+\fancyfoot[C]{\thepage}
+
+\newcommand{\defeq}{\vcentcolon=}
+\newcommand{\eqdef}{=\vcentcolon}
+\newcommand{\bq}{``}
+\newcommand{\eq}{''}
+\newcommand{\listsep}{\setlength{\itemsep}{0em}}
+\newcommand{\sdots}{\,\dots\,}
+
+\newenvironment{enum}[1][1.]{
+        \begin{enumerate}[#1]
+        \listsep
+    }{
+        \end{enumerate}
+    }
+
+\newenvironment{items}{
+        \begin{itemize}
+        \listsep
+    }{
+        \end{itemize}
+    }
+
+\renewcommand{\lim}[2]{\underset{#1\to#2}{\text{lim}}}
+\newcommand{\uplim}[2]{\underset{#1\uparrow#2}{\text{lim}}\:}
+\newcommand{\downlim}[2]{\underset{#1\downarrow#2}{\text{lim}}\:}
+\newcommand{\liminfty}[1]{\lim{#1}{\infty}}
+\newcommand{\limneginfty}[1]{\lim{#1}{-\infty}}
+\newcommand{\sequenceset}{\mathbb{R}^{\mathbb{N}}}
+\newcommand{\upsequence}[1]{\left(#1^{(n)}\right)_{n=1}^{\infty}}
+\newcommand{\downsequence}[1]{\left(#1_{n}\right)_{n=1}^{\infty}}
+
+\renewcommand{\r}{\mathbb{R}}
+\newcommand{\n}{\mathbb{N}}
+\newcommand{\nz}{\n_{0}}
+\newcommand{\rk}[1]{\r^{#1}}
+
+\let\oldemptyset\emptyset
+\let\emptyset\varnothing
+
+\newcommand{\secnewpage}[1]{\newpage\section{#1}}
+\newcommand{\subsecnewpage}[1]{\newpage\subsection{#1}}
+
+\title{Samenvatting Analyse 2}
+\author{Jonas van der Schaaf}
+
+\begin{document}
+    \maketitle
+    \tableofcontents
+\end{document}
