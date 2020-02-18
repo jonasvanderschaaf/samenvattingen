@@ -45,3 +45,9 @@ Er zijn verschillende manieren om convergentie van een reeks te bepalen, hier vo
     \item Als \(\limsup\left|a_{n}\right|^{\frac{1}{n}}>1\), dan divergeert de reeks \(\sum a_{n}\).
     \item Net als bij het verhoudingscriterium geldt dat als \(\limsup\left|a_{n}\right|^{\frac{1}{n}}=1\), dat de test dan geen uitslag geeft.
 \end{enum}
+
+\paragraph{Integraaltest} Zij \(f\colon\r\to\r\) een integreerbare functie, dan is \(\sum_{n=N}^{\infty}f(n)\) een oneindige reeks. Als geldt dat \(\int_{N}^{\infty}f(x)\,dx=\infty\), dan geldt dat de reeks \(\sum_{n=N}^{\infty}f(b)\) ook divergeert naar \(\infty\). Dit is omdat \(\int_{N}^{\infty}f(x)\,dx=\infty\leq\sum_{n=N}^{\infty}f(n)\)
+
+Als geldt dat \(\int_{N}^{\infty}f(x)\,dx\) convergeert, dan geldt dat de reeks \(\sum_{n=N}^{\infty}f(x)\) ook convergeert. Dit is omdat \(\sum_{N}^{\infty}f(x)<f(N)+\int_{N}^{\infty}f(x)\,dx\).
+
+\paragraph{Alternerende reeksen} Zij \(\downsequence{a}\) een dalende rij met \(\liminfty{a_{n}}=0\). Dan geldt dat de reeks \(\sum(-1^{n+1}a_{n})\) convergeert.
