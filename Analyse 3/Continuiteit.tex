@@ -1,0 +1,27 @@
+\section{Continuïteit in metrische ruimtes}
+\subsection{Continuïteit}
+\paragraph{Wat is continuïteit} Zij \(f\colon S\to S^{*}\) een functie\footnote{\((S,d)\) en \((S^{*},d^{*})\) zijn hier metrische ruimtes.}. Dan is \(f\) continu op een punt \(s_{0}\in S\) als geldt dat:
+
+\begin{quotation}
+    Voor alle \(\epsilon>0\) is er een \(\delta>0\) zodat voor alle \(s\in S\) geldt dat als \(d(s,s_{0})<\delta\) dan \(d^{*}(f(s),f(s_{0}))<\epsilon\).
+\end{quotation}
+
+De functie \(f\) is continue op een deelverzameling \(E\subseteq S\) als \(f\) continu is op alle \(s_{0}\in E\).
+
+\paragraph{Wat is uniforme continuïteit?} Zij \(f\colon S\to S^{*}\) een functie. Dan is \(f\) uniform continu op een deelverzameling \(E\in S\) als:
+
+\begin{quotation}
+    Voor alle \(\epsilon>0\) is er een \(\delta>0\) zodat voor alle \(s,t\in S\) geldt dat als \(d(s,t)<\delta\), dan \(d^{*}(f(s),f(t))<\epsilon\).
+\end{quotation}
+
+\paragraph{Paden in \(\rk{k}\)} Zij \(\gamma\colon[a,b]\to\rk{k}\), dan geldt
+\[
+    \gamma(t)=\left(f_{1}(t),f_{2}(t),\sdots,f_{k}(t)\right)
+\]
+voor \(f_{1}(t),f_{2}(t),\sdots,f_{k}(t)\colon[a,b]\to\r\). We noemen \(\gamma\) een pad als deze continu is. En \(\gamma\) is continu dan en slechts dan als alle \(f_{1}(t),f_{2}(t),\sdots,f_{k}(t)\) continu zijn.
+
+\paragraph{Continuïteit en open verzamelingen} Zij \(f\colon S\to S^{*}\) een continue functie. Dan geldt dat \(f^{-1}(U)\) open is voor alle open \(U\subseteq S^{*}\).
+
+\paragraph{Continuïteit en compactheid} Zij \(f\colon S\to S^{*}\) een continue functie en \(E\subseteq\) compact. Dan geldt dat \(f(E)\) ook compact is en \(f\) is uniform continu op \(E\).
+
+\paragraph{Reëelwaardige continue functies} Zij \(f\colon S\to\r\) een continue functie en \(E\subseteq S\) compact. Dan geldt dat \(f\) begrensd is op \(E\) en dat \(f\) een maximum en minimum aanneemt op \(E\).
