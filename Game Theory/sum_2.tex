@@ -1,0 +1,161 @@
+\begin{definition}[Mixed strategy Nash equilibrium]
+      The mixed strategy profile $\alpha^{*}$ is a \textbf{mixed strategy Nash equilibrium} of a strategic game with vNM preferences if for each player $i$ and every mixed strategy $\alpha_{i}$
+      $$
+            U_{i}(\alpha^*) \geq U_{i}\left(\alpha^*_{-i}, \alpha_{i}\right)
+      $$
+      holds.
+\end{definition}
+
+
+\begin{example}[Matching pennies]
+      In the matching pennies game, each of two players flip a penny to heads or tails. The players then reveal their choices simultaneously. We have the following table corresponding to the payoff.
+      \begin{table}[h!]
+            \begin{center}
+                  \begin{tabular}{ c | c c }
+                             & Head    & Tail    \\ \hline
+                        Head & $1,-1$  & $-1,1$  \\
+                        Tail & $-1, 1$ & $1, -1$
+                  \end{tabular}
+                  \vspace{-5pt}
+                  \caption{Payoff matrix for the Matching Pennis game}
+                  \vspace{-20pt}
+            \end{center}
+      \end{table}
+      Assume player 1 plays Head with probability $p$ (thus tail with probability $1-p$) and player 2 plays Head with probability $q$ (thus tail with probability $1-q$). Then:
+      \[
+            \ee_1[\pi(\text{head})]=q+(1-q)(-1)=2 q-1
+      \]
+      \[
+            \ee_1[\pi(\text{tail})]=q(-1)+(1-q)=1-2 q
+      \]
+      Now, we can easily find the best response function for player one if player 2 is allowed to mix.
+      \[
+            \mathcal{B}_{1}(q)=\left\{\begin{array}{cl}
+                  \{0\}                  & \text { if } q<\frac{1}{2} \\
+                  \{p: 0 \leq p \leq 1\} & \text { if } q=\frac{1}{2} \\
+                  \{1\}                  & \text { if } q>\frac{1}{2}
+            \end{array}\right.
+      \]
+
+      \[
+            \mathcal{B}_{2}(p)=\left\{\begin{aligned}
+                  \{1\}                  & \text { if } p<\frac{1}{2} \\
+                  \{q: 0 \leq q \leq 1\} & \text { if } p=\frac{1}{2} \\
+                  \{0\}                  & \text { if } p>\frac{1}{2}
+            \end{aligned}\right.\]
+      When drawing these two functions, there is an intersection. This intersection is the Nash equilibrium. We can say:
+      \[
+            a^{*}: p =\frac{1}{2}; q = \frac{1}{2}
+      \]
+\end{example}
+
+
+\begin{proposition}
+      \label{2_important}
+      A mixed strategy profile $\alpha^{*}$ in a strategic game with vNM preferences in which each player has finitely many actions is a mixed strategy Nash equilibrium\\
+      $\iff$\\
+      for each player $i$
+      \begin{itemize}
+            \item the expected payoff, given $\alpha_{-i}^*,$ to every action to which $\alpha_{i}^{*}$ assigns positive probability is the same;
+            \item the expected payoff, given $\alpha_{-i}^{*},$ to every action to which $\alpha_{i}^{*}$ assigns zero probability is smaller than or equal to the expected payoff to any action to which $\alpha_{i}^{*}$ assigns positive probability.
+      \end{itemize}
+\end{proposition}
+
+
+\begin{note}
+      In simple terms, this means you are indifferent about the actions you are using and the actions that you are not using cannot give you a higher expected utility. This means you are choosing your best response. If every player chooses their best response, it is a Nash equilibrium.
+\end{note}
+
+
+\begin{corollary}
+      Each player's expected payoff is in an  equilibrium is her expected payoff to any action that she uses with positive probability.
+\end{corollary}
+
+
+\begin{proof}
+      Given a set of actions with positive probability for a player. If any action deviates from the other, either
+      \begin{itemize}
+            \item this action is a better option, and she should drop the other actions in this set.
+            \item this action is a worse option, and she should drop this action from the set.
+      \end{itemize}
+      By induction, we can conclude that all expected payoffs are equal.
+\end{proof}
+
+
+\begin{proposition}
+      Every strategic game with vNM preferences in which each player has finitely many actions has a mixed strategy equilibrium.
+\end{proposition}
+\begin{note}
+      Note the use of `finite' here. There might be, but might not always be, a mixed strategy equilibrium in the case for infinite games. For example, the game where you choose the highest number. Here, there are infinite action with always a better option (choosing a higher number).
+\end{note}
+
+
+\begin{definition}[Dominated actions in strategic games with vNM preferences]
+      Player $i$'s mixed strategy $\alpha_{i}$ strictly dominates action $\alpha$ if
+      \[
+            u_{i}(\alpha_{i}'', \alpha_{-i}) > u_{i}(\alpha_{i}', \alpha_{-i})
+      \]
+      for every list a of other players' actions.
+\end{definition}
+
+
+\begin{example}
+      Consider the following game;:
+      \begin{table}[h!]
+            \begin{center}
+                  \begin{tabular}{ c | c c c}
+                              & $T_1$ & $T_2$ & $T_3$ \\ \hline
+                        $S_1$ & $2,2$ & $0,3$ & $1,2$ \\
+                        $S_2$ & $3,1$ & $1,0$ & $0,2$
+                  \end{tabular}
+            \end{center}
+      \end{table}
+      $T_1$ does not look like a good option. Claim: for player 2 the action profile $\alpha_2 = (0,q,1-1)$ is strictly better than than $T_1$. For this, there need to be
+      \begin{itemize}
+            \item For $S_1$: $3 \cdot q + 2(1-q) > 2 \iff q >0$
+            \item For $S_2$: $0 \cdot q + 2(1-q) > 1 \iff q < \frac{1}{2}$
+      \end{itemize}
+      Now we can conclude our claim is true for $0 < q <
+            \frac{1}{2}$. Thus $T_1$ is stricly dominated by $\alpha_2$ for some action profile (for example $(0,\frac{1}{3}, \frac{2}{3})$), and therefor not used in any mixed strategy Nash equilibrium.
+      We can see in general when player 1 has profile $\alpha_1 = (0,\lambda, 1-\lambda)$, that
+      \[
+            U(T_1) = 2\cdot \lambda + 1 - \lambda = \lambda + 1 < \frac{7}{3}\lambda + \frac{4}{3}(1-\lambda) = \lambda + \frac{4}{3}\lambda = U(\alpha_2)s
+      \]
+\end{example}
+
+
+\begin{illustration}[Volunteers dilema]
+      We have the following game:
+      \begin{itemize}
+            \item Players: $n$ people witnessing a crime
+            \item Each player $i$ chooses from \{call, don't call\};
+            \item Preferences: vNM preferences
+                  \begin{itemize}
+                        \item $U$[nobody calls] $=0$
+                        \item $U$[$i$ calls] $=v-c$
+                        \item $U$[$i$ doesn't call, at least one other does] $= v$
+                  \end{itemize}
+      \end{itemize}
+      
+      This means calling costs $c$ and solving the crime gives $v$.
+      \\
+      Claim 1: this game has Nash equilibrium.
+      One person calling is enough. Say one person calls, that person doesn't want to not call ($U$[nobody calls] $< U$[$i$ calls]). For the other persons, they don't want to call ($U$[$i$ calls] $< U$[$i$ doesn't call, at least one other does]). This means that the action profile where one player calls is a Nash equilibrium. This also means there are $n$ Nash equilibria: every player $i$ can call.\\
+      \\
+      Claim 2: there also is a symmetric Nash equilibrium (a Nash equilibrium where every player uses the same mixed strategy). This means every player is calls with the same probability $p$. We must be indifferent between these two actions (see Corollary \ref{2_important}).
+      \begin{align*}
+            EU[\text{call}]             & = EU[\text{not calling}]                                                          \\
+            v-c                         & = 0\cdot P[\text{no one else calls}] + v\cdot P[\text{at least one player calls}] \\
+            v-c                         & = v\cdot P[\text{at least one player calls}]                                      \\
+            v-c                         & = v(1 - P[\text{no one player calls}])                                            \\
+            v-c                         & = v - v\cdot P[\text{no one else calls}])                                         \\
+            -c                          & = - v\cdot P[\text{no one else calls}]                                            \\
+            P[\text{no one else calls}] & = \frac{c}{v}                                                                     \\
+            (1-p)^{n-1}                 & = \frac{c}{v}                                                                     \\
+            (1-p)                       & = (\frac{c}{v})^{\frac{1}{n-1}}                                                   \\
+            p = 1 -(\frac{c}{v})^{\frac{1}{n-1}}
+      \end{align*}
+
+      \noindent Claim 3: when $n$ increases, $p$ decreases
+\end{illustration}
+

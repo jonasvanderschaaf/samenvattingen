@@ -1,0 +1,255 @@
+\begin{definition}
+      Definition of extensive game with perfect information
+      \begin{itemize}
+            \item set of players
+            \item set of terminal histories
+            \item player function
+            \item for each player, preferences terminal histories
+      \end{itemize}
+\end{definition}
+
+\begin{example}[Mini-ultimatum game Proposer]
+      We have two players: proposer and responder. Proposer stats with a choice: \textit{String} or \textit{Generous}. Then, the responder has the choice \textit{Accept} or \textit{Reject}. More formally, the specification of mini-ultimatum game is as follows:
+      \begin{itemize}
+            \item Players: proposer and responder
+            \item Terminal histories:
+                  (Stingy, Accept); (Stingy, Reject)
+                  (Generous, Accept); (Generous, Reject)
+            \item Player function:
+                  \begin{itemize}
+                        \item $P(\varnothing)=$ Proposer (Start of the game)
+                        \item $P($Stingy$)=$ Responder
+                        \item $P($Generous$)=$ Responder
+                  \end{itemize}
+            \item Preferences:
+                  \begin{align*}
+                        U_2(\text{Stingy},\text{Accept})=1    \\
+                        U_1 (\text{Stingy},\text{Accept})=9   \\
+                        U_2(\text{Stingy},\text{Reject})=0    \\
+                        U_1 (\text{Stingy},\text{Reject})=0   \\
+                        U_2(\text{Generous},\text{Accept})=5  \\
+                        U_1 (\text{Generous},\text{Accept})=5 \\
+                        U_2(\text{Generous},\text{Reject})=0  \\
+                        U_1 (\text{Generous},\text{Reject})=0 \\
+                  \end{align*}
+      \end{itemize}
+      This equal to the following tree:
+      \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+      \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+            %uncomment if require: 
+            \path (0,300); %set diagram left start at 0, and has height of 300
+
+            %Straight Lines [id:da20379485280914245] 
+            \draw    (380,129) -- (444.49,193.49) ;
+            \draw [shift={(445.9,194.9)}, rotate = 225] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+            %Straight Lines [id:da04579844714855119] 
+            \draw    (380,129) -- (317.61,191.39) ;
+            \draw [shift={(316.2,192.8)}, rotate = 315] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+            %Straight Lines [id:da01737775400298025] 
+            \draw    (302,22) -- (380.39,100.39) ;
+            \draw [shift={(381.8,101.8)}, rotate = 225] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+            %Straight Lines [id:da3603923805245839] 
+            \draw    (302,22) -- (221.31,102.69) ;
+            \draw [shift={(219.9,104.1)}, rotate = 315] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+            %Straight Lines [id:da15281111625407162] 
+            \draw    (214,127) -- (278.49,191.49) ;
+            \draw [shift={(279.9,192.9)}, rotate = 225] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+            %Straight Lines [id:da505919501748696] 
+            \draw    (214,127) -- (151.61,189.39) ;
+            \draw [shift={(150.2,190.8)}, rotate = 315] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+            % Text Node
+            \draw (274,4) node [anchor=north west][inner sep=0.75pt]   [align=left] {Proposer};
+            % Text Node
+            \draw (380,126) node [anchor=south] [inner sep=0.75pt]   [align=left] {Responder};
+            % Text Node
+            \draw (346.1,157.9) node [anchor=south east] [inner sep=0.75pt]   [align=left] {\textit{Accept}};
+            % Text Node
+            \draw (414.95,158.95) node [anchor=south west] [inner sep=0.75pt]   [align=left] {\textit{Reject}};
+            % Text Node
+            \draw (316.2,195.8) node [anchor=north] [inner sep=0.75pt]   [align=left] {(5,5)};
+            % Text Node
+            \draw (445.9,197.9) node [anchor=north] [inner sep=0.75pt]   [align=left] {(0,0)};
+            % Text Node
+            \draw (214,124) node [anchor=south] [inner sep=0.75pt]   [align=left] {Responder};
+            % Text Node
+            \draw (180.1,155.9) node [anchor=south east] [inner sep=0.75pt]   [align=left] {\textit{Accept}};
+            % Text Node
+            \draw (248.95,156.95) node [anchor=south west] [inner sep=0.75pt]   [align=left] {\textit{Reject}};
+            % Text Node
+            \draw (150.2,193.8) node [anchor=north] [inner sep=0.75pt]   [align=left] {(9,1)};
+            % Text Node
+            \draw (279.9,195.9) node [anchor=north] [inner sep=0.75pt]   [align=left] {(0,0)};
+            % Text Node
+            \draw (258.95,60.05) node [anchor=south east] [inner sep=0.75pt]   [align=left] {\textit{Stingy}};
+            % Text Node
+            \draw (343.9,58.9) node [anchor=south west] [inner sep=0.75pt]   [align=left] {\textit{Generous}};
+      \end{tikzpicture}
+
+      Drawing a graph might be more intuitive, but not every game is discrete. For continuos games, working with formulas is easier (or sometimes the only possibility).
+\end{example}
+
+\begin{definition}[Strategy]
+      A \textbf{strategy} of a player in an extensive game is a complete action plan. That is, it
+      specifies an action for every situation where it is her turn to make a move.
+\end{definition}
+
+\begin{example}[Strategies in the mini-ultimatum game]
+      In the mini-ultimatum game, the responder has 4 strategies
+
+      \begin{enumerate}
+            \item A A = Accept after Stingy, Accept after Generous
+            \item A R = Accept after Stingy, Reject after Generous
+            \item R A = Reject after Stingy, Accept after Generous
+            \item R R = Reject after Stingy, Reject after Generous
+      \end{enumerate}
+
+      This extensive form game can be written in strategic form:
+      \begin{table}[h!]
+            \begin{center}
+                  \begin{tabular}{ c | c c c c}
+                                 & A A   & A R   & R A   & R R   \\ \hline
+                        Stingy   & (9,1) & (9,1) & (0,0) & (0,0) \\
+                        Generous & (5,5) & (0,0) & (5,5) & (0,0)
+                  \end{tabular}
+            \end{center}
+      \end{table}
+      pure strategy Nash equilibria:
+      \begin{enumerate}
+            \item (Stingy, A A)
+            \item (Stingy, A R)
+            \item (Generous, R A)
+      \end{enumerate}
+\end{example}
+
+
+\begin{definition}[Nash equilibrium in an extensive game]
+      The strategy profile $s^*$ in an extensive game with perfect information is a Nash
+      equilibrium if, for every player $i$ and every strategy $r_i$ of player $i$:
+      \[
+            U_i (s^* ) > U_i (r_i , s_{-i}^* )
+      \]
+\end{definition}
+
+
+\begin{definition}[Subgame]
+      Let $\Gamma$ be an extensive game with perfect information. For any non-terminal
+      history $h$ of $\Gamma$, the subgame $\Gamma(h)$ following the history h is the following extensive
+      game.
+      \begin{itemize}
+            \item Players: players in $\Gamma$
+            \item Terminal histories: set of sequences $h^{\prime}$ such that $(h, h^{\prime})$ is a terminal history of $\Gamma$
+            \item Player function: $P(h,h^{\prime})$ is assigned to each subhistory $h^{\prime}$ of a terminal history
+            \item Preferences: each player prefers $h^{\prime}$ to $h^{\prime \prime}$ if and only if she prefers $(h,h^{\prime})$ to $(h,h^{\prime \prime})$
+      \end{itemize}
+\end{definition}
+
+
+\begin{example}[Subgames of the mini-ultimatum game Proposer]
+      The mini-ultimatum game has three subgames:
+      \begin{enumerate}
+            \item The whole game
+            \item The game after Stingy
+            \item The game after Generous
+      \end{enumerate}
+\end{example}
+
+
+\begin{definition}[Subgame prefect equilibrium]
+      A subgame perfect equilibrium is a strategy profile $s^*$ with the property that in no
+      subgame can any player $i$ do better by choosing a strategy different from $s_i^*$, given that
+      every other player $j$ adheres to strategy $s_j^*$.
+\end{definition}
+
+
+\begin{corollary}
+      From this definition, it follows:
+      \begin{itemize}
+            \item every subgame perfect equilibrium is a Nash equilibrium
+            \item a subgame perfect equilibrium induces a Nash equilibrium in every subgame
+            \item not every Nash equilibrium is subgame perfect
+      \end{itemize}
+\end{corollary}
+
+
+\begin{example}[Subgame prefect equilibrium of the mini-ultimatum game]
+      The mini-ultimatum game has three subgames:
+      \begin{enumerate}
+            \item (Stingy, A A) is a N.E. and subgame perfect
+            \item (Stingy, A R) is a N.E. but not subgame perfect
+            \item (Generous, R A) is a N.E. but not subgame perfect, this N.E. uses \textit{incredible threat}\footnote{The threat of choosing \textit{reject} when choosing \textit{stingy}, the \textit{proposer} wants to choose \textit{generous}. However, if the \textit{proposer} still chooses \textit{stingy}, the \textit{responder} will still \textit{accept}}
+      \end{enumerate}
+\end{example}
+
+
+\begin{example}[Twist to the mini-ultimatum game]
+      Let us define the utility function by $U_i(x,y) = x - \frac{1}{4} |x-y| $. Now, our table is
+
+      \begin{table}[ht!]
+            \begin{center}
+                  \begin{tabular}{ c | c c c c}
+                                 & A A    & A R    & R A   & R R   \\ \hline
+                        Stingy   & (7,-1) & (7,-1) & (0,0) & (0,0) \\
+                        Generous & (5,5)  & (0,0)  & (5,5) & (0,0)
+                  \end{tabular}
+            \end{center}
+      \end{table}
+      Now it is the case that unique subgame perfect equilibrium [Generous, Reject Accept].
+\end{example}
+
+
+\begin{illustration}[Stackelberg's model of duopoly]
+      Cournot setting where firms move sequentially
+      \[
+            P_{d}(Q) = \left\{
+            \begin{array}{ll}
+                  (\alpha-Q) & \text { if } Q \leq \alpha \\
+                  0          & \text { if } Q>\alpha
+            \end{array}\right.
+      \]
+
+      \[
+            C_{i}(q_{i})=\mathrm{cq}_{i}
+      \]
+
+      \begin{itemize}
+            \item Players: 2 firms
+            \item Terminal histories: set of all quantity pairs $(q_{1}, q_{2}), q_{1} \geq 0, q_{2} \geq 0$ $\cdot$
+            \item Player function: $P(\emptyset)=1$ and $P\left(q_{1}\right)=2$ for all $q_{1}$
+                  $\cdot$
+            \item Preferences: $\pi_{i}=q_{i} P_{d}\left(q_{1}+q_{2}\right)-c_{i}\left(q_{i}\right)=\left\{\begin{array}{ll}q_{i}\left(\alpha-c-q_{1}-q_{2}\right) & \text { if } Q \leq \alpha \\ -c q_{i} & \text { if } Q>\alpha\end{array}\right.$
+      \end{itemize}
+
+      To find the Subgame perfect equilibrium, we use backward induction:
+
+      First Order Condition: if $Q \leq \alpha,$ set $\frac{d\pi_2}{dq_2} = 0$ (+ check Second Order Condition )
+
+      This implies $\frac{d\pi_2}{dq_2} q_{2}(\alpha-c-q_{1}-q_{2}) =  \alpha-c-q_{1}-q_{2}-q_{2}=0$, and thus $q_{2}=\frac{1}{2}(\alpha-c-q_{1})$.
+
+      Thus
+      \[
+            \quad b_{2}\left(q_{1}\right)=
+            \left\{\begin{array}{ll}
+                  \frac{1}{2}(\alpha-c-q_{1}) & \text { if } q_{1} \leq \alpha-c \\
+                  0                           & \text { if } q_{1}>\alpha-c
+            \end{array}\right.
+      \]
+      This was the smallest subgame. Now, solve a bigger subgame. This is the whole game. Of course, player 1 anticipates player 2's response and maximizes
+      \[\pi_{1}=q_{1}\left(\alpha-c-q_{1}-\left(\alpha-c-q_{1}\right) / 2\right)=q_{1}\left(\alpha-c-q_{1}\right) / 2\]
+      Again, set $\frac{d\pi_1}{dq_1} = 0$ and calculate the derivative:
+      \[0 = \frac{d\pi_1}{dq_1} q_{1}(\alpha-c-q_{1}-q_{2}) =
+            \left(\alpha-c-q_{1}\right) / 2-q_{1} / 2
+      \]
+      \\
+      \begin{tabular}{l|l|l}
+            Subgame perfect outcome                  & Payoff                                   & Subgame perfect equilibrium                                        \\
+            \hline $q_{1}^{*}=\frac{1}{2}(\alpha-c)$ & $\pi_{1}^{*}=\frac{1}{8}(\alpha-c)^{2}$  & $q_{1}^{*}=\frac{1}{2}(\alpha-c)$                                  \\
+            $q_{2}^{*}=\frac{1}{4}(\alpha-c)$        & $\pi_{2}^{*}=\frac{1}{16}(\alpha-c)^{2}$ & $b_{2}\left(q_{1}\right)=\left\{\begin{array}{cc}
+                        \frac{1}{2}(\alpha-c-q_{1}) & \text { if } q_{1} \leq \alpha-c
+                        \\ 0 & \text { if } q_{1}>\alpha-c\end{array}\right.$
+      \end{tabular}
+
+      Now, firm 1 is more aggressive and earns higher profit than in Cournot duopoly $[\frac{1}{9}(\alpha-c)^{2} ]$
+\end{illustration}
+
