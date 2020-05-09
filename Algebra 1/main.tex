@@ -1,0 +1,53 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[dutch]{babel}
+\usepackage{enumerate}
+\usepackage{amsthm, amssymb, mathtools, amsmath, bbm, mathrsfs}
+\usepackage[margin=3cm]{geometry}
+\usepackage[parfill]{parskip}
+\usepackage{hyperref}
+
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\rightmark}
+\rhead{Jonas van der Schaaf}
+\fancyfoot[C]{\thepage}
+
+\newcommand{\secnewpage}[1]{\newpage\section{#1}}
+\newcommand{\subsecnewpage}[1]{\newpage\subsection{#1}}
+
+\newcommand{\n}{\mathbb{N}}
+\newcommand{\z}{\mathbb{Z}}
+\newcommand{\nz}{\mathbb{N}_{0}}
+\renewcommand{\r}{\mathbb{R}}
+\renewcommand{\c}{\mathbb{C}}
+
+\newcommand{\gen}[1]{\left\langle#1\right\rangle}
+
+\DeclareMathOperator{\order}{orde}
+\DeclareMathOperator{\Id}{Id}
+\DeclareMathOperator{\im}{Im}
+\DeclareMathOperator{\ggd}{ggd}
+\DeclareMathOperator{\kgv}{kgv}
+
+\newcommand{\defeq}{\vcentcolon=}
+
+\let\oldemptyset\emptyset
+\let\emptyset\varnothing
+
+\author{Jonas van der Schaaf}
+\title{Samenvatting Algebra 1}
+\date{\today}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\input{sec1.tex}
+
+
+\input{groepen.tex}
+\end{document}

@@ -1,0 +1,42 @@
+\secnewpage{Groepen}
+\paragraph{Groepsaxioma's} Een groep is een paar van een verzameling \(G\) met een bewerking \(\circ\colon G\times G\to G\) met de volgende eigenschappen:
+\begin{enumerate}
+    \item Associativiteit: voor elke \(a,b,c\in G\) geldt dat
+          \[
+              (a\circ b)\circ c=a\circ(b\circ c),
+          \]
+    \item Neutraal element: er is een \(e\in G\) zodat voor elke \(g\in G\) geldt dat
+          \[
+              e\circ g=g\circ e=g,
+          \]
+    \item Voor elke \(a\in G\) is er een \(a^{*}\) zodat
+          \[
+              a\circ a^{*}=a^{*}\circ a=e.
+          \]
+\end{enumerate}
+
+\paragraph{Abelse Groepen} Zij \(G\) een groep. Als voor elke \(a,b\in G\) geldt dat \(a\circ b=b\circ a\), dan heet \(G\) abels, en dan zeggen we dat elk element in \(G\) commuteert.
+
+\paragraph{Multiplicatieve notatie} In de rest van deze samenvatting zal ik (bijna) altijd de multiplicatieve notatie gebruiken, dat komt overeen met \(a\circ b=ab\), \(\underbrace{a\circ\dots\circ a}_{n\times}=a^{n}\) en \(a^{*}=a^{-1}\).
+
+\paragraph{Simpele stellingen over inverses} Zij \(G\) een groep, dan geldt dat:
+\begin{enumerate}
+    \item Er is precies \(1\) eenheidselement in een groep,
+    \item Elk element \(a\in G\) heeft precies \(1\) inverse,
+    \item Voor elke \(a,b\in G\) geldt dat
+          \[
+              \left(a^{-1}\right)^{-1}=a
+          \]
+          en dat
+          \[
+              (ab)^{-1}=b^{-1}a^{-1}.
+          \]
+\end{enumerate}
+
+Verder geldt voor \(n,m\in\z\) dat \(a^{n+m}=a^{n}\cdot a^{m}\) en dat \(a^{nm}=(a^{n})^{m}\).
+
+\paragraph{Uniciteit van producten} Zij \(G\) een groep en \(a,b\in G\). Dan is er precies één \(x\in G\) zodat \(ax=b\), namelijk \(x=a^{-1}b\).
+
+Ook is er precies één \(y\in G\) zodat \(ya=b\), namelijk \(y=ba^{-1}\).
+
+\paragraph{Producten van meer dan \(1\) element} Zij \(G\) een groep met \(a_{1},\dots,a_{n}\in G\) dan is het product \(a_{1}\cdots a_{n}\) inductief gedefinieerd als \((a_{1}\cdots a_{n-1})a_{n}\). Ook volgt door inductie toe te passen uit deze definitie dat \((a_{1}\cdots a_{k})(a_{k+1}\cdots a_{n})=a_{1}\cdots a_{n}\).
