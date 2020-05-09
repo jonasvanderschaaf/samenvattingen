@@ -1,0 +1,279 @@
+\begin{definition}[Bayseian Game]
+      A \textbf{Bayesian game} is a game in which players have incomplete information about the other players. 
+      A player may not know the exact payoff functions of the other players, but instead have beliefs about these payoff functions. 
+      These beliefs are represented by a probability distribution over the possible payoff functions.
+\end{definition}
+
+
+\begin{example}[Battle of Sexes]
+      Let us start with an example using the Battle of the Sexes game. We assume:
+      \begin{itemize}
+            \item player 1 does not know player 2's preference
+            \item player 2 knows player 1's preference
+      \end{itemize}
+      This means there are two cases: \textit{player 2 wants to meet} or \textit{player 2 does not want to meet}. The case of \textit{player 2 wants to meet} is the standard Battle of the Sexes game. Player 2 will have payoff 0 if they meet, and keep her preference for S over B.
+
+      \begin{table}[h!]
+            \begin{center}
+                  \begin{tabular}{ c | c c c c}
+                          & B     & S     & \\ \hline
+                        B & (2,1) & (0,0)   \\
+                        S & (0,0) & (1,2)
+                  \end{tabular}
+                  \vspace{-5pt}
+                  \caption{Situation where player 2 wants to meet}
+                  \vspace{-25pt}
+            \end{center}
+      \end{table}
+
+      \begin{table}[h!]
+            \begin{center}
+                  \begin{tabular}{ c | c c c c}
+                          & B     & S     & \\ \hline
+                        B & (2,0) & (0,2)   \\
+                        S & (0,1) & (1,0)
+                  \end{tabular}
+                  \vspace{-5pt}
+                  \caption{Situation where player 2 does not want to meet}
+                  \vspace{-25pt}
+            \end{center}
+      \end{table}
+\end{example}
+
+
+\begin{example}[Nash Equiliberum in Battle of Sexes]
+      Let us give both situations a chance: $p_{m(eet)} = p_{a(void)} = 0.5$.
+      Only player 2 can choose, since she knows player 1's preference.
+      However, player 1 does not know about player 2's preference.
+      We can still make table for the player 1's expected payoff.
+      Here $(A,B)$ is choice $A$ when not meeting and $B$ when meeting.
+
+      \begin{table}[h!]
+            \begin{center}
+                  \begin{tabular}{ c | c c c c}
+                          & (B,B) & (B,S) & (S,B) & (S,S) \\ \hline
+                        B & 2     & 1     & 1     & 0     \\
+                        S & 0     & 0.5   & 0.5   & 1
+                  \end{tabular}
+                  \vspace{-5pt}
+                  \caption{Expected payoffs for player 1.}
+                  \vspace{-25pt}
+                  \label{table:payoff1}
+            \end{center}
+
+      \end{table}
+
+      From this table, we can read that the best response for player 1 is $B$.
+      When player 1 chooses $B$, player two would want to pick $B$ (payoff 1) with $p_{m} = 0.5$ and S (payoff 2) with $p_{a} = 0.5$.
+      This means $\mathcal B_2 (B) = (B,S)$. This means $(B,(B,S)$ is a Nash Equilibrium of this game.
+
+      When player 1 chooses $S$, player two would want to pick $S$ (payoff 2) with $p_{m} = 0.5$ and $B$ (payoff 1) with $p_{a} = 0.5$.
+      However, player 1 would prefer $B$. This means $(S,(S,B)$ is not a Nash Equilibrium of this game.
+      In formulae: $\mathcal B_2(S) = (S,B)$ but $\mathcal B_1(S,B) = B \implies$ player 1 will not choose $S$.
+\end{example}
+
+
+\begin{definition}[Formal Bayesian Game]
+      A \textbf{Bayesian Game} has
+      \begin{itemize}
+            \item players: a set $N$
+            \item states: a set  $\omega$
+            \item actions: a set $A$
+            \item signals: a function $\tau : \omega \to S$ where $S$ is a belief of states of the world.
+            \item Bernoulli payoff function over $(a, \omega )$
+      \end{itemize}
+\end{definition}
+
+
+\begin{example}[Battle of Sexes as a Bayesian Game]
+      We can give the Battle of Sexes as a Bayesian Game as follows:
+      \begin{itemize}
+            \item players $N = \{\text{player 1, player 2}\}$
+            \item states $\omega = \{\text { meet, avoid }\}$
+            \item actions $a = \{ B , S \}$ for each player
+            \item signals
+                  \begin{itemize}
+                        \item (uninformed) player 1: $\tau(\text {meet})=\tau(\text {avoid})=z$
+                        \item (informed) player 2: $\tau(\text {meet})=m ; \tau(\text {avoid})=v$
+                  \end{itemize}
+            \item given signal, belief about states
+                  \begin{itemize}
+                        \item player 1 assigns prob. $1 / 2$ to either state after $z$
+                        \item player 2 assigns prob. 1 to meet after $m$
+                        \item player 2 assigns prob. 1 to avoid after $v$
+                  \end{itemize}
+            \item Bernoulli payoff function over $(a, \omega)$, best viewed in Table \ref{table:payoff1}
+      \end{itemize}
+\end{example}
+
+
+\begin{example}[Battle of Sexes with both players uncertain]
+      This game is like the example above, but now player 1 is also uncertain.
+      Let $y$ be `wants to meet' and $n$ be `does not want to meet'.
+      Let $ab$ be player 1 wants action $a$ and player 2 wants action $b$.
+      Players only know their own state. We give $y_i$ and $y_i$ to players $i \in \{1,2\}$
+
+      \begin{itemize}
+            \item player 1's belief: player 2 wants to meet with probability 1/2
+            \item player 2's belief: player 1 wants to meet with probability 2/3
+            \item player 1 receives signals $y_1$ in $yy$ or $yn$, $n_1$ in $ny$ or $nn$
+            \item player 2 receives signals $y_2$ in $yy$ or $ny$, $n_2$ in $yn$ or $nn$
+      \end{itemize}
+      This gives:
+      \begin{itemize}
+            \item Type $y_1$ believes $pr[yy]=pr[yn]=1/2$
+            \item Type $y_2$ believes $pr[yy]=2/3$; $pr[ny]=1/3$
+      \end{itemize}
+      Claim: ((B,B), (B,S)) N.E.; ((S,B), (S,S)) N.E.
+      \begin{proof}
+            We first proof two lemmas.
+            \begin{enumerate}[label=Lemma \arabic*.]
+                  \item $\mathcal B_1 (B,S) = (B,B)$\\
+                        We have two cases $y_1$ and $n_1$, which both have two cases $B$ and $S$.
+                        \begin{enumerate}[label=(\roman*)]
+                              \item type $y_1$ of player 1
+                                    \begin{itemize}
+                                          \item $\pi_{y_1} (B,(B,S)) = (1/2)\cdot 2+(1/2)\cdot 0 = 1$
+                                          \item $\pi_{y_1} (S,(B,S)) = (1/2)\cdot 0+(1/2)\cdot 1 = 1/2$
+                                    \end{itemize}
+                              \item type $n_1$ of player 1
+                                    \begin{itemize}
+                                          \item $\pi_{n_1} (B,(B,S)) = (1/2)\cdot 0+(1/2)\cdot 2 = 1$
+                                          \item $\pi_{n_1} (S,(B,S)) = (1/2)\cdot 1+(1/2)\cdot 0 = 1/2$
+                                    \end{itemize}
+                        \end{enumerate}
+
+                  \item $\mathcal B_2 (B,B) = (B,S)$\\
+                        We have two cases $y_2$ and $n_2$, which both have two cases $B$ and $S$.
+                        \begin{enumerate}[label=(\roman*)]
+                              \item type $y_2$ of player 2
+                                    \begin{itemize}
+                                          \item $\pi_{y_2} ((B,B),B) = (2/3)\cdot 1+(1/3)\cdot 1 = 1$
+                                          \item $\pi_{y_2}((B,B),S) = (2/3)\cdot 0+(1/3)\cdot 0 = 0$
+                                    \end{itemize}
+                              \item type $n_2$ of player 2
+                                    \begin{itemize}
+                                          \item $\pi_{n_2}((B,B),B) = (2/3)\cdot 0+(1/3)\cdot 0 = 0$
+                                          \item $\pi_{n_2} ((B,B),S) = (2/3)\cdot 2+(1/3)\cdot 2 = 2$
+                                    \end{itemize}
+                        \end{enumerate}
+            \end{enumerate}
+            By Lemma 1, 2 we can conclude $((B,B), (B,S))$ is a Nash equilibrium. 
+            The proof for $((S,B), (S,S))$ is similar and left as an exercise for the reader.
+      \end{proof}
+\end{example}
+
+
+\begin{example}
+      We can give the Battle of Sexes with two uncertain players as a Bayesian Game as follows:
+      \begin{itemize}
+            \item players $N = \{\text{ player 1, player 2}\}$
+            \item states $\omega = \{\text { yy,yn,ny,nn}\}$
+            \item actions $a = \{ B , S \}$ for each player
+            \item signals
+                  \begin{itemize}
+                        \item  player $1$:
+                              \begin{itemize}
+                                    \item $\tau_1(yy) = \tau_1(yn) = y_1$
+                                    \item $\tau_1(ny) = \tau_1(nn) = n_1$
+                              \end{itemize}
+                        \item  player $2$:
+                              \begin{itemize}
+                                    \item $\tau_2(nn) = \tau_2(yn) = n_2$
+                                    \item $\tau_2(ny) = \tau_2(yy) = y_2$
+                              \end{itemize}
+                  \end{itemize}
+            \item given signal, belief about states
+                  \begin{itemize}
+                        \item player 1 assigns prob. 1/2 to each state $yy$ and $yn$ after $y 1 $
+                        \item player 1 assigns prob. 1/2 to each state $ny$ and $nn$ after $n 1 $
+                        \item player 2 assigns prob. 2/3 to $yy$ and 1/3 to $ny$ after $y 2 $
+                        \item player 2 assigns prob. 2/3 to $yn$ and 1/3 to $nn$ after $n 2$
+                  \end{itemize},
+            \item Bernoulli payoff function over $(a, \omega)$, best viewed in a table from the (old) lecture notes.
+      \end{itemize}
+\end{example}
+
+
+\begin{definition}[Nash equilibrium of a Bayesian game]
+      A \textbf{Nash equilibrium of a Bayesian game} is a Nash equilibrium of the strategic game
+      (with vNM preferences) defined as follows:
+      \begin{itemize}
+            \item \textit{Players}: set of all pairs $(i,t_i)$ in which i is the player and $t_i$ is one of the signals that i may receive
+            \item \textit{Actions}: set of actions of each player $(i,t_i)$ is the set of actions of i in Bayesian game
+            \item \textit{Preferences}: a Bernoulli payoff function of $(i,t_i)$ such that
+                  \[
+                        \pi_{i} [a_{i}, t_{i}] = \sum_{\omega \varepsilon \Omega} \operatorname{Pr}\left(\omega \mid t_{i}\right) u_{i}\left[\left\{a_{i}, a_{-i}^{+}(\omega)\right\}, \omega\right]
+                  \]
+                  where
+                  \[
+                        a^{+}(\omega) = a_j(\tau_j(\omega))
+                  \]
+      \end{itemize}
+\end{definition}
+
+
+\begin{example}[Public good II]
+      Public good is provided if and only if at least one player contributes (at known cost $c$)
+      Each individual is privately informed about $v_i$ , draw from $F(v)$, $0 < v_min < c < v_max$
+\end{example}
+
+
+\begin{example}[Bayesian game for Public good II] 
+      The Public good II can be modelled as:
+      \begin{itemize}
+            \item Players: $n$ individuals
+            \item States: set of all profiles $(v_1 , \ldots , v_n )$
+            \item Actions: each player chooses $0$ or $c$
+            \item Signals: $τ_i (v_1 ,\ldots, v_n ) = v_i$
+            \item Beliefs: player $i$ assigns probability $F(v_1 ) F(v_2 )\ldots F(v_{i-1} ) F(v_{i+1} )\ldots F(v_n )$ to the event that the valuation of every other player $j$ is at most $v_j$
+            \item Preferences of player $i$:
+                  \begin{itemize}
+                        \item $\pi_i =0$ if no one contributes
+                        \item $\pi_i =v_i$ if $i$ does not contribute and at least one other does
+                        \item $\pi_i =v_i - c$ if $i$ contributes
+                  \end{itemize}
+      \end{itemize}
+\end{example}
+
+
+\begin{example}[Symmetric Nash Equilibrium of Public good II]
+      An example of a symmetric action profile is: $0$ for all $i$. 
+      This is symmetric, but not a Nash Equilibrium. 
+      I would rather spend $c$ to receive $v_i - c$. 
+      Another such option is $c$ for all $i$. 
+      But then, deviating to $0$ will increase my payoff from $v_i - c$ to $v_i$. 
+      Thus, this is also not a Nash Equilibrium. 
+      A candidate for such a Nash Equilibrium is: $c$ if $c \ge v^{*}$.
+
+      If a player $i$ draws $v^{*}$, she is indifferent about playing $c$ or $0$. To prove this, we look at the expected utility. This is
+      \[
+            \mathbb{E}_i(\{c\} \mid v_i, s_{-1}) = v_i -c
+      \]
+      and
+      \begin{align*}
+            \mathbb{E}_i(\{0\} \mid v_i, s_{-1}) & = 0\cdot\mathbb{P}(\text{others do not contribute}) + v_i \cdot \mathbb{P}(\text{at least one other contributes})
+            \\&=
+            0 + v_i(1 - \mathbb{P}(\text{others do not contribute})) \tag{Note: $F(v^{*}) =\pp (v < v^{*}$}
+            \\&=
+            v_i(1 - F(v^{*})^{n-1})
+      \end{align*}
+      Player $i$ which $v_i = v^{*}$ will be indifferent if $\mathbb{E}_i(\{c\} \mid v_i, s_{-1}) = \mathbb{E}_i(\{0\} \mid v_i, s_{-1})$. This gives
+      \begin{align*}
+            v^{*} -c & = v^{*}(1 - F(v^{*})^{n-1})
+            \\
+            v^{*} -c & = v^{*} - v^{*}F(v^{*})^{n-1})
+            \\
+            c        & = v^{*}F(v^{*})^{n-1})
+      \end{align*}
+      If $v_i < v^{*}$, then $v_iF(v^{*})^{n-1} <  v^{*} F(v^{*})^{n-1} = c$. Then $-v_iF(v^{*})^{n-1}  > -c$. Now $v_i-v_iF(v^{*})^{n-1}  > v_i-c$ which is equal to $\mathbb{E}_i(\{0\} \mid v_i, s_{-1}) > \mathbb{E}_i(\{c\} \mid v_i, s_{-1})$. Thus, if $v_i < v^{*}$ then $i$ would want to not contribute.
+
+      If $v_i > v^{*}$, then $v_iF(v^{*})^{n-1} >  v^{*} F(v^{*})^{n-1} = c$. Then $-v_iF(v^{*})^{n-1}  < -c$. Now $v_i-v_iF(v^{*})^{n-1}  < v_i-c$ which is equal to $\mathbb{E}_i(\{0\} \mid v_i, s_{-1}) < \mathbb{E}_i(\{c\} \mid v_i, s_{-1})$. Thus, if $v_i > v^{*}$ then $i$ would want to contribute.
+
+      Now, we have identified the strategy `$c$ if $v_i > v^{*}$' as an equilibrium.
+\end{example}
+
+
+\begin{remark}
+      In this example, the equilibrium is not in the best interest of the public good.
+\end{remark}

@@ -1,0 +1,59 @@
+\begin{definition}[Stategy]
+    A strategy in an extensive game tells you what a player does for every information set where she has the move. It it gives one action for every information set.
+\end{definition}
+
+
+\begin{definition}[Weak sequential equilibrium]
+    We want to want to determine which equilibrium is better. We force each player whose turn it is to move forms a belief about the histories in her
+    information set. A belief system is a collection of beliefs, one for each information set
+    We are working with behavioral strategy in extensive game. This is a probability function that assigns to each information set a
+    probability distribution over the possible actions in that set. Behavioral strategies are equivalent to mixed strategies, but easier to work with
+\end{definition}
+
+
+\begin{example}[card game]
+    \textbf{Behavioral strategy: } With behavioral strategy, you give a probability distribution for $\{Raise, See\}$ after High card
+    other probability distribution for $\{Raise, See\}$ after Low card\\
+    \textbf{Mixed strategy: } Using mixed strategy, we make one probability distribution for the set
+    $\{(Raise,Raise), (Raise, See), (See, Raise), (See,See)\}$
+\end{example}
+
+
+\begin{definition}[Weak sequential equilibrium](Kreps and Wilson, 1982)
+    A Weak sequential equilibrium, also know as a Perfect Bayesian Equilibrium is an assessment, that is a behavioral strategy profile $\beta$ and a belief system $\mu$, that satisfies
+    \begin{enumerate}[label=(\roman*)]
+        \item \textbf{Sequential rationality: } Each player’s strategy is optimal in the part of the game that follows each of her
+              information sets, given the strategy profile and her belief about the history in the
+              information set that has occurred.
+        \item \textbf{Weak consistency of beliefs with strategies: }
+              For every Information Set reached with positive probability given the strategy profile $\beta$,
+              the probability assigned by the belief system to each history $h^*$ in the information set $I_i$ is
+              given by Bayes’ rule. That is:
+              \begin{equation*}
+                  \pp[ h^* \mid I_i ] = \frac{\pp[ h^* \text{ according to } \beta ]}{\sum_{h \in I_i}\pp [h \text{ according to } \beta ]}
+              \end{equation*}
+              If an information set is not reached with positive probability, any belief is allowed.
+    \end{enumerate}
+\end{definition}
+
+
+\begin{definition}[Signaling games] (Spence, 1973)
+    \begin{itemize}
+        \item Why do gazelles engage in stotting when approached by cheetah?
+        \item Why do men give expensive flowers to women?
+        \item Why do students follow a costly but (sometimes) useless education?
+    \end{itemize}
+    To signal their quality.
+
+    \begin{itemize}
+        \item In signaling game, first mover has private information that is relevant to second mover
+        \item First mover wants to convince second mover to choose particular beneficial action
+        \item “Good” types may send costly signals to distinguish themselves from “bad” types
+              \begin{itemize}
+                  \item Signaling games have \textbf{separating equilibria}, in which different types choose
+                        different signals and second movers infer types from signals
+                  \item Signaling games have \textbf{pooling equilibria}, in which different types choose the same
+                        signal and second movers do not update their beliefs
+              \end{itemize}
+    \end{itemize}
+\end{definition}
