@@ -1,0 +1,104 @@
+\secnewpage{Ondergroepen, homomorfismen en directe producten}
+\subsection{Ondergroepen}
+\paragraph{Definitie van een ondergroep} Zij \(G\) een groep en laat \(H\subseteq G\) een deelverzameling zijn. Dan geldt dat \(H\) een ondergroep is precies als:
+\begin{enumerate}
+    \item \(H\) niet leeg is (\(H\neq\emptyset\)),
+    \item voor elke \(a,b\in H\) geldt dat \(ab\in H\) (ook wel \(H\) is gesloten),
+    \item voor alle \(a\in H\) ook geldt dat \(a^{-1}\in H\).
+\end{enumerate}
+
+\subparagraph{Ondergroepen en groepen} Zij \(G\) een groep en \(H\subseteq G\) een ondergroep. Dan is \(H\) ook een groep met dezelfde werking als op \(G\).
+
+\subparagraph{Equivalente eigenschappen van ondergroep} Zij \(G\) een groep en \(H\subseteq G\) een deelverzameling, dan is \(H\) ook een ondergroep als geldt dat
+\begin{enumerate}
+    \item \(H\) niet leeg is,
+    \item voor elke \(a,b\in H\) geldt dat \(ab^{-1}\in H\).
+\end{enumerate}
+
+\paragraph{Doorsnedes van ondergroepen} Zij \(G\) een groep en \((H_{i})_{i\in I}\) een collectie ondergroepen, dan geldt dat
+\[
+    \bigcap_{i\in I}H_{i}
+\]
+ook een ondergroep is van \(G\).
+
+\subsection{Groepshomomorfismen}
+\paragraph{Definitie van een homomorfisme} Zij \(G_{1},G_{2}\) groepen. Dan is \(f\colon G_{1}\to G_{2}\) een groepshomomorfisme als voor elke \(a,b\in G_{1}\) geldt dat
+\[
+    f(ab)=f(a)f(b).
+\]
+
+De verzameling van homomorfismen van \(G_{1}\) naar \(G_{2}\) wordt als \(\Hom(G_{1},G_{2})\) genoteerd.
+
+\subparagraph{Isomorfismen} Zij \(G_{1},G_{2}\) groepen en \(f\colon G_{1}\to G_{2}\) een bijectief homomorfisme, dan wordt het ook wel een isomorfisme genoemd. Als er een isomorfisme tussen twee groepen \(G_{1},G_{2}\) bestaat, dan heten deze isomorf, en dat wordt genoteerd als \(G_{1}\cong G_{2}\).
+
+\subparagraph{Endomorfismen} Een homomorfisme van een groep naar zichzelf heet een endomorfisme. De verzameling endomorfismen van \(G\) wordt genoteerd als \(\End(G)\).
+
+\subparagraph{Automorfismen} Een isomorfisme van een groep naar zichzelf heet een automorfisme. De verzameling automorfismen van \(G\) wordt genoteerd als \(\Aut(G)\).
+
+\paragraph{Eigenschappen van een homomorfisme} Zij \(G_{1},G_{2}\) groepen en \(f\colon G_{1}\to G_{2}\) een homomorfisme. Laat \(e_{1}\in G_{1}\) het eenheidselement van \(G_{1}\) zijn en \(e_{2\in G_{2}}\) het eenheidselement van \(G_{2}\). Dan geldt dat
+\begin{enumerate}
+    \item \(f(e_{1})=e_{2}\),
+    \item voor elke \(a\in G_{1}\) geldt dat \(f(a^{-1})=f(a)^{-1}\).
+\end{enumerate}
+
+\paragraph{Kernen van homomorfismen} Zij \(G_{1},G_{2}\) groepen, \(f\colon G_{1}\to G_{2}\) een homomorfisme en \(e_{2}\) het eenheidselement van \(G_{2}\). Dan is de kern van \(f\) als volgt gedefinieerd:
+\[
+    \ker(f)=\{g\in G\mid f(g)=e_{2}\}.
+\]
+
+De kern is een ondergroep van \(G_{1}\). Ook is het beeld \(f[G_{1}]\) een ondergroep van \(G_{2}\).
+
+\paragraph{Injectieviteit} Zij \(G_{1},G_{2}\) groepen, \(f\colon G_{1}\to G_{2}\) een homomorfisme en \(e_{1}\) het eenheidselement van \(G_{1}\). Dan geldt dat \(f\) een injectieve functie is precies als
+\[
+    \ker(f)=\{e_{1}\}.
+\]
+
+\paragraph{Samenstellingen van homomorfismen} Zij \(G_{1},G_{2},G_{3}\) groepen en \(f\colon G_{1}\to G_{2}\) en \(g\colon G_{2}\to G_{3}\) homomorfismen. Dan is \(f\circ g\) ook een homomorfisme.
+
+\paragraph{Inverses van isomorfismen} Zij \(G_{1},G_{2}\) groepen en \(f\colon G_{1}\to G_{2}\) een isomorfisme, dan is \(f^{-1}\) ook een isomorfisme.
+
+\paragraph{Equivalentie en isomorfismen} Zij \(G_{1},G_{2},G_{3}\) groepen, dan geldt dat
+\begin{enumerate}
+    \item \(G_{1}\cong G_{1}\),
+    \item als \(G_{1}\cong G_{2}\), dan geldt ook dat \(G_{2}\cong G_{1}\),
+    \item als \(G_{1}\cong G_{2}\) en \(G_{2}\cong G_{3}\), dan geldt ook dat \(G_{1}\cong G_{3}\).
+\end{enumerate}
+
+\subsection{Directe producten}
+\paragraph{Definitie van het directe product} Zij \(G_{1},G_{2}\) twee groepen, dan geldt dat \(G_{1}\times G_{2}\) met de bewerking
+\[
+    (G_{1}\times G_{2})\times(G_{1}\times G_{2})\to G_{1}\times G_{2}\colon ((g_{1},h_{1}),(g_{2},h_{2}))\mapsto (g_{1}g_{2},h_{1}h_{2})
+\]
+een groep vormt.
+
+\subparagraph{Eigenschappen van het directe product} Voor drie groepen \(G_{1},G_{2},G_{3}\) geldt in zekere zin dat ze de volgenden eigenschappen hebben
+\begin{enumerate}
+    \item Commutativiteit: \(G_{1}\times G_{2}\cong G_{2}\times G_{2}\),
+    \item associativiteit: \((G_{1}\times G_{2})\times G_{3}\cong G_{1}\times(G_{2}\times G_{3})\cong G_{1}\times G_{2}\times G_{3}\).
+\end{enumerate}
+
+\paragraph{Isomorfisme tussen een groep en ondergroepen} Zij \(G\) een ondergroep met twee ondergroepen \(H_{1},H_{2}\) met de volgende eigenschappen
+\begin{enumerate}
+    \item Voor alle \(h_{1}\in H_{1}\) en \(h_{2}\in H_{2}\) geldt dat \(h_{1}h_{2}=h_{2}h_{1}\)m
+    \item \(H_{1}\cap H_{2}=\{e\}\),
+    \item voor elke \(g\in G\) geldt dat \(g=h_{1}h_{2}\) voor een \(h_{1}\in H_{1}\) en \(h_{2}\in H_{2}\).
+\end{enumerate}
+Dan geldt dat \(G\cong H_{1}\times H_{2}\).
+
+\paragraph{Chinese reststelling} Zij \(n,m\in\n\) met \(\ggd(n,m)=1\). Dan geldt dat
+\[
+    \z/nm\z\cong\z/n\z\times\z/m\z
+\]
+met het isomorfisme
+\[
+    f\colon\z/nm\z\to\z/n\z\times\z/m\z\colon a\mod nm\to (a\mod n,a\mod m).
+\]
+
+\subparagraph{Algemenere versie} Zij \(n_{1},\dots,n_{t}\) positieve    gehele getallen zijn zodat voor alle \(i,j\in\{1,\dots,t\}\) geldt dat \(\ggd(n_{i},n_{j})=1\). Definieer \(N\defeq\prod_{i=1}^{t}n_{i}\). Dan geldt dat
+\[
+    \z/N\z\cong\z/n_{1}\z\times\dots\times\z/n_{t}\z
+\]
+met het isomorfisme
+\[
+    f\colon\z/N\z\to\z/n_{1}\z\times\dots\times\z/n_{t}\z\colon a\mod N\mapsto (a\mod n_{1},\dots,a\mod n_{t}).
+\]

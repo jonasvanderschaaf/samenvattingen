@@ -1,5 +1,7 @@
 \documentclass{article}
 
+\edef\restoreparindent{\parindent=\the\parindent\relax}
+
 \usepackage[utf8]{inputenc}
 \usepackage[dutch]{babel}
 \usepackage{enumerate}
@@ -9,6 +11,8 @@
 \usepackage{hyperref}
 
 \usepackage{fancyhdr}
+
+\restoreparindent
 
 \pagestyle{fancy}
 \fancyhf{}
@@ -33,6 +37,10 @@
 \DeclareMathOperator{\ggd}{ggd}
 \DeclareMathOperator{\kgv}{kgv}
 
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Aut}{Aut}
+
 \newcommand{\defeq}{\vcentcolon=}
 
 \let\oldemptyset\emptyset
@@ -47,7 +55,7 @@
 \tableofcontents
 
 \input{sec1.tex}
-
+\input{sec2.tex}
 
 \input{groepen.tex}
 \end{document}
