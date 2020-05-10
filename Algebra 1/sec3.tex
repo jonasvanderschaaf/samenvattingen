@@ -1,0 +1,93 @@
+\secnewpage{Voortbrengers, orde en index}
+\subsection{Voortbrengers}
+\paragraph{Definitie van een voortbrenger} Zij \(G\) een groep en \(S\subseteq G\) een deelverzameling. Dan geldt dat
+\[
+    \gen{S}\defeq\{g\in G\mid g=x_{1}\cdots x_{n},n\in\nz,x_{i}\in S\text{ of }x_{i}^{-1}\in S\}.
+\]
+Voor elke \(S\) geldt dat \(\gen{S}\) een ondergroep is.
+
+\subparagraph{Cyclische groep} Een groep heet cyclisch als geldt dat \(\gen{x}=G\) voor een \(x\in G\). Dan heet \(x\) een voortbrenger van \(G\).
+
+\paragraph{Orde van een element} Zij \(G\) een groep en \(x\in G\). Dan is de orde van \(x\) gedefinieerd als
+\[
+    \order(x)\defeq\begin{cases}
+        \min\{n\in\n\mid x^{n}=e\}=\#\gen{x} & \{n\in\n\mid x^{n}=e\}\neq\emptyset \\
+        \infty                               & \{n\in\n\mid x^{n}=e\}=\emptyset
+    \end{cases}.
+\]
+Het enige element met orde \(1\) is het eenheidselement.
+
+\paragraph{Machten van veelvouden van de orde} Zij \(x\in G\) een element met orde \(n<\infty\). Dan geldt voor \(m\in\z\) dat \(x^{m}=e\) dan en slechts dan als \(n\mid m\).
+
+\paragraph{Isomorfismen van gegenereerde ondergroepen} Zij \(G\) een groep en \(x\in G\). Dan geldt dat
+\begin{enumerate}
+    \item \(\gen{x}\cong\z\) als \(\order(x)=\infty\),
+    \item \(\gen{x}\cong\z/n\z\) als \(\order(x)=n<\infty\).
+\end{enumerate}
+
+\subparagraph{Ordes en homomorfismen} Zij \(G_{1},G_{2}\) groepen en \(x\in G_{1}\) een element met \(\order(x)=n<\infty\). Dan heeft \(f(x)\) ook eindige orde en \(\order(f(x))\mid\order(x)\). Als \(f\) injectief is geldt dat \(\order(f(x))=\order(x)\).
+
+\subsection{Ordes van (onder)groepen}
+\paragraph{Orde van een groep} Zij \(G\) een groep, dan is de orde van \(G\) gedefinieerd als
+\[
+    \order(G)\defeq\#G.
+\]
+
+\paragraph{Stelling van Euler} Zij \(a\in\z\) en \(m\in\n\) met \(\ggd(a,m)=1\). Dan geldt dat \(a^{\varphi(m)}\equiv 1\mod m\).
+
+\subparagraph{Kleine stelling van Fermat} Zij \(p\) een priemgetal en \(a\in\z\), dan geldt dat \(a^{p}\equiv a\mod p\).
+
+\subsection{Nevenklassen}
+\paragraph{Definitie van een nevenklasse} Zij \(G\) een groep en \(H\subseteq G\) een ondergroep. Laat \(a\in G\). Dan heet
+\[
+    aH\defeq\{ah\mid h\in H\}
+\]
+een linkernevenklasse van \(H\) en
+\[
+    Ha\defeq\{ha\mid h\in H\}
+\]
+een rechternevenklasse van \(H\).
+
+De verzameling rechternevenklassen van \(H\) wordt genoteerd als \(G/H\) en de verzameling linkernevenklassen als \(H\backslash G\).
+
+\paragraph{Elementen van nevenklassen} Zij \(G\) een groep en \(H\subseteq G\) een ondergroep. Dan gelden de volgende drie eigenschappen voor alle \(a,b\in G\):
+\begin{enumerate}
+    \item \(aH=bH\) dan en slechts dan als \(a^{-1}b\in H\),
+    \item óf \(aH=bH\) óf \(aH\cap bH=\emptyset\),
+    \item elk element zit in precies \(1\) nevenklasse.
+\end{enumerate}
+
+\paragraph{Aantallen elementen van nevenklassen} Zij \(G\) een groep en \(H\subseteq G\) een ondergroep, dan geldt voor elke \(a\in G\) dat
+\[
+    \#aH=\#H.
+\]
+
+\paragraph{Index van een ondergroep} Zij \(G\) een groep en \(H\subseteq G\) een ondergroep, dan is de index van \(H\) als volgt gedefinieerd:
+\[
+    \groupindex{G}{H}\defeq \#(G/H).
+\]
+
+\paragraph{Representantensysteem} Zij \(G\) een groep, \(H\subseteq G\) een ondergroep en \(S\subseteq G\) een verzameling zodat het precies \(1\) element uit elke nevenklasse bevat, dan heet \(S\) een representantensysteem en dan geldt dat \(\#S=\groupindex{G}{H}\). Bovendien geldt ook dat
+\[
+    G=\coprod_{s\in S}sH.
+\]
+
+\paragraph{De stelling van Lagrange} Zij \(G\) een groep en \(H\subseteq G\) een ondergroep. Dan geldt dat
+\[
+    \order(G)=\groupindex{G}{H}\cdot\order(H).
+\]
+
+Hieruit volgt dat \(\order(H)\mid\order(G)\) als \(G\) eindig is, want \(\groupindex{G}{H}\in\n\).
+
+\subparagraph{Ondergroep van een ondergroep} Zij \(G\) een eindige groep en \(H_{2}\subseteq H_{1}\subseteq G\) ondergroepen. Dan geldt dat
+\[
+    \groupindex{G}{H_{1}}=\groupindex{G}{H_{2}}\cdot\groupindex{H_{2}}{H_{1}}.
+\]
+
+\subparagraph{Ordes van elementen en groepen} Zij \(G\) een groep en laat \(x\in G\). Dan geldt dat \(\order(x)\mid\order(G)\).
+
+\subparagraph{Groepen met ordes van priemgetallen} Zij \(G\) een groep met \(\order(G)=p\), dan is \(G\) cyclisch en \(G\cong\z/p\z\).
+
+\subparagraph{Kleine groepen en cycliciteit} Zij \(G\) een groep met \(\order(G)\leq5\), dan geldt dat \(G\) cyclisch is of \(G\cong V_{4}\).
+
+\paragraph{Stelling van Cauchy} Zij \(G\) een eindige groep en \(p\) een priemgetal zodat \(p\mid\order(G)\). Dan is er een \(x\in G\) met \(\order(x)=p\).
