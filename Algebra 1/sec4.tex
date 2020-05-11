@@ -1,0 +1,34 @@
+\secnewpage{Ondergroepen en factorgroepen}
+\subsection{Normaaldelers}
+\paragraph{Definitie van een normaaldeler} Zij \(G\) een groep en \(N\subseteq G\) een ondergroep. Dan heet \(N\) een normaaldeler als voor alle \(g\in G\) en \(n\in N\) geldt dat
+\[
+    gng^{-1}\in N.
+\]
+Dit wordt ook wel genoteerd als \(N\triangleleft G\).
+
+\subparagraph{Het centrum van een groep} Zij \(G\) een groep. Dan is het centrum van \(G\) gedefinieerd als \(Z(G)\defeq\{g\in G\mid \forall h\in G\colon gh=hg\}\). Het centrum is een normaaldeler.
+
+\subparagraph{De commutatorondergroep} Zij \(G\) een groep. Dan is de commutatorondergroep van \(G\) gedefinieerd als \([G,G]\defeq\gen{\{[g,h]\mid g,h\in G\}}\). Dit is ook een normaaldeler.
+
+\paragraph{Normaaldelers en linkse/rechtse nevenklassen} Zij \(G\) een groep en \(N\subseteq G\) een ondergroep. Dan is \(N\) een normaaldeler dan en slechts dan als \(aN=Na\) voor alle \(a\in G\).
+
+\paragraph{Ondergroepen van index \(2\)} Zij \(G\) een groep en \(N\) een ondergroep met \(\groupindex{G}{N}=2\), dan geldt dat \(N\triangleleft G\).
+
+\paragraph{Kernen van homomorfismen} Zij \(G_{1},G_{2}\) groepen en \(f\colon G_{1}\to G_{2}\) een homomorfisme, dan geldt dat \(\ker(f)\triangleleft G\).
+
+\subsection{Factorgroepen}
+\paragraph{Constructie van de factorgroep} Zij \(G\) een groep en \(N\triangleleft G\). Dan vormt \(G/N\) een groep met de bewerking \(G/N\times G/N\colon (\overline{a},\overline{b})\mapsto \overline{ab}\).
+
+Bovendien geldt dat \(\order(G/N)=\groupindex{G}{N}\), en als \(G\) abels is, dan is \(G/N\) dat ook.
+
+\paragraph{Normaaldelers zijn kernen} Zij \(G\) een groep en \(N\triangleleft G\). Dan is \(N\) de kern van het homomorfisme
+\[
+    \varphi\colon G\to G/N\colon g\mapsto gN.
+\]
+Dit homomorfisme heet het natuurlijke/canonieke homomorfisme. De functie \(\varphi\) is ook surjectief.
+
+\paragraph{Normaaldeler en kern} Zij \(G\) een groep en \(N\subset G\) een ondergroep. Dan geldt dat \(N\triangleleft G\) dan en slechts dan als \(N=\ker(f)\) voor een homomorfisme \(f\).
+
+\paragraph{Normaaldeler en ondergroepen} Zij \(G\) een groep \(N\triangleleft G\) en \(H\subseteq G\) een ondergroep zodat \(N\subseteq H\). Dan geldt dat \(N/H\) een ondergroep is van \(G/N\).
+
+\paragraph{Normaaldelers en abelse groepen} Zij \(G\) een groep en \(N\triangleleft G\), dan is \(G/N\) abels precies als \([G,G]\subseteq N\).
