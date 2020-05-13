@@ -1,0 +1,73 @@
+\secnewpage{Groepswerkingen}
+\paragraph{Definitie van een groepswerking} Zij \(G\) een groep en \(X\) een verzameling. Een werking is dan een afbeelding:
+\[
+    G\times X\colon (g,x)\mapsto g\circ x,
+\]
+
+die voldoet aan de volgende twee eigenschappen:
+\begin{enumerate}
+    \item Voor elke \(x\in X\) geldt dat \(e\circ x=x\),
+    \item voor alle \(g,h\in G\) en \(x\in X\) geldt dat \(g\circ(h\circ x)=(gh)\circ x\).
+\end{enumerate}
+
+\paragraph{Groepswerkingen en bijecties} Zij \(G\) een groep en \(X\) een verzameling zodat \(G\) op \(X\) werkt met \(\circ\). Dan is de afbeelding
+\[
+    \varepsilon_{g}\colon X\to X\colon x\mapsto g\circ x
+\]
+
+een bijectie. Ook geldt dat \(f\colon G\to S(X)\colon g\mapsto\varepsilon_{g}\) een homomorfisme is.
+
+\subparagraph{Homomorfismes naar symmetrische groep} Zij \(G\) een groep, \(X\) een verzameling en \(f\colon G\to S(X)\) een homomorfisme, dan is \(G\times X\to X\colon x\mapsto f(g)(x)\) een groepswerking.
+
+\paragraph{Isomorfie van een groep met de symmetrische groep} Elke groep \(G\) is isomorf met een ondergroep van \(S(G)\). Als \(\#G=n<\infty\), dan is \(G\) specifiek isomorf met een ondergroep van \(S_{n}\).
+
+\paragraph{Normaaldelers en ondergroepen} Zij \(G\) een groep en \(H\subseteq G\) een ondergroep met de eigenschap \(\groupindex{G}{H}=n<\infty\), dan is er een normaaldeler \(N\) met \(N\subseteq H\) en \(\groupindex{G}{N}\mid n!\).
+
+\subparagraph{Ondergroep met bijzondere orde} Zij \(G\) een groep en \(H\) een ondergroep met \\\(\ggd\left(\#H,\left(\groupindex{G}{H}-1\right)!\right)=1\). Dan is \(H\) een normaaldeler.
+
+\subparagraph{Ondergroep met priemgetal als orde} Zij \(G\) een groep en \(H\subseteq G\) een ondergroep zodat \(\#H\) de kleinste priemdeler is van \(\#G\). Dan is \(H\) een normaaldeler.
+
+\paragraph{Definitie van de baan} Zij \(G\) een groep die werkt op \(X\), dan is de baan van \(x\in X\) onder \(G\) gedefinieerd als
+\[
+    Gx\defeq\{g\circ x\mid g\in G\}.
+\]
+
+\subparagraph{Equivalentie} Zij \(G\) een groep die werkt op \(X\), dan heten twee elementen \(x,y\in X\) equivalent onder \(G\) als er een \(g\in G\) is zodat \(g\circ x=y\), dit wordt geschreven als \(x\sim_{G}y\). Dit is een equivalentierelatie. De equivalentieklassen zijn precies de banen van \(X\) onder \(G\).
+
+\subparagraph{Transitief werken} Zij \(G\) een groep die werkt op \(X\), dan geldt dat \(G\) transitief werkt op \(X\) als geldt dat \(Gx=X\), dus als er precies \(1\) baan is.
+
+\paragraph{Definitie van de stabilisator} Zij \(G\) een groep die werkt op \(X\). Dan is de stabilisator van een \(x\in X\) gedefinieerd als
+\[
+    G_{x}\defeq \{g\in G\mid g\circ x=x\}.
+\]
+
+\paragraph{Stabilisatoren en ondergroepen} Zij \(G\) een groep die werkt op \(X\). Dan is \(G_{x}\) een ondergroep van \(G\) en voor elke \(g\in X\) geldt dat \(gG_{x}g^{-1}=G_{g\circ x}\).
+
+\paragraph{Nevenklassen van de stabilisator en banen} Zij \(G\) een groep die werkt op \(X\) en \(x\in X\). Dan geldt dat de afbeelding
+\[
+    f\colon G/G_{x}\to Gx\colon aG_{x}\mapsto a\circ x,
+\]
+een welgedefinieerde bijectie. Daardoor geldt dat \(\#Gx=\groupindex{G}{G_{x}}\).
+
+\paragraph{Verzamelingen en indices van ondergroepen} Zij \(G\) een groep de werkt op \(X\). LZij \(Y\) een verzameling met precies één element uit elke baan. Dan geldt dat
+\[
+    \#X=\sum_{x\in Y}\groupindex{G}{G_{x}}.
+\]
+
+\paragraph{Conjugatie en groepswerking} Zij \(G\) een groep die op zichzelf werkt met
+\[
+    ^{g}x\defeq gxg^{-1},
+\]
+dan heten de banen \(Gx\) de conjugatieklassen van \(x\). Twee elementen \(x,y\in G\) heten geconjugeerd als geldt dat er een \(g\in G\) zodat geldt dat \(gxg^{-1}=y\).
+
+\subparagraph{Groepen met orde van de macht van een priemgetal} Zij \(G\) een groep met\(\#G=p^{k}\) met \(p\) priem, dan geldt dat \(Z(G)\neq \{e\}\).
+
+\paragraph{Formule van Burnside} Zij \(G\) een groep die werkt op een eindige verzameling \(X\). Definiëer dan de fixpunten van \(g\) als
+\[
+    X^{g}\defeq\{x\in X\mid g\circ x=x\}.
+\]
+
+Dan geldt voor het aantal banen \(\#X/G\) dat het gelijk is aan
+\[
+    \#X/G=\frac{1}{\#G}\cdot\sum_{g\in G}\#X^{g}.
+\]
