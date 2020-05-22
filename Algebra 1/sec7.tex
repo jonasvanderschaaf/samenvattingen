@@ -1,0 +1,44 @@
+\secnewpage{Automorfismen}
+\subsection{De automofismegroep}
+\paragraph{Definitie van de automorfismegroep} Zij \(G\) een groep. Dan geldt dat
+\[
+    \Aut(G)=\{f\colon G\to G\mid\text{\(G\) is een isomorfisme}\}\subseteq S(G)
+\]
+een ondergroep is.
+
+\paragraph{Inwendige automorfismen} Zij \(G\) een groep. Definiëer \(\varphi_{a}\colon G\to G\colon g\mapsto aga^{-1}\) voor \(a\in G\). Dan is de verzameling
+\[
+    \Inn(G)\defeq\{\varphi_{a}\mid a\in G\}
+\]
+een normaaldeler van \(\Aut(G)\) en \(\Inn(G)\cong G/Z(G)\).
+
+\paragraph{Automorfismen van normaaldelers} Zij \(G\) een groep en \(N\triangleleft G\). Dan is er een groepshomomorfisme \(f\colon G\to N\) met \(f(a)\defeq\varphi_{a}\mid N\). Als \(N\) abels is geldt bovendien dat de functie \(g\colon G/N\to\Aut(N)\) met \(g(aN)=f(a)\) een goed gedefiniëerd homomorfisme is.
+
+\paragraph{Groepen en priemgetallen} Deze stelling bestaat uit twee delen:
+\begin{enumerate}
+    \item Zij \(p\) een priemgetal en \(G\) een groep met \(\#G=p^{2}\). Dan geldt dat \(G\cong\z/p^{2}\z\) of \(G\cong\z/p\z\times\z/p\z\).
+    \item Zij \(p,q\) priemgetallen met \(p>q\) en \(\ggd(p-1,q)=1\). Dan is elke groep van de orde \(pq\) cyclisch, dus \(G\cong\z/pq\z\).
+\end{enumerate}
+
+\subsection{Semidirecte producten}
+\paragraph{Definitie van het semidirecte product} Zij \(H,N\) twee groepen en \(\tau\colon H\to\Aut(N)\) een homomorfisme, dan vormt de verzameling \(N\times H\) de bewerking
+\[
+    (n_{1},h_{1})\cdot(n_{2},h_{2})\defeq(n_{1}\tau(h_{1})(n_{2}),h_{1}h_{2}))
+\]
+deze groep wordt genoteerd als \(N\rtimes_{\tau}H\). Als duidelijk is welk homomorfisme bedoeld wordt wordt dat vaak genoteerd als \(N\rtimes H\).
+
+\subparagraph{Semidirecte en directe producten} Zij \(N,H\) groepen en \(\tau\colon H\to\Aut(N)\) het triviale homomorfisme. Dan is het directe product \(N\times H\) dezelfde groep als \(N\rtimes_{\tau} H\).
+
+\paragraph{Semidirecte producten en surjectieve homorfismen} Zij \(N,H\) groepen en \(\tau\colon H\to\Aut(N)\) een homomorfisme. Dan is de deelverzameling \(\{e_{N}\}\times H\subseteq N\rtimes_{\tau}H\) een ondergroep en \(\{e_{N}\}\times H\cong H\). Ook geldt dat de functie \(\pi\colon N\rtimes_{\tau}H\to H\colon (n,h)\mapsto h\) een surjectief homomorfisme is met de kern \(N\rtimes_{\tau}\{e\}\cong N\).
+
+\paragraph{Semidirecte producten van ondergroepen} Zij \(G\) een groep met \(N,H\subseteq G\) een ondergroepen zodat de volgende eigenschappen gelden:
+\begin{enumerate}
+    \item \(N\cap H=\{e\}\),
+    \item \(G=NH\),
+    \item \(N\triangleleft G\).
+\end{enumerate}
+Dan geldt dat \(G\cong N\rtimes_{\tau}H\) met \(\tau\colon H\to\Aut(N)\colon h\mapsto\varphi_{h}\).
+
+\paragraph{Karakteristieke ondergroepen} Zij \(G\) een groep en \(H\subseteq G\) een ondergroep. Dan geldt dat \(H\) karakteristiek is als voor alle \(\psi\in\Aut(G)\) geldt dat \(\psi(H)=H\).
+
+\subparagraph{Voorbeelden van karakteristieke ondergroepen} Zij \(G\) een groep, dan geldt dat \(Z(G)\) en \([G,G]\) karakteristieke ondergroepen zijn.
