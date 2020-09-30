@@ -6,3 +6,5 @@
 *.fdb_latexmk
 *.fls
 *.pdf
+
+!/Stochastiek 2/plots/*.pdf

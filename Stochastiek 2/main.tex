@@ -1,0 +1,42 @@
+\documentclass{article}
+
+\edef\restoreparindent{\parindent=\the\parindent\relax}
+
+\usepackage[utf8]{inputenc}
+\usepackage[dutch]{babel}
+\usepackage[parfill]{parskip}
+\usepackage{enumerate}
+\usepackage{amsthm, amssymb, mathtools, amsmath}
+\usepackage[margin=3cm]{geometry}
+\usepackage[hidelinks]{hyperref}
+
+\restoreparindent
+
+\newcommand{\p}{\mathbb{P}}
+\newcommand{\e}{\mathbb{E}}
+\renewcommand{\r}{\mathbb{R}}
+\newcommand{\f}{\mathcal{F}}
+\renewcommand{\lim}[2]{\underset{#1\to#2}{\text{lim}}}
+\newcommand{\liminfty}[1]{\lim{#1}{\infty}}
+\newcommand{\defeq}{\vcentcolon=}
+
+\newcommand{\avg}[1]{\overline{#1}}
+
+\DeclareMathOperator{\unif}{Uniform}
+\DeclareMathOperator{\expon}{Exponentieel}
+\DeclareMathOperator{\bin}{Binomiaal}
+\DeclareMathOperator{\var}{Var}
+\DeclareMathOperator{\cov}{Cov}
+
+\title{Samenvatting Stochastiek 2}
+\author{Jonas van der Schaaf}
+\date{\today}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\newpage
+\input{H1.tex}
+\input{H2.tex}
+\end{document}
