@@ -1,0 +1,1085 @@
+\documentclass[a4paper,12pt,oneside]{book}
+\usepackage[dutch]{babel}
+\usepackage{ upgreek }
+\usepackage{fancyhdr, hyperref}
+\usepackage{titlepic}
+\usepackage{graphicx}
+\usepackage{pdfpages} 
+\usepackage{anyfontsize}
+
+\usepackage[pages=some,scale=1,angle=0,opacity=0.7]{background}
+
+\newcommand\BackImage[2][scale=1]{%
+\BgThispage
+\backgroundsetup{
+  contents={\includegraphics[#1]{#2}}
+  }
+}
+\input{/home/pim/Desktop/huiswerk.tex}
+\title{\noindent\makebox[\textwidth][l]{%
+  \hspace{-\dimexpr\oddsidemargin+1in}%
+  \colorbox{white}{%
+    \parbox{\dimexpr\paperwidth-2\fboxsep}{{\fontsize{100}{200}\selectfont \vspace{10pt} Algebra 2}\\ \\  {\fontsize{60}{50}\selectfont Collegeaantekeningen}}%
+  }}}
+
+\makeatletter
+\renewcommand{\@chapapp}{Hoorcollege}
+\makeatother
+\begin{document}
+
+
+\pagestyle{fancy}
+\setlength{\headheight}{13pt}
+\fancyhf{}
+\lhead{\rightmark}
+\rhead{Pim Meulensteen}
+\fancyfoot[C]{\thepage}
+\author{}
+\date{}
+%
+% Title page
+%
+\frontmatter
+\BackImage[height=\paperheight]{background.jpg} % Background image
+\maketitle
+
+
+%
+% Table of contents
+%
+
+\begin{itemize}
+\item Naam: Pim Meulensteen
+\item Student nr.: 12751510
+\item Contact: pim.meulensteen@student.uva.nl
+\item Datum: \today
+\end{itemize}
+\tableofcontents
+
+\mainmatter
+
+\part{Generalizatie van Algebra 1}
+Ringen en licahamen zijn beide generalisaties van groepen. De eerste vier weken van het vak zullen ook vooral generalisaties zijn van dingen die we weten over groepen naar ringen.
+
+\chapter{Ringen en Licahamen}
+\section{Definities en opmerkingen}
+\begin{definitie} Een \textit{ring} is een vijftupel $(R, +, \cdot , 0, 1)$ met $R$ een verzameling, $+$ en $\cdot$ afbeeldingen:
+$$+ : R \times R \to R, (a, b) \mapsto a + b$$
+$$\cdot  : R \times R \to R, (a, b) \mapsto ab $$
+en 0 en 1 elementen van $R$, zodanig dat de volgende eigenschappen (R1) t/m (R4) gelden:
+\begin{enumerate}[label=(R\arabic*)]
+\item $(R, +, 0)$ is een abelse groep; dit houdt in:
+\begin{enumerate}[label=(G\arabic*)]
+\item $a + (b + c) = (a + b) + c$ voor alle $a, b, c \in R$;
+\item $0 + a = a + 0 = a$ voor alle $a \in R$;
+\item voor elke $a \in R$ is er een tegengestelde $-a \in R$ waarvoor geldt $a + (-a) = (-a) + a = 0$;
+\item $a + b = b + a$ voor alle $a, b \in R$.
+\end{enumerate}
+\item $a(bc) = (ab)c$ voor alle $a, b, c \in R$ (associativiteit van $\cdot$);
+\item $a(b + c) = ab + ac$ en $(b + c)a = ba + ca$ voor alle $a, b, c \in R$ (de distributieve wetten).
+\item $1 \cdot a = a = a \cdot 1$ voor alle $a \in R$.
+\end{enumerate}
+\end{definitie}
+
+\begin{definitie}
+Een ring R heet \textit{commutatief} als bovendien voldaan is aan (R5):
+\begin{enumerate}[label=(R\arabic*)]
+\setcounter{enumi}{4}
+\item $ab = ba$ voor alle $a, b \in R$.
+\end{enumerate}
+\end{definitie}
+
+\begin{definitie}
+Een \textit{delingsring} (of \textit{scheeflichaam}) is een ring $R$ die behalve aan (R1) t/m (R4) ook voldoet
+aan (R6):
+\begin{enumerate}[label=(R\arabic*)]
+\setcounter{enumi}{5}
+\item $1 \ne 0$, en voor alle $a \in R$, $a 6 = 0$ is er een inverse $a' \in R$ waarvoor geldt $a \cdot a' = a' \cdot a = 1$.
+\end{enumerate}
+\end{definitie}
+
+\begin{definitie}
+Een lichaam (Engels: field; Frans: corps; Duits: Körper) is een commutatieve delingsring (dus (R1)
+t/m (R6))
+\end{definitie}
+
+\begin{opmerking}
+Soms worden 1 en R4 weggelaten
+\end{opmerking}
+
+\begin{opmerking}
+Het kan zo zijn dat 1 = 0. De ring is dan triviaal $(\{1\}, +, 1, \cdot, 1)$
+\end{opmerking}
+
+\begin{opmerking}
+R1 vertelt ons dat R een abelse groep is. We gebruikNL
+2
+en $R^+$ als we de groep $(R,+,0)$ bedoelen.
+\end{opmerking}
+
+\section{Voorbeelden}
+\begin{voorbeeld}
+We geven enkelen voorbeelden van ringen:
+\begin{itemize}
+	\item $(\zz, +, 0, \cdot, 1)$ is commutatief en maar geen delingsring, en daarmee geen lichaam.
+	\item $(\zz/n\zz, +, 0, \cdot, 1)$ is altijd commutatief en een delingsring als $n$ priem is (en dan ook een lichaam).
+	\item $(M(n,\rr), +, 0_n, \cdot, \mathbb{I}_n)$ (vierkanten matrices) is commutatief $\iff$ $n=1$ maar geen delingsring.
+	\item $(\rr, +, 0, \cdot, 1)$ is commutatief en een delingsring, en daarmee een lichaam.
+	\item $(\cc, +, 0, \cdot, 1)$ is commutatief en een delingsring, en daarmee een lichaam.
+	\item $(\hh, +, 0, \cdot, 1)$ (de quaternionen) is niet commutatief maar wel een delingsring.
+\end{itemize}
+\end{voorbeeld}
+
+We bewijzen de claim dat $\hh$ een delingsring is. Voor $q = a + bi + cj + dk$, zij $\overline{q} = a - bi - cj - dk$ en $N(q) = q \cdot \overline{q} = a^2 + b^2 + c^2 +d^2$. Nu is het zo dat
+\[
+q^{-1} = \frac{\overline{q}}{N(q)}
+\]
+
+
+\begin{voorbeeld}
+Een minder triviaal voorbeeld zijn de vierkante matrices van groote $n$ met elementen uit een andere ring $R$. De notatie hiervoor is $M(n,\rr)$
+\end{voorbeeld}
+
+\begin{stelling}[Sylabus 1.8] Zij $R$ een ring.
+\begin{enumerate}[label=(\roman*)]
+	\item $a(b_1 + \ldots + b_n) = ab_1 + \ldots + ab_n$
+	\item $(b_1 + \ldots + b_n)a = b_1 a + \ldots + b_n a$
+	\item $a(b-c) = ab -ac$
+	\item $a\cdot 0 = 0 \cdot a = 0$
+\end{enumerate}
+\end{stelling}
+\begin{bewijs}
+Het bewijs is triviaal.\footnote{Het bewijs is ook te vinden op bladzijde 10 van de sylabus}
+\end{bewijs}
+
+\begin{gevolg}
+$1 = 0 \iff R = \{0\}$
+\end{gevolg}
+
+\begin{bewijs}
+\[
+1 = 0 \iff \forall x \in R, x = x \cdot 1 = x \cdot 0 = 0 \iff R = \{0\}
+\]
+\end{bewijs}
+
+\section{Eenheid}
+Er zijn ringen waar sommige - maar niet alle - elementen een inverse hebben. Dit noemen we \textit{eenheden}.
+
+\begin{definitie}
+Een element $a \in R$ heet een \textit{eenheid} (of inverteerbaar) als er een
+$b \in R$ bestaat met $ab = ba = 1$. Een element $a \in R$ noemt men een \textit{linkseenheid} als er een $b \in R$ is met $ab = 1$ en een \textit{rechtseenheid} als er een $c \in R$ bestaat met $ca = 1$.
+\end{definitie}
+
+\begin{definitie}
+De verzameling eenheden van $R$ wordt genoteerd $R^*$ en heet de \textit{eenhedengroep} van $R$. $(R^*, \cdot, 1)$ is een groep.
+\end{definitie}
+
+\begin{voorbeeld}
+We geven enkelen voorbeelden van ringen:
+\begin{itemize}
+	\item $R = (\zz, +, 0, \cdot, 1)$ heeft $R^* = \{1,-1\}$
+	\item $R =(\qq, +, 0, \cdot, 1)$ heeft $R^* = \qq \setminus \{0\}$
+	\item $R =(M(n,\rr), +, 0_n, \cdot, \mathbb{I}_n)$ heeft $R^* = \{n \in M(n,\rr) \mid \det(n) \ne 0  \}$
+	\item $R =(\rr, +, 0, \cdot, 1)$  heeft $R^* = \rr \setminus \{0\}$
+	\item $R =(\cc, +, 0, \cdot, 1)$ heeft $R^* = \cc \setminus \{0\}$
+	\item $R =(\hh, +, 0, \cdot, 1)$ heeft $R^* = \hh \setminus \{0\}$
+	\item $R =(\zz/n\zz, +, 0, \cdot, 1)$ heeft $R^* = \{a \in \zz/n\zz \mid \ggd(a,n)=1\}$
+\end{itemize}
+\end{voorbeeld}
+
+\begin{opmerking}
+$1 \in R^*$.
+\end{opmerking}
+\begin{opmerking}
+$0 \in R^* \iff 1 = 0$.
+\end{opmerking}
+\begin{opmerking}
+$R$ is een delingsring $ \iff R^* = R \setminus \{0\}$.
+\end{opmerking}
+\begin{gevolg}
+$\zz/n\zz$ is een lichaam $\iff n$ is priem.\footnote{zie ok stelling 1.20}
+\end{gevolg}
+\begin{opmerking}
+Voor $p$ priem is $\mathbb{F}_p$ het lichaam $\zz/p\zz$.
+\end{opmerking}
+
+\section{Deelringen}
+\begin{definitie}
+Een deelverzameling $R'$ van een ring $R$ heet een \textit{deelring} van $R$ als aan (D1), (D2) en
+(D3) voldaan is:
+\begin{enumerate}[label=(D\arabic*)]
+\item $1 \in R ' $;
+\item $R'$ is een ondergroep van de additieve groep van $R$;
+\item $ab \in R'$ voor alle $a, b \in R'$
+\end{enumerate}
+$(R', +, \cdot, 0,1)$ is dan ook een ring.
+\end{definitie}
+
+\begin{opmerking}
+Als R commutatief is, dan is elke deelring ook commutatief. Het omgekeerde is niet waar, want $R' = \{0\}$. 
+\end{opmerking}
+\begin{definitie}
+Het \textit{centrum} van een ring is
+\[
+Z(R) = \{a \in R \mid ax = xa \forall x \in R\}.
+\]
+Dit is altijd een commutatieve deelring.
+\end{definitie}
+
+\begin{voorbeeld}
+De ring $\zz[i] = \{a + bi \mid a,b \in \zz\} \subset \cc$ is de ``ring van gehele getallen van Gauss'' met 1 en 0.
+Ook geldt voor $x= a + bi$ en $y = c + di$ dat
+\begin{itemize}
+\item $x + y = (a + c) + (b + d)i$
+\item $-x = -a -bi$
+\item $xy = (ac -bd) + (ad + bc)i$
+\end{itemize}
+Ofwel: $\zz[i]$ is commutatief en een deelring van $\cc$. Het is geen lichaam: sommgie elementen (bijv 2.) hebben geen inversen.
+\end{voorbeeld}
+
+\begin{voorbeeld}
+De ring $\qq[i] = \{a + bi \mid a,b \in \qq\} \subset \cc$ is wel een lichaam.
+\end{voorbeeld}
+
+\begin{voorbeeld}
+Als $m \in \zz$ geen kwadraat is, dan zijn $\zz[\sqrt{m}]$ een coummutatieve deeling en $\qq[\sqrt{m}]$ een lichaam.
+\end{voorbeeld}
+
+\section{Nuldelers}
+
+\begin{definitie}
+Een element $a \in R \setminus \{0\}$ heet een \textit{linkernuldeler} als er een $b \in R \setminus \{0\}$
+$ab = 0$. Evenzo heet $a \ne 0$ een \textit{rechternuldeler} als er een $c \in R \setminus \{0\}$
+$ac = 0$. We noemen $a$ een \textit{nuldeler} als het een linker- of rechternuldeler is.
+\end{definitie}
+
+\begin{definitie}
+Een \textit{nilpotent} element is een $a \in R \setminus \{0\}$ zo dat $a^n = 0$ voor zekere $n \in N$. Een nilpotent element is een nuldeler, zowel links als rechts.
+\end{definitie}
+
+\begin{definitie}
+Een element  $a \in R$ noemt men een \textit{idempotent element}, of \textit{idempotent}, als a 2 = a.
+Een idempotent element $a$ met $a \not \in \{0, 1\}$ is een nuldeler (zowel links als rechts),
+\end{definitie}
+
+\begin{stelling}
+Een ring heeft geen elementen die zowel nuldeler als eenheid zijn.
+\end{stelling}
+\begin{opmerking}
+In een niet comuutatieve ring kan een linksnuldeler geen rechtsnuldelerzijn, waar wel een linkseenheid.
+\end{opmerking}
+\begin{gevolg}
+Een delingsring heeft geen nuldelers.
+\end{gevolg}
+
+\clearpage
+\chapter{Domeinen}
+\section{Voorbereidende opgaves}
+\begin{itemize}
+\item $A= (\zz/2\zz, +, 0)$ heeft $\en(A) \cong \zz/2\zz$
+\item $A= (\zz/3\zz, +, 0)$ heeft $\en(A) \cong \zz/3\zz$
+\item $\ldots$
+\item $A= (\zz/k\zz, +, 0)$ heeft $\en(A) \cong \zz/k\zz$
+\end{itemize}
+
+\begin{proof}merk op dat $f(0) = 0$ (per definitie). Voor $\overline{m}$ geldt $f(\overline{m}) = f(1 + 1 \ldots 1) = f(1) +\ldots + f(1)$. Daarnast 
+\[
+\en (A) = \{f_i : 1 \to \i \mid i \in \zz/k\zz\} \cong \zz/k\zz
+\]
+\end{proof}
+
+\section{Vervolg stelling vorig college}
+\begin{theorem}
+Een linkernuldeler in een ring is geen rechtseenheid.
+\end{theorem}
+
+\begin{proof}
+Bewijs. Neem $a \in R$ een linkdernuldeler, met $b \in R \setminus \{0\}$ zodat $ab = 0$, en ook een rechtseenheid $c\in R$ zodat $ca = 1$. Dan 
+$$b = 1b = cab = c0 = 0 $$
+\end{proof}
+Analoog geldt een rechternuldeler in een ring is geen linkereenheid.
+
+\section{Domeinen}
+\begin{definitie}[Domein] 
+Een \textit{domein} is een communtateive ring met $1\ne 0$ zonder nuldelers.
+\end{definitie}
+
+\begin{remark}
+Alle lichamen zijn domeinen, net als $\zz$ en $\zz [\sqrt{n}]$.
+\end{remark}
+
+\begin{remark}
+$\mathbb{H}, \zz/n\zz$ (n niet priem), $M(n,\rr)$ zijn geen domeinen.
+\end{remark}
+
+\begin{theorem}[1.23]
+Zij $R$ een ring zonder nuldelers (bijv. een domein). Dan
+\begin{enumerate}
+\item Voor alle $a, b \in R$ geldt: ab = 0 $\iff a = 0 $ of $b = 0$,
+ 
+\item Voor alle $a, b, c \in R$ geldt: $ab = ac$ $\iff$ $a = 0$ of $b = c$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+\begin{enumerate}
+\item $\Longleftarrow$ volgt gelijk. $\implies$ als $ab =0$ en $a \ne 0 \ne b$, dan zijn $a$ en $b$ nuldelers. Dus een tegenspraak.
+\item $ab = ac \iff ab -ac =0 \iff a(b-c) = 0$. Uit (1) volgt $a = 0$ of $b-c =0 \iff b=c$.
+\end{enumerate}
+\end{proof}
+
+\section{Polynoomringen}
+Zij $R$ een ring. Een polynoom met co\"eficienten $a_i$ in $R$ is een uitdrukking van de vorm
+\[
+a_0 +a_1 X + a_2X^2 + \ldots + a_nX^n = \sum_{i=0}^{n}a_iX^n = \sum_{i=0}^{\infty}a_iX^n = R[X]
+\]
+waar $N \in \nn$ en $a_i \in R$. Claim: dit is een ring met 
+\[
+\sum_{i=0}^{\infty}a_iX^n + \sum_{i=0}^{\infty}b_iX^n = \sum_{i=0}^{\infty}(a_i + b_i)X^n
+\]
+en
+\[
+\sum_{i=0}^{\infty}a_iX^n \cdot \sum_{i=0}^{\infty}b_iX^n = \sum_{i=0}^{\infty}c_iX^n
+\]
+waar 
+\[
+c_i = \sum_{j+k=1}a_jb_k.
+\]
+Let op:
+\[
+\sum_{j+k=1}a_jb_k \ne \sum_{j+k=1}b_ja_k.
+\]
+Ook geldt
+\[0= \sum_{i=0}^{\infty}0X^n\]
+en 
+\[
+1 = 1 + \sum_{i=1}^{\infty}0X^n
+\]
+
+Een voorbeeld in $\cc[X]$:
+\[
+(i+X)(-i+X) = 1 + X^2.
+\]
+De \textit{constante coefficient} van $\sum_{i=0}^{\infty}a_iX^n$ is $a_0$
+De \textit{graad} is $\mathrm{deg}(f) = \mathrm{gr}(f)$ is hoogste $n$ zodat $a_n \ne 0$. We noemen dan $a_n$ de \textit{kopco\"fficient} van $f$. Als de kopco\"fficient 1 is, dan is $f$ \textit{monisch}. De graad van het nulpolynoom is $-\infty$. Als $\deg(f) \le 0$ (ofwel $f= a_0$), dan is $f$ \textit{constant}.
+
+\section{Polynomen in meerdere variabelen}
+Polynomen in meerdere variabelen worden inductief defefinieerd door
+$R[X,\ldots X_n] = (R[X,\ldots X_{n-}])[X_n]$. Een $f\in R[X,\ldots X_n]$ is  van de vorm
+
+\[
+\sum_{i_1 \ge 0, i_2 \ge 0, \ldots i_n \ge 0} = a_{i_1,i_2 \ldots, i_n} X_1^{i_1} \cdot X_2^{i_2} \ldots X_n^{i_n}
+\]
+of met multi-indexnotatie
+\[
+\sum_{I} a_IX^I
+\]
+met 
+\[
+X^I = X_1^{i_1} \cdot X_2^{i_2} \ldots X_n^{i_n}
+\]
+\begin{example}
+\textbf{Een linksnuldeler die een linkseenheid is}. Zij $R$ een nietcommuntatieve ring.
+Als inleiding bekijken we $A_n = (\rr^n, +, 0)$. Merk op dat elke lineraire afbeelding van $\rr^n \to \rr^n$ een groepshomomorphisme is. Dit laat zien dat $M(n,R) \subset \mathrm{end}(A_n)$
+
+Nu is het zo dan $M(n,R)$ een deelring van $\mathrm{End}(A_n)$ is. Omdat $M(n,R)$ niet communtetief, is $\mathrm{End}(A_n)$ dat ook niet.
+
+We bekijken nu vectoren van willekeurige lengte. Neem $A = \rr[X]^{+}$. Definieer $f,g,h \in \mathrm{End}(A)$:
+\begin{itemize}
+\item $f : a_0 +a_1 X + a_2X^2 + \ldots + a_nX^n \mapsto a_1 +a_2 X + a_3X^2 + \ldots + a_nX^{n-1} $
+\item $g : a_0 +a_1 X + a_2X^2 + \ldots + a_nX^n \mapsto a_0$
+\item $h : a_0 +a_1 X + a_2X^2 + \ldots + a_nX^n \mapsto a_0X +a_1 X^2 + a_2X^3 + \ldots + a_nX^{n+1}$
+\end{itemize}
+Nu is het zo dat 
+\begin{itemize}
+\item $fh = 1$, dus $f$ is een linkseenheid\footnote{Als je een polynoom opvat als rijtje, dan kun je zien dat $h$ het rijtje naar rechts verschuift en $f$ het rijtje naar links verschuift. Als je eerst naar rechts verschuift en dan weer naar link dan heb je uiteindelijk niks gedaan}.
+\item $fg = 0$, dus $f$ is een linkernuldeler.
+\end{itemize}
+\end{example}
+
+\section{Quoti\"entenlichaam}
+Het doel van een Quoti\"entenlichaam is uit een ring een lichaam construreren. Dit kennen wel al:
+\[
+\qq = \{ \frac{a}{b} \mid a, b \in \zz, b \ne 0\}
+\]
+
+Zij $R$ een domein en $S = R \setminus \{0\}$. Dan definieren we de equiavalentierelatie $\sim$ van $R$ op $S$.
+Namelijk
+\[
+(a,s) \sim (b,t) \iff at = bs.\footnote{In $\qq$ is dit logisch: $\frac{a}{b} = \frac{c}{d}  \iff ad = bc$. W}
+\]
+We laten transitivieit ziet, gezien dit niet triviaal is.
+Neem $(a,s \sim (b,t)$ en $(b,t) \sim (c,u)$, dus $at = bs$ en $bu = ct$. Nu volgt uit $at = bs$ dat $atu = bsu$ en uit 
+$bu = ct$ volgt dat $bus = cts$. R is een domein, dus $atu = bsu = bus = cts$.  Nu geldt:
+$0 = atu - cts = t(au -cs)$. We weten $t \ne 0$, dus wegens stelling 1.23 is het zo dat $au = cs$.
+
+Laat $Q(R) := (R \times S)/\sim$. We gebruiken de notatie $\frac{a}{s} := [(a,s)]$. Dus $Q(R) = \{ \frac{a}{s} \mid a,s \in R, s \ne 0\}$.
+
+We definieren $+$ en $\cdot$:
+\[
+\frac{a}{s} + \frac{b}{t} = \frac{at + bs}{st}
+\]
+en
+\[
+\frac{a}{s} \cdot \frac{b}{t} = \frac{ab}{st}
+\]
+Dit hangt niet af van de keuze van representanten.
+
+We nemen $(Q(R), +, \cdot, 0 = \frac{0}{1}, 1 = \frac{1}{1})$. Nu is dit een lichaam.
+
+Ook is $R$ een deelring van $Q(R)$. Neem $f : R \to Q(R) : r \mapsto \frac{r}{1}$ als injectieve afbeelding.  Dus kunnen we $R$ identificeren met het beeld/deelverzameling $\{\frac{r}{1} \mid r \in R\} \subset Q(R)$. Nu is het zo dat $\forall a,b \in R$ de optelling en vermenigvuldiging ``hetzelfde'' als in $Q(R)$: $\frac{a}{1} + \frac{b}{1} = \frac{a1 + b1}{1\cdot1} = \frac{a+b}{1}$ en $\frac{a}{1} \cdot \frac{b}{1} = \frac{ab}{1}$. Ergo: elk domein is een deelring.
+
+We noemen $R(X) := Q(R[X])$ het \textit{lichaam van rationale functies}.
+
+
+\chapter{Ringmorfismes}
+\begin{voorbeeld}
+\begin{enumerate}[label=(\alph*)]
+\item Laat $R$ een ring, $R' \subset R$ een deelring. De inclusiefabeelding $R' \to R$ is een ringhomomorfisme. Als $f : A \to B$ een ringhomomorfisme is, dan geldt dat $A \cong \mathrm{Im}(f) \subset B$. We kunnen $A$ dus beschouwen als deelring van $B$. Namelijk: laat $R$ een domein, als $R \to Q(R) : r \mapsto \frac{r}{1}$. Dit is injectief.
+ \item $\forall n \in \zz_{> 0}$ is de afbeelding $\zz \to \zz/n\zz : a \mapsto \overline{a}$ een ringhomomorfisme.
+ \item In $R = R_1 * R_2$ kan je  een ringhomomorfisme maken met de \textit{projectie}afbeelding $f : R \to R_1 : (a,b) \mapsto a$.
+ \item Laat $s \in R^*$. Dan is conjucatie met $\gamma_s : R \to R : r \mapsto srs^{-1}$ een ringhomomorfisme. Dan $\gamma_s(r + r') = s(r + r')s^{-1} = srs^{-1} + sr's^{-1} = \gamma_s(r) + \gamma_s(r')$ en $\gamma_s(rr') = s(rr')s^{-1} = srs^{-1}sr's^{-1} = \gamma_s(r)\gamma_s(r')$.
+\end{enumerate}
+\end{voorbeeld}
+
+
+\begin{opmerking}
+\begin{itemize}
+\item Als $R$ commutatief is, dan is $\gamma_s$ de indentiteit.
+\item Als $R = M(n,\rr)$ dan is $s$ een inverteerbare matrix. Dan corresnpondeert $\gamma_s$ met een basistranformatie.
+\end{itemize}
+\end{opmerking}
+
+\begin{definitie}
+$f : R_1 \to R_2$
+\begin{enumerate}
+\item Het \textit{Beeld} is de verzameling $\{f(x) \mid x \in R_2\} \subset R_2$
+\item De \textit{Kern} is de verzameling $\{x \in R_1 \mid f(x) = 0\} \subset R_1$
+\end{enumerate}
+\end{definitie}
+
+\begin{opmerking}
+$f(1) = 1$, dus $1 \not \in \mathrm{Ker}(f)$ tenzij $1 = 0$ in $R_2$. Dit impliceert dat $\mathrm{Ker}(f)$ op de triviale ring nooit een deelring is.
+\end{opmerking}
+
+
+\begin{opmerking}
+$\mathrm{Ker}(f) = \{0\} \iff f$ is injectief.
+\end{opmerking}
+
+\section{Idealen}
+Uit algebra 1 weten we dat kernen van groepshomomorfismen zijn normaaldelers. Nu gaan we zien dat kernen van ringhomomorfismen \textit{idealen} zijn.
+\begin{definitie}
+Een \textit{ideaal} $I$ van een ring $R$ is een deelverzameling $I \subset R$ zodat
+\begin{enumerate}[label=(I\arabic*)]
+\item $I$ is een ondergroep van $R^+$.
+\item $\forall r \in R, a \in I$ geldt dat $ra \in I$.
+\end{enumerate}
+\end{definitie}
+
+\begin{opmerking}
+Als $1 \in I$, dan $r 1 = r \in I$ voor alle $x$. Ergo: $I = R$.
+\end{opmerking}
+
+\begin{definitie}
+\begin{enumerate}[label=(\arabic*)]
+\item Een \textit{rechtsideaal} $I$ van een ring $R$ is een deelverzameling $I \subset R$ zodat
+\begin{enumerate}[label=(I\arabic*)]
+\item $I$ is een ondergroep van $R^+$.
+\item $\forall r \in R, a \in I$ geldt dat $ra, ar \in I$.
+\end{enumerate}
+\item Een \textit{rechtsideaal} $I$ van een ring $R$ is een deelverzameling $I \subset R$ zodat
+\begin{enumerate}[label=(I\arabic*)]
+\item $I$ is een ondergroep van $R^+$.
+\item $\forall r \in R, a \in I$ geldt dat $ar \in I$.
+\end{enumerate}
+\end{enumerate}
+\end{definitie}
+
+\begin{voorbeeld}
+Neem $n \in \zz$. Dan is $n\zz = \{nx \mid x\in \zz\}$ een ideaal van $\zz$.
+\end{voorbeeld}
+
+\begin{stelling}
+[Kernen zijn idealen] De kern van een ringhomomorfisme $f : R_1 \to R_2$ is een ideaal van $R_1$
+\end{stelling}
+\begin{bewijs}
+\begin{enumerate}[label=(I\arabic*)]
+\item $I$ is een ondergroep van $R^+$: dit is bewezen in Algebra 1.
+\item $\forall r \in R, a \in I$ geldt dat $ar \in I$. Er geldt: $f(ra) = f(r)f(a) = f(r)0 = 0$, dus $ra \in \mathrm{ker}(f)$.
+\end{enumerate}
+\end{bewijs}
+
+\begin{voorbeeld}
+$\mathrm{ker}(f : \zz \to \zz/n\zz : a \mapsto \overline{a}) = n \zz$
+\end{voorbeeld}
+
+\section{Voorgebrachte ideaalen en hoofdideaalen}
+
+\begin{definitie}
+$R$ ring, $a_i \in R$ voor alle i. Stel $R$ comuutatief. Het ideaal \textit{voorgebracht} door $a_i$, $0 < i \le 1$ is 
+\[
+\sum_{i=1}^n Ra_i = \{ \sum_{i=1}^n ra_i \mid r \in R\} =: (a_1, \ldots a_n)
+\]
+\end{definitie}
+
+\begin{opmerking}
+Als $R$ niet comuutatief is, dan geeft de vorige definitie een linksideaal.
+\end{opmerking}
+
+\begin{voorbeeld}
+Bekijk $(4, 6) \in \zz$. Dit is $(4, 6)= \{m4 + n6 \mid m, n \in zz\}$. Dit is $2\zz$. 
+\end{voorbeeld}
+
+\begin{definitie}
+Als een ideaal door \'e\'en element kan worden voortgebracht, heeft het een \textit{hoofdideaal}.
+\end{definitie}
+
+\begin{voorbeeld}
+Het ideaal $(2,1+i) \subset \zz[i]$ is een hoofdideaal met voorbrenger $(1+i)$. 
+\end{voorbeeld}
+
+\begin{opmerking}
+$I = Ra_i \ldots + Ra_n$ is het kleinste ideaal wat  $a_i, \ldots, a_n$  bevat.
+\end{opmerking}
+
+\begin{voorbeeld}
+Het ideaal $(x,y) \subset \rr[x,y]$ is geen hoofdideaal.
+\end{voorbeeld}
+
+\begin{definitie}
+Voor $f = \sum_{i,j > 0} a_{i,j}x^iy^j \in R[x,y]$ is de \textit{graad in x} als $gr_x(f) = \max\{m \in z_{\ge 0} \mid \exists i,j $ met $ a_{i,j} \ne 0 $ en $i = m\}$. Analoog definiteren we $gr_y(f)$
+\end{definitie}
+\begin{bewijs}
+Stel dat $f\in \rr[x,y]$ het ideaal $(x,y)$ voorbrengt. Dan zijn $X$, $Y$ veevlouden van $g$, zeg $X = f_i g$ en $Y = f_2 g$. Dan geldt:
+\begin{itemize}
+\item  De enige ideaalen van een deelring $R$ zijn $\{0\}$ en $R$.
+$g, f_1, f_2$ niet nul
+\item $0 = gr_y(x) = gr_y(f_1g) = gr_y(f_1) + gr(y)(g) \implies gr(y)(g) = 0$.
+\item Analoog: $gr(x)(g) = 0$.
+\end{itemize}
+Maar $(x,y) = \{aX + bY \mid a,b \in \rr[x]\}$ bevat enkel (naast nul) elementen elemeten $f$ waarvoor geldt $gr_x(f) \ge 1$ of $gr_y(f) \ge 1$. Dit is een tegenspraak.
+\end{bewijs}
+
+\begin{gevolg}
+De enige ideaalen van een deelring $R$ zijn $\{0\}$ en $R$.
+\end{gevolg}
+
+\begin{gevolg}
+Elk ringhomomorfisme van $f: K \to R$ van een lichaam $K$ naar ring $R \ne \{0\}$ is injectief.
+\end{gevolg}
+
+\begin{bewijs}
+$\mathrm{ker}(f)$ is een ideaal van een delingsring. Dus $\mathrm{ker}(f) = \{0\}$  of  $\mathrm{ker}(f) = \{K\}$. Dit tweede kan niet: $R \ne \{0\}$ dus $1 \not \in \mathrm{ker}(f)$. Nu gelt  $\mathrm{ker}(f) = \{0\}$, en daarmee is $f$ injectief.
+\end{bewijs}
+
+\section{Uitdelen naar ideealen}
+Idealen hebben te maken met quotienten.
+
+Zij $R$ een ring, $I \subset R$ een ideaal. Dan is $I$ een ondergroep van $R^+$ per definitie. $I$ is automatisch een normaaldeler, want $R^+$ is abels.
+
+Nu kunnen we \textit{uitdelen}: 
+\[R/I = (\{a + I = \overline{a} \mid a \in R \},+, \overline{0})\]
+is een groep. Hiermee kunnen we een ring maken:
+definieer $\cdot : R/I \times R/I \to R/I : \overline{a} \cdot \overline{b} \mapsto \overline{ab}$
+
+Merk op: het maak niet uit welke representanten we kiezen.
+Als $\overline{a} = \overline{a'}$ en $\overline{b} = \overline{b'}$, dan
+$$ ab - a'b' = a(b-b') + (a - a')b' \in I$$
+want $(b-b'), (a-a') \in I$.
+
+Nu is het makkelijk te zien dat $(R/I, +, \overline{0}, \cdot, \overline{1})$ een ring is.
+
+\begin{opmerking}
+Als $R$ commutatief is, dan is $R/I$ ook commutatief.
+\end{opmerking}
+
+\begin{voorbeeld}
+Neem $R=\zz$ met het ideaal $n\zz$. Bekijk $R/I = \zz/n\zz$. Nu heeft $R/I$ wel nuldelers, terwijl $R$ dit niet heeft. Dit in tegenstelling tot deelringen.
+\end{voorbeeld}
+
+\begin{stelling}
+Laat $R$ een ring zijn en $I$ een ideaal van $R$. Dan is de natuurlijke afbeelding $\phi : R \to R/I$
+een surjectief ringhomomorfisme met $\ker(\phi) = I$.
+\end{stelling}
+
+\begin{bewijs}
+Het volgt dat $\phi$ een surjectief groepshomomorfisme is, weten we al uit algebra 1.
+Ook is het zo dat $\phi(1) = \overline{1}$ en $\phi(ab) = \overline{ab} = \overline{a}\overline{b} = \phi(a)\phi(b)$. 
+\end{bewijs}
+
+\begin{gevolg}
+Zij $R$ een ring. $I$ is een ideaal van $R$ $\iff$ $I$ is de kern van een ringhomomorfisme. 
+\end{gevolg}
+
+\section{Evaluatieafbeelding}
+\begin{stelling}
+Laat $R$ een commutatieve ring zijn en $\alpha \in R.$ Dan is de afbeelding
+$$\Phi_{\alpha} : R[X] \to R, $$
+ gegeven door 
+ $$\Phi_{\alpha}(\sum b_iX^i) \mapsto \sum b_i{\alpha}^i$$
+een surjectief ringhomomorfisme. 
+(Merk op dat $\Phi_{\alpha} (f ) = f (\alpha)$.) 
+Bovendien geldt:
+
+$$\ker(\Phi_{\alpha} ) = (X - \alpha) = \{(X - \alpha)f \mid  f \in R[X]\}$$.
+\end{stelling}
+
+\begin{voorbeeld}
+Niet alle idealen zijn hoofdidealen, zoals we al in 2.12 hebben gezien, en zoals ook
+het volgende voorbeeld laat zien. Laat $R = \zz[X]$ en zij $I \subset R$ gedefnieerd door
+
+$$I = \{f \in Z[X] f (0) \text{ is even}\} = \{a_0 + a_1 X + \ldots + a_n X^n \in \zz[X] \mid a_0 \in 2\zz \}$$.
+
+Om te bewijzen dat $I$ een ideaal is van $\zz[X]$ kan men bijvoorbeeld opmerken dat $I$ de kern is van het
+samengestelde ringhomomorfisme
+$$ \zz[X] \to \zz \to \zz/2\zz$$
+en de Stelling toepassen.
+
+Stel dat I een hoofdideaal is: $I = (g) = \zz[X] \cdot g$ met $g \in \zz[X]$. Uit $2 \in I = (g)$ volgt dan dat
+$2 = h \cdot g$ voor een zekere $h \in \zz[X]$. Kijken we naar de graden van deze polynomen, dan zien we dat
+dit alleen kan als $h$ en $g$ constanten in $\zz$ zijn, dus $g = \pm 1$ of $\pm 2$. 
+
+Ook is $X \in I = (g)$, maar dit is voor $g = \pm 2$ onmogelijk. Dus $g = \pm 1$. Uit de definitie van $I$ blijkt echter dat $\pm 1 \not \in I$, een tegenspraak.
+
+We concluderen dat $I$ geen hoofdideaal is.
+\end{voorbeeld}
+
+
+\chapter{Isomorfiestellingen, Chinese reststelling}
+\section{Voorbereidende opgave}
+Welke getallen horen er op de open plaatsen?
+\begin{itemize}
+\item $14\zz + 15\zz = ??\zz$
+\item $6\zz \cap 15\zz = ??\zz$
+\item $14\zz \cdot 6\zz = ??\zz$
+\end{itemize}
+Getallen die voldoen
+\begin{itemize}
+\item $14\zz + 15\zz = \zz$ (grootste gemene deler)
+\item $6\zz \cap 15\zz = 30\zz$ (kleinste gemeenschappelijk veelvoud)
+\item $14\zz \cdot 6\zz = 84\zz$ ()
+\end{itemize}
+
+\begin{voorbeeld}
+Er geldt voor twee idealen $I,J$:
+\[
+(I+J)(I \cap J) \subset (IJ)+(JI)
+\]
+Bekijk de linker kant. Dit zijn elementen in de vorm $(x+y)z$ waar $x \in I, y \in J, z \in I \cap J$.
+\[
+(x+y)z = xz+yz  \mid xz \in IJ , yz \in JI
+\]
+\end{voorbeeld}
+
+\begin{voorbeeld}
+Bekijk nu $R=\zz$. De idealen in $\zz$ zijn hoofdidealen, dus $I = a\zz, J=b\zz$
+\[
+(a\zz+b\zz)(a\zz \cap b\zz) \subset (a\zz b\zz)+(b\zz a\zz)
+\]
+Uit het voorbeeld hierboven volgt:
+\[
+(\ggd{}(a,b) \zz)(\kgv(a,b) \zz) \subset ab\zz + ab\zz
+\]
+\[
+ab\zz  = ab\zz
+\]
+\end{voorbeeld}
+
+\section{Vervolg evaluatieafbeelding}
+
+\begin{bewijs}
+Dat $\Phi_{\alpha}$ een ringhomorfisme is, is eenvoudig na te rekenen; merk op dat we nodig hebben dat $R$
+commutatief is! 
+
+Duidelijk is verder dat $\Phi_{\alpha}$ surjectief is, want een element $a \in R$ is het beeld onder $\Phi_{\alpha}$
+van het constante polynoom $a$.
+
+We bewijzen nu dat $\ker(\Phi_{\alpha} ) = (X - \alpha)$. 
+
+Voor '$\supset$`: Er geldt $\Phi_{\alpha} (X - \alpha) = \alpha - \alpha = 0$, dus
+$X - \alpha \in \ker(\Phi_{\alpha})$, en omdat $\ker(\Phi_{\alpha} )$ een ideaal is geldt dan ook $R[X](X - \alpha) \subset \ker(\Phi_{\alpha} )$.
+%n
+%P
+%P
+Voor  '$\subset$; Stel dat $f =\sum a_i X^i \in \ker(\Phi_{\alpha} )$, dan geldt $\sum a_i \alpha^i = 0$, dus
+$$
+f = \sum a_i X^i  = \sum a_i X^i - \sum a_i \alpha^i = \sum a_i (X^i - \alpha^i) = \sum a_i b (X-\alpha)
+$$
+ Hiermee is 2.13 bewezen.
+\end{bewijs}
+
+\begin{voorbeeld} We behandelen enkele voorbeelden.
+\begin{enumerate}
+\item $\Phi_0 : \rr[X] \to \rr : f \to f(0)$.
+Dit geeft $\ker \Phi_0 = \{\sum a_i X^i \mid a_0 = 0\}  = \{X \sum a_i X^{i-1} \mid a_0 = 0\} = \{Xg \mid g \in \rr[x]\} = (X) = (X - 0)$ zoals de stelling ons vertelde.
+\item Bekijk $\rr[X,Y] = (\rr[X])[Y]$. Nu is er voor elke coefficient uit $\rr[X]$ ook een evaluatieafbeelding. 
+$$\Phi_f : R[X,Y] \to R[X] : F_{X,Y} \mapsto F_{X,f(x)}.$$ Wegens de stelling:
+$$ \ker (\Phi_f) = (Y - f(x)) \subset \rr[X,Y]$$
+\end{enumerate}
+\end{voorbeeld}
+
+\section{Stellingen uit Algbra 1}
+\begin{stelling}[Homomorfiestelling voor ringen]
+Zij $f : R_1 \to R_2$ een ringhomomorfisme, $I \subset R$ een ideaal met $I \subset \ker(f)$ en $\Phi : R_1 \to R_1/I$ het kanonieke ringhomomorfisme. Dan is er precies \'e\'en ringhomomorfisme $g : R_1/I \to R_2$ zodat $g \circ \Phi = f$. Bovendien geldt $\ker g = \phi(\ker(f))$
+\end{stelling}
+
+\begin{bewijs}
+Uit Algebra 1 weten we dat er een uniek \underline{groeps}homomorfisme is $g : (R_1/I)^+ \to R_2^+$ met $g \circ \Phi = f$ en $\ker(g) = \phi(\ker(f))$. Nu gaan we aantonen dat $g$ een ringhomomorfisme is.
+Voor $a \in R_1$ schrijven we $\overline{a} = \phi(a) \in R_1/I$
+\[
+g(\overline{1}) = g(\phi(1)) = f(1) = 1
+\]
+en dan 
+\[
+g(\overline{a}\cdot\overline{b}) = g(\overline{ab}) = g(\phi(\overline{a})) = f(\overline{ab}) = f(a)f(b) = g(\phi(a))g(\phi(b)) = g(\overline{a})\cdot g(\overline{b})).
+\]
+\end{bewijs}
+
+\begin{stelling}[Eerste isomorfiestelling voor ringen]
+Zij $f : R_1 \to R_2$ een ringhomomorfisme. Dan is er een isomorfisme van ringen 
+\[
+R_1/\ker(f) \to f(R_2) : \overline{a} = a + \ker(f) \to f(a)
+\]
+In het bijzonder geldt er  als $f$ surjectief is, dat 
+\[
+R_1/\ker(f) \cong R_2
+\]
+\end{stelling}
+
+\begin{bewijs}
+Gebruik de homomorfiestelling met $\ker(f) = I$ en $\phi R_1 \to R_1/\ker(f)$.
+Dus er is  een ringhomomorfisme zodat
+\[
+g: R_1/\ker(f) \to R_2
+\]
+met $f = \phi \circ g$ en $\ker(g) = \phi(\ker(f)) = \{\overline{0}\}$. Dus is $g$ injectief.
+
+Omdat $\phi$ surjectief is, geldt $g(R_1/\ker(f)) = g(\phi(R_1)) = f(R_1)$. Nu geldt dat
+\[
+g : R_1/\ker(f) \to f(R_1)
+\]
+een bijectief ringhomomorfisme is.
+\end{bewijs}
+
+
+\begin{voorbeeld}
+Definieer 
+\[
+\phi : R[X] \to \cc : f \mapsto f(i).
+\]
+We beweren dat $\phi$ surjectief is: als $z = a+bi \in \cc$, dan is er een $f = a + bX$ zodat $\phi(f) = z$. Uit opgave 37 weten we dat $\ker \phi = (X^2 + 1)$. We passen de eerste isomorfiestelling toe. $$\rr[X]/(X^2+1) \cong \cc$$
+\end{voorbeeld}
+\begin{voorbeeld}
+Bekijk
+\[
+f : \zz[i] \to \mathbb{F}_2 : a + bi \mapsto \overline{a} +  \overline{b}
+\]
+met kern $(2, i+1) = (i+1)$ (zie opgave 2.10). We passen de eerste isomorfiestelling toe.
+ $$\zz[i]/(i+1) \cong \mathbb{F}_2 $$
+\end{voorbeeld}
+\begin{voorbeeld}[Evalutaieafbeelding]
+Neem $a \in R$, dan geldt $R[X]/(X-a) \cong \rr$.˙
+\end{voorbeeld}
+
+\begin{voorbeeld}
+Idealen voorgebracht door constanten. Neem het ideaal $I$ van de commutatieve ring $R$. Dan $\rr[X] \supset \rr[X]\cdot I$ met $I[X] := \{ \sum a_i X^i \in \rr[X] \mid a_i \in I\}$. De claim is dat $R[X]/I[X] \cong (R/I)[X]$.
+ 
+\textit{Bewijs. } Definieer de afbeelding $\rr[X] \to (R/I)[X] : \sum a_i X^i \mapsto \sum \overline{a_i} X^i$. Dit is zeker surjectief, en ook is het makkelijk te zine dat het een surjectief ringhomomorfisme is. De kern is $I[X]$. Nu zijn we met de eerste isomorfiestelling klaar.
+\end{voorbeeld}
+
+\begin{stelling}[derde isomofiestelling voor ringen]
+Zij $R$ een ring met ideaal $I$ en zij $\phi : R \to R/I$. Dan
+\begin{enumerate}[label=(\roman*)]
+\item Als $J$ ook een ideaal is met $I \subset J$, dan is $J/I = \phi(J)$ een ideaal van $R/I$. Bovendien is elk ideaal van $R/I$ van deze vorm.
+\item Er geldt $(R/I)/(J/I) \cong R/J$.
+\end{enumerate}
+\end{stelling}
+\begin{bewijs}
+Bewijs zoals bij Algebra 1.
+\end{bewijs}
+
+\begin{voorbeeld}
+Zij $I$ een hoofdideaal voortgebracht door $(a)$ en zij $J$ het ideaal voortgebracht door $(a,b)$. Dan geldt dat $I \subset J$. Noem $\overline{R} = R/(a)$ en $\overline{b} = b + (a)$ het beeld van b in $\overline{R}$. 
+
+Beijk $\overline{R} \supset J/I = (a,b)/(a)= (\overline{b}) $ en per derde isomofiestelling $\overline{R}/(\overline{b}) = R/(a,b)$. 
+\end{voorbeeld}
+\begin{opmerking}
+Neem $a,b,c \in R$. Bekijk $(a,b)$. Dan is dit hezelfde als $(a, b+ca)$.
+\end{opmerking}
+\begin{voorbeeld}
+Gegeven $I=(X+Y, X^2 +X  + Y + 1) \subset \rr[X,Y]$. Wat is $\rr[X,Y]/I$?
+
+Er geldt: $(X+Y, X^2 +X  + Y + 1) = (X+Y, X^2 + 1)$. Dus $\rr[X,Y]/I = \rr[X,Y]/(X+Y, X^2 + 1) \cong (\rr[X,Y]/(X+Y))/(\overline{X^2 + 1})$. We weten uit 2.30 dat $(\rr[X])[Y]/(Y-(-X) \cong \rr[X]$. Dus 
+$(\rr[X,Y]/(X+Y))/(\overline{X^2 + 1}) \cong \rr[X]/(\overline{X^2 + 1}) \cong \cc$.
+\end{voorbeeld}
+
+\begin{stelling}[Chineese reststelling voor ringen]
+Zij $R$ een commutatieve ring. Neem $I,J$ onderling ondeelbare idealen; ofwel $I+J = R$. Dan geldt
+\begin{enumerate}[label=(\roman*)]
+\item $I \cap J = I\cdot J$
+\item $R/I\cdot J \cong R/I \cdot R/J$
+\end{enumerate}
+\end{stelling}
+\begin{bewijs}
+\begin{enumerate}[label=(\roman*)]
+\item $I \cap J = I\cdot J$ bewijzen we met twee inclusies. $I \cdot J \subset I \cap J$ is altijd waar. We tonen nog aan $I \cdot J \supset I \cap J$: neem $x \in I, y \in J$ z.d.d $x + y = 1$. Dit kan, want $I\cdot J = R$. Neem $z \in I \cap J$. Dan $z = z*1 = z(x+y) = zx + zy \in (I\cdot J)$
+\item Voor $R/I\cdot J \cong R/I \cdot R/J$ gebruiken we de 1e isomorfiestelling. Neem $\xi : R \to R/I$ en $\psi :  R \to R/J$. Laat vervolgens $\phi R \to R/I \times R/J :  x \mapsto (\xi(x), \psi(x))$ een ringhomomorfisme zijn. Claim $\phi$ is surjectief met kern $I \cdot J$. Nu volgt de stelling met de 1e isomorfiestelling.
+\end{enumerate}
+\end{bewijs}
+
+\begin{gevolg}
+Zij $m,n \in \zz$ zodat $\gcd (m,n) = 1$. Dan geldt dat $m\zz + n\zz = \zz$. Er is een ringisomorfisem $\zz/mn\zz \cong \zz/m\zz \times \zz/n\zz$
+\end{gevolg}
+
+\begin{voorbeeld}
+Neem $R = \qq[X], I= (X-1), J =(X+1)$. Er geldt dat $1 \in I + J$, want $1 = -\frac{1}{2}(X-1) + \frac{1}{2}(X+1) \in I+J$. Daarnee zijn $I, J$ onderling ondeelbaar. 
+
+$I\cdot J = (X-1)(X+1) = ((X-1)(X+1))$ wegegens voorbeeld 2.35. Met de Chineese reststelling hebben we dat
+$$\qq[X]/IJ \cong \qq[X]/I \times \qq[X]/J \cong \qq \times \qq $$
+\end{voorbeeld}
+
+\begin{voorbeeld}
+We weten dat 
+\[
+\qq[X]/(X^2+1) \cong \qq \times \qq.
+\]
+Geldt het dat
+\[
+\qq[X]/(X^p+1) \cong \qq^p?
+\]
+Nee, bekijk
+\[
+\qq[X]/(X^4+1) \cong \qq[X]/(X^2-1) \times \qq[X]/(X^2+1) \cong \qq \times \qq \times \qq[i]
+\]
+\end{voorbeeld}
+\part{Algebra 2}
+
+\chapter{Nulpunten van polynomen}
+
+\section{Delen met rest over polynomen}
+\begin{stelling}
+\label{stelling:3c1}
+Zij $R$ een ring, en $f , g \in R[X]$. Neem aan dat $g \ne 0$ en dat de kopcoëfficiënt van $g$ een
+eenheid van $R$ is. Dan bestaan er unieke $q, r \in R[X]$ zodanig dat
+$$f = qg + r \text{ en } r = 0 \text{ of } gr(r) < gr(g)$$
+Men noemt $q$ en $r$ het quotiënt en de rest bij de deling door $g$. Indien we de conventie aanhouden
+dat het nulpolynoom graad $-\infty$ heeft, dan hoeven we de mogelijk dat $r = 0$ niet apart te vermelden.
+\end{stelling}
+
+\begin{bewijs}
+We gaan eerst de existentie van $q$ en $r$ bewijzen.
+Laat $n = gr(f)$ en $m = gr(g) \ge 0$. 
+We voeren het bewijs, bij vaste $g$, met inductie naar $n$.
+
+Als $n < m$ dan kunnen we $q = 0$ en $r = f$ nemen; dit geval is het begin van de inductie.
+
+Laat nu $n \ge m$. Zij $a$ de kopcoëfficiënt van $f$, en $b$ de kopcoëfficiënt van $g$. Er is gegeven dat $b$ een eenheid is, dus
+er is een $c \in R$ zodat $cb = bc = 1$. Het polynoom $acX^{n-m} \cdot g$ heeft dan graad $n$ en kopcoëfficiënt $a \cdot cb = a$. Hieruit volgt dat
+$f_1 = f - acX^{n-m} \cdot g$ een graad heeft die kleiner dan $n$ is; de $n$-de graads termen vallen immers tegen elkaar weg. We kunnen
+op $f_1$ nu de inductiehypothese toepassen (de stelling geld voor polynomen graad kleiner dan $n$), en we vinden dat er $q_1 , r_1 \in R[X]$ bestaan met:
+$f_1 = q_1 g + r_1$
+en $r_1 = 0$ of $gr(r_1 ) < gr(g)$.
+Er geldt dus:
+
+$$f = f 1 + acX^{n-m} g = acX^{n-m} + q 1 \cdot g + r 1.$$
+Laat nu $q = acX^{n-m} + q_1$ en $r = r_1$ , dan hebben we:
+$f = qg + r$ ,
+$r = 0$ of $gr(r) < gr(g)$,
+zoals verlangd.
+
+
+Nu bewijzen we de uniciteit van $q$ en $r$. Stel dat ook $f = q_0 g + r_0$ en dat $r_0 = 0$ of $gr(r_0 ) < gr(g)$.
+Dan hebben we:
+$(q - q_0 )g = r_0 - r$.
+De graad van het rechterlid is kleiner dan $gr(g)$. Zou nu $q \ne q_0 $, dan was de graad van de linkerkant groter dan of gelijk aan $gr(g)$, aangezien de kopcoëfficient van $g$ een eenheid is. Dit levert een tegenspraak, dus moet wel $q = q_0$ , en dan ook $r_0 - r = 0$ dus $r = r_0$.
+
+Hiermee is de stelling bewezen.
+\end{bewijs}
+
+\begin{voorbeeld}
+Zij $R$ een domein en laat $\phi : \rr[X,Y] \to R[T] : f \mapsto f(T^3,T^7)$.
+Dit is een ringhomomorfisme. We willen de $\ker(\phi)$ vinden. We weten zeker
+$X^7 - Y^3 \in \ker(\phi)$\footnote{$\phi(X^7 - Y^3) = T^{7^3} - T^{7^3} = T^{21} -T^{21} = 0$.}. We claimen dat $\ker(\phi) = (X^7 - Y^3)$.
+\begin{bewijs}
+Zij $f \in \ker(\phi) \subset (R[X])[Y]$. Laat $g: Y^7 - Y^3$. De kopcoëfficient van $g$ als element van $(R[X])[Y]$ is $-1 \in R[X]^*$. Wegens \autoref{stelling:3c1} geldt dat er $q, r \in (R[X])[Y]$ zodanig dat $f = qg + r$, en $r=0$ of $gr_y(r) < gr_y(g) = 3$. Dus  $r = f_0 + f_1Y + f_2Y^2$ voor zeker $f_0,f_1,f_2 \in R[X]$.
+
+We bekijken nogmaals $0 = \phi(f) = \phi(q)\phi(g) + \phi(r)=\phi(q)0 + \phi(r) = \phi(r) = f_0(T^3) + f_1(T^3)T^7 +f_2(T^3)T^14$. Hieruit volgt dat alle coeffeicienten nul zijn. Merk op dat $f_0(T^3)$ een som van termen $a_iT^i, i \equiv 0 \mod 3$, $f_1(T^3)T^7$ een som van termen $a_iT^i,i \equiv 10\equiv1 \mod 3$ en zo ook  $f_2(T^3)T^14$ een som van termen $a_iT^i,i \equiv 17\equiv 2 \mod 3$. Hierdoor kunnen deze termen niet tegen elkaar wegvallen, en moeten ze allemaal gelijk zijn aan 0. 
+
+Er volgt: $r = 0$, dus $f = qg$ en daarmee $f \in ( Y^7 - Y^3)$.
+\end{bewijs}
+\end{voorbeeld}
+
+\begin{gevolg}
+Als $K$ een lichaam is, dan is ieder ideaal van $K[X]$ een hoofdideaal.
+\end{gevolg}
+\begin{bewijs}
+Zij $K$ een lichaam en $I \subset K[X]$ een ideaal. We zoeken een $x \in K[X]$ zodat $I = (x)$. Als
+$I = \{0\}$, dan $x=0$. Als $I= K[X]$, dan $x=1$. In andere gevallen nemen we we een element $0 \ne x \in I$ van minimale graad. Nu is het zo dat $x$ het ideaal voortbrengt:
+\begin{itemize}
+\item $K[X]\cdot g \subset I$ is altijd waar per definitie van een ideaal.
+\item Voor $K[X]\cdot g \supset I$ nemen we een willekeurig element $f \in I$. Gezien $K$ een lichaam is, is de kopcoëfficiënt een eenheid. Dus weten we per \autoref{stelling:3c1} dat $\exists! q,r \in K[X]$ zodat $f=qg+r$ en $r=0$ of $gr(r) < gr(g)$. We willen laten zien dat dit laatste niet kan.
+
+We weten dat $r= f-gh \in I$, dus $gr(r) \ge gr(g)$, waarmee $r= 0$ en $f=qg$. Dan $f\in (g)$.
+\end{itemize}
+\end{bewijs}
+
+\begin{stelling}
+\label{stelling:3c5}
+Zij $R$ een commutatieve ring, $\alpha \in R$ en $f\in R[X]$. Dan is er een $q \in R[X]$ zodat
+$$ f = q(X-\alpha) + f(\alpha).$$
+\end{stelling}
+
+\begin{bewijs}
+
+Gebruik \autoref{stelling:3c1} met $g = X -\alpha$ en merk op dat $gr(r) < 1$ impliceert dar $r \in \{0,1\} \subset R[X]$.
+\end{bewijs}
+
+\begin{definitie}
+Zij $R$ een ring, $f  =\sum_{i=1}^n a_iX^i \in R[X]$. Dan noemen we $\alpha$ een \textit{nulpunt} van $f$ als $f(\alpha) = 0$.
+\end{definitie}
+
+\begin{stelling}
+\label{stelling:3c6}
+Zij $R$ een domein, $f\in R[X]$ en $\alpha_1, \alpha_2, \ldots \alpha_n \in R$ $n$ nulpunten van $f$ zijn. Dan is er een $q \in R[X]$ zodat $f = q(X-\alpha_1)(X-\alpha_2)\ldots (X-\alpha_n)$
+\end{stelling}
+
+\begin{bewijs}
+We gaan inductie doen naar $n$. Als $n=1$, volgt dit uit \autoref{stelling:3c1}. 
+
+Als $n \> 1$. dam os er wegens \autoref{stelling:3c1} een $f_1 \in R[X]$ zodat 
+\begin{equation}
+\label{eq:51}
+f = f_1(x-\alpha_n).
+\end{equation} Als we nu voor $i = 1,\ldots, n-1$ de subsitutie van $\alpha_i$ in \autoref{eq:51} doen, dan geldt
+\[
+0 = f(\alpha_i) = f_1(\alpha_i)(\alpha_i - \alpha_n).
+\]
+Gezien $\alpha_i - \alpha_n \ne 0$, volgt dat $f_1(\alpha_i) = 0$.
+
+Wegens de inductiehypothese is er een $q$ zodat $f_1 = q(x-\alpha_1)(x-\alpha_2)\ldots(x-\alpha_{n-1})$
+en daarmee
+\[
+f = q(x-\alpha_1)(x-\alpha_2)\ldots(x-\alpha_{n-1})(x-\alpha_{n})
+\]
+\end{bewijs}
+
+\begin{stelling}
+\label{stelling:3c7}
+Zij $R$ een domein, en $f \in R[X]$ een polynoom ongelijk aan nul. Dan is het aantal
+onderling verschillende nulpunten van $f$ in $R$ ten hoogste gelijk aan $gr(f )$.
+\end{stelling}
+\begin{bewijs}
+ Dit volgt uit \autoref{stelling:3c6}, want als $\alpha_1 , . . . , \alpha_n$ verschillende nulpunten zijn van f dan is $f =
+q \cdot (X - \alpha 1 ) . . . (X - \alpha_n )$. Dit geeft $gr(f ) = gr(q) + n$, dus $gr(f ) \ge n$.\end{bewijs}
+
+\begin{opmerking}
+De eis in \autoref{stelling:3c7} dat $R$ een domein is, is essentieel. Het polynoom $X^2 -1$ in $(\zz/8\zz)[X]$
+van graad 2 heeft 4 nulpunten in $Z/8Z$ en $X^2 + 1 \in H[X]$ heeft zelfs oneindig veel nulpunten in H. De ringen $\zz/8\zz$ en H zijn dan ook geen domeinen: $\zz/8\zz$ heeft nuldelers en H is niet
+commutatief.
+\end{opmerking}
+
+\section{Dubbele nulpunten en afgeleides}
+\begin{opmerking}
+Het is ook gemakkelijk in te zien dat er polynomen waarbij er minder dan $n$ nulpunten zijn. Bekijk $(X-\alpha)^d$, $X^2 + 1 \in R[X]$.
+\end{opmerking}
+
+\begin{definitie}
+Zij $R$ een domein, $f\in R[X] \setminus \{0\}, \alpha \in R$ een nulpunt. We noemen $\alpha$ een \textit{meervoudig nulpunt} als in de schrijfwijze $f=q(X-\alpha)$ geldt $q(\alpha) = 0$. 
+\end{definitie}
+
+\begin{definitie}
+Zij $R$ een domein, $f\in R[X]$. De \textit{afgeleide} van $f =\sum_{i=1}^n a_iX^i$ 
+is
+\[
+f' = \sum_{i=1}^n i a_iX^{i-1}
+\] 
+\end{definitie}
+
+\begin{lemma}Zij $R$ een commutatieve ring. Dan geldt
+\begin{enumerate}[label=(\roman*)]
+\item $(f+g)' = f' + g'$;
+\item $(cf)' = cf'$;
+\item $(fg)' = fg'+ gf'$.
+\end{enumerate}
+\end{lemma}
+
+\begin{stelling}
+Zij $R$ een commutatieve ring, $f\in R[X]$. Dan is $\alpha$ een dubbel nulpunt van $f$ $\iff$ $\alpha$ is een nulpunt van $f'$.
+\end{stelling}
+
+\begin{bewijs}
+Zij $f  = q(X-\alpha)$. Dan geldt
+\[
+f' = (q(X-\alpha)' = q(X-\alpha)' + q'(X-\alpha) = q + q'(X-\alpha) \implies f'(\alpha) = q(\alpha).
+\]
+We hebben dan dat
+\[
+f'(\alpha) = 0 \iff q(\alpha) = 0 \iff \alpha \text{ is een dubbel nulpunt van $f$}
+\]
+\end{bewijs}
+\begin{stelling}
+\label{stelling:3c10}
+Zij $p$ priem. In $\mathbb{F}_p[X]$ geldt
+\[
+\prod_{a\in \mathbb{F}_p} (X-a) = X^p -X
+\]
+\end{stelling}
+\begin{bewijs}
+Voor alle $a \in \mathbb{F}_p$ geldt dat $a^P = a$ wegens de kleine stelling van Fermat. Dan zijn alle $p$ elementen van $\mathbb{F}_p$ nulpunten van$X^p-X$. Daarnaast is $\mathbb{F}_p$ een domein; daarmee zijn er niet meer nulpunten dan dit.
+
+Nu geeft \autoref{stelling:3c6} ons dat 
+\[
+X^p -X = q \prod_{a\in \mathbb{F}_p} (X-a) 
+\]
+Met het vergelijk van graden vinden we dat $q$ constant is. Als we de kopcoefficienten vergelijken kan je concluderen dat $q=1$.
+\end{bewijs}
+\begin{gevolg}
+Zij $p$ priem. Dan geldt $(p-1)! \equiv -1 \mod p$
+\end{gevolg}
+\begin{bewijs}
+Bekijk \autoref{stelling:3c10} die zegt  dat
+\[
+\prod_{a\in \mathbb{F}_p} (X-a) = X^p -X.
+\]
+Nu geldt ook
+\[
+X\prod_{a\in \mathbb{F}_p \setminus \{0\}} (X-a) = x(X^{p-1} -1)
+\]
+Er volgt
+\[
+\prod_{a\in \mathbb{F}_p \setminus \{0\}} (X-a) = (X^{p-1} -1)
+\]
+Neem $X=0$. Dan
+\[
+(-1)^{p-1} \prod_{a\in \mathbb{F}_p \setminus \{0\}} (a) = (-1)
+\]
+wat gelijk is aan
+\[
+(p-1)! \equiv (-1)
+\]
+mod 3.
+\end{bewijs}
+
+\begin{lemma}
+\label{lemma:3c13}
+Zij $n$ het element van maximale orde in een eindige abels groep $G$ met orde $m$. Dan voldoet elke $y \in G$ aan $y^m = 1$ 
+\end{lemma}
+
+\begin{stelling}
+Zij $R$ een domein en $G\subset R $ een eindig ondergroep. Dan is $G$ cyclisch.
+\end{stelling}
+\begin{bewijs}
+Omdat $R$ een domein is, is $G$ abels. Zij $x \in G$ een element van maximale order $m$. Dit element bestaat wegens de eindigheid van de groep. 
+
+Dan brengt $x$ de groep $G$ voort: \autoref{lemma:3c13} geeft ons dat elke $b \in G$ een nulpunt is van $X^m -1 \in R[X]$. Dit geeft dat $\#G \le m$ wegens \autoref{stelling:3c7}. $G$ bevat de ondergroep $<a>$, die $m$ element heeft. Dus moet $G = <a>$
+\end{bewijs}
+\begin{gevolg}
+Zij $p$ priem. Dan is $\mathbb{F}_p[X]$ cyclisch van orde $p-1$.
+\end{gevolg}
+
+\begin{definitie}
+Elk element van eindig orde in $R^*$ heten \textit{eenheidswortels}.
+\end{definitie}
+
+\end{document}
