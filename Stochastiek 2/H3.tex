@@ -1,0 +1,67 @@
+\section{Schatters}
+\subsection{Eigenschappen van schatters}
+\paragraph{Wat is een schatter} Een schatter of statistiek is een stochastische vector \(T(X)\) die alleen van \(X\) afhangt.
+
+Als een kansverdeling van \(X\) afhangt van een parameter \(\theta\) zodat \(P_{\theta}\) de kansverdeling is van \(X\), dan is \(\theta\) vaak onbekend, dus dan worden schatters gebruikt om gegeven een realisatie van \(X\) de parameter \(\theta\) te schatten.
+
+\paragraph{Mean Square Error} Gegeven een schatter \(T\) voor een de waarde van \(g(\theta)\), dan is de verwachte kwadratische fout van een schatter de waarde
+\[
+    \mse(\theta;T)=\e_{\theta}\left\|T-g(\theta)\right\|^{2}.
+\]
+
+De Mean Square Error kan ontbonden worden in twee termen:
+\[
+    \mse(\theta;T)=\var_{\theta}(T)+(\e T-g(\theta))^{2}.
+\]
+
+\paragraph{Niet-toelaatbare schatters} Gegeven twee schatters \(T_{1},T_{2}\) van een parameter \(\theta\) met voor elke \(\theta\in\Theta\), met \(\Theta\) de parameterruimte.
+\[
+    \e_{\theta}\left\|T_{1}-g(\theta)\right\|^{2}\leq\e_{\theta}\left\|T_{2}-g(\theta)\right\|^{2},
+\]
+dan heet \(T_{2}\) ontoelaatbaar.
+
+\paragraph{Zuivere schatters} Gegeven een schatter \(T\) voor \(g(\theta)\), dan is de onzuiverheid van \(T\) gedefiniëerd als
+\[
+    \e_{\theta}(T)-g(\theta)=0.
+\]
+Een schatter is zuiver als voor elke \(\theta\in\Theta\) dat de onzuiverheid gelijk is aan \(0\).
+
+\subsection{Maxmimum Likelihood-Schatters}
+\paragraph{Likelihood-functie} Zij \(X\) een stochastische vector met een kansdichtheid \(p_{\theta}\) die afhangt van \(\theta\in\Theta\) met \(\Theta\) de parameterruimte. Dan is voor een vaste \(x\), de functie
+\[
+    \theta\mapsto L(\theta;x)=p_{\theta}(x),
+\]
+de likelihood-functie.
+
+\paragraph{Maximum likelihood-schatter} Gegeven een likelihood-functie \(L\) voor een stochast \(X\), dan is de maximum likelihood-schatter \(T(X)\) de waarde voor \(\theta\) zodat \(p_{\theta}(x)\) maximaal is.
+
+\subsection{Momentschatters}
+\paragraph{Momenten van een stochast} Gegeven een stochastische variabele afhankelijk van een parameter \(\theta\), dan is het \(j\)-de moment het getal \(\e_{\theta}(X^{j})\), als deze verwachting bestaat.
+
+\paragraph{Steekproefmoment} Gegeven een steekproef \(X_{1},\dots,X_{n}\), dan is het \(j\)-de steekproef moment gegeven door \(\avg{X^{j}}\).
+
+\paragraph{Momentenschatter} Zij \(X_{1},\dots,X_{n}\) een steekproef met onbekende parameter \(\theta\). Dan is de momentschatter de waarde \(\hat{\theta}\) zodat \(\e_{\hat{\theta}}(X^{j})=\avg{X^{j}}\) voor de eerste \(n\) momenten zodat \(\hat{\theta}\) uniek bepaald is. Dat betekent in de praktijk vaak dat \(\hat{\theta}\) bepaald wordt door het eerste moment dat afhankelijk is van de parameter \(\theta\).
+
+\subsection{Bayes-schatters}
+Een bayes schatter is een schatter voor een parameter \(\theta\in\Theta\). Er wordt een a priori\footnote{Letterlijk van tevoren.} kansverdeling \(\pi\colon\Theta\to\r\) opgesteld voor \(\theta\), die aangeeft hoe waarschijnlijk een bepaalde waarde van een parameter is. Afhankelijk van de data wordt dan de kansverdeling aangepast tot een a posteriori\footnote{Letterlijk van later, beter vertaald als afgeleid uit de feiten.} kansverdeling.
+
+\paragraph{Bayes-risico} Gegeven een a priori verdeling \(\pi\) is het Bayes-risico van een schatter \(T\) voor \(g(\theta)\) gedefiniëerd als
+\[
+    R(\theta;T)-\int\e_{\theta}\left(T-g(\theta)\right)^{2}\pi(\theta)\,d\theta.
+\]
+
+\paragraph{Bayes-schatter} Gegeven een a priori dichtheid \(\pi\) is de Bayes-schatter de schatter \(T\) die \(R(\theta;T)\) minimaliseert.
+
+De expliciete formule voor de Bayes-schatter is
+\[
+    T(x)=\frac{\int g(\theta)p_{\theta}(x)\pi(\theta\,dx)}{\int p_{\vartheta}(x)\pi(\vartheta)\,d\vartheta}.
+\]
+In Bayesiaanse notatie wordt dit geschreven als
+\[
+    T(x)=\e\left(g\left(\overline{\Theta}\right)\mid X=x\right).
+\]
+
+\paragraph{A posteriori dichtheid} De a posteriori dichtheid van \(\overline{\Theta}\) is gelijk aan
+\[
+    p_{\overline{\Theta}\mid X=x}(\theta)=\frac{p_{\theta}(x)\pi(\theta)}{\int p_{\vartheta}(x)\pi(\vartheta)\,d\vartheta}.
+\]
