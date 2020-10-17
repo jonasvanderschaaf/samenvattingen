@@ -1,0 +1,49 @@
+\section{Optimaliteitstheorie}
+\subsection{Voldoende statistieken}
+\paragraph{Voldoende voor discrete statistieken} Voor een statistisch model \(X\) bestaande uit discrete verdelingen afhankelijk van parameter \(\theta\) heet een statistiek \(V=V(X)\) voldoende als
+\[
+    \p(X=x\mid V=v)
+\]
+onafhankelijk is van \(\theta\) voor alle \(x\) en \(v\).
+\paragraph{Factorisatiestelling voor discrete voldoende statistieken}  Een statistisch model \(X\) bestaande uit discrete verdelingen afhankelijk van parameter \(\theta\) heet voldoende precies als
+\[
+    p_{\theta}(x)=g_{\theta}(V(x))h(x)
+\]
+voor twee functies \(g_{\theta}\) en \(h\) voor alle \(x\) en \(\theta\).
+
+\paragraph{Voldoende continue statistieken} Een statistiek \(V(X)\) heet voldoende voor een waarneming \(X\) precies als er functies \(g_{\theta}\) en \(h\) zijn zodat voor alle \(\theta\) en \(x\) geldt dat
+\[
+    p_{\theta}(x)=g_{\theta}(V(x))h(x).
+\]
+Dit is voor discrete verdelingen precies de definitie, maar voor continue verdelingen geeft dit nu ook een definitie.
+
+\subparagraph{Functies van statistieken} Zij \(V\) een voldoende statistiek en \(V^{*}\) een statistiek zodat \(V=f(V^{*})\), dan is \(V^{*}\) ook voldoende.
+
+\subsection{Schattingstheorie}
+\paragraph{Verschillende criteria voor schatters} Er zijn heel veel verschillende manieren om een bepaalde schatter te kiezen boven een andere. Hier volgen een paar:
+\subparagraph{Bayes-criterium} Gegeven een a priori dichtheid \(\pi\) op \(\Theta\) is het Bayes-criterium het criterium dat de schatter \(T\) boven \(T'\) verkiest als
+\[
+    \int \mse(\theta;T)\pi(\theta)\,d\theta\leq\int \mse(\theta;T')\pi(\theta)\,d\theta.
+\]
+De schatter \(T\) die dit criterium minimaliseert is precies de Bayes schatter.
+
+\subparagraph{Minimax criterium} Het minimax criterium verkiest een schatter \(T\) boven \(T'\) als
+\[
+    \sup_{\theta\in\Theta}\mse(\theta; T)\leq\sup_{\theta\in\Theta}\mse(\theta;T').
+\]
+
+\subsection{UMVZ-schatters}
+\paragraph{UMVZ-schatter} Een schatter \(T\) heet uniform minimum variantie zuiver (UMVZ) als \(T\) zuiver is voor \(g(\theta)\) en \(\var_{\theta}(T)\leq\var_{\theta}(S)\) voor alle \(\theta\) en alle zuivere schatters \(S\) voor \(g(\theta)\).
+
+\paragraph{Rao-Blackwell} Zij \(V=V(X)\) een voldoende statistiek en \(T=T(X)\) een willekeurige schatter voor \(g(\theta)\). Dan is er een schatter \(T^{*}\) die alleen afhankelijk is van \(V\) met \(\e_{\theta}T=\e_{\theta}T^{*}\) en \(\var_{\theta}T^{*}\leq\var_{\theta}T\). Bovendien geldt dat \(\mse(\theta;T^{*})\leq\mse(\theta;T)\), met de ongelijkheid strict als \(\p_{\theta}(T^{*}=T)=1\).
+
+\paragraph{Volledige statistiek} Een statistiek \(V\) heet volledig precies als, als geldt dat \(\e_{\theta}(f(V))=0\) dan geldt dat \(\p_{\theta}(f(V)=0)\).
+
+\paragraph{Voldoende, volledig en UMVZ} Zij \(V\) een voldoende en volledige statistiek en \(T=V(T)\) een zuivere schatter voor \(g(\theta)\). Dan is \(T\) een UMVZ-schatter voor \(g(\theta)\).
+
+\paragraph{Exponentiële familie} Een familie kansdichtheden \(p_{\theta}\) heet een \(k\)-dimensionele familie als er functies \(c\), \(h\), \(Q_{j}\) en \(V_{j}\) bestaan zodat
+\[
+    p_{\theta}(x)=c(\theta)h(x)e^{\sum_{j}^{k}Q_{j}(\theta)V_{j}(x)}.
+\]
+
+\paragraph{Exponentiële familie, voldoende en volledig} Gegeven een \(k\)-dimensionele exponentiële familie \(p_{\theta}\). Dan is \(V=(V_{1},\dots,V_{n}\) voldoende en volledig als de verzameling \(\{(Q_{1}(\theta),\dots,Q_{n}(\theta)\mid\theta\in\Theta\}\) een inwendig punt heeft.
