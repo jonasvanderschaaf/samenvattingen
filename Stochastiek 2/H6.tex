@@ -47,3 +47,26 @@ De schatter \(T\) die dit criterium minimaliseert is precies de Bayes schatter.
 \]
 
 \paragraph{Exponentiële familie, voldoende en volledig} Gegeven een \(k\)-dimensionele exponentiële familie \(p_{\theta}\). Dan is \(V=(V_{1},\dots,V_{n}\) voldoende en volledig als de verzameling \(\{(Q_{1}(\theta),\dots,Q_{n}(\theta)\mid\theta\in\Theta\}\) een inwendig punt heeft.
+
+\subsection{Cramer-Rao ondergrenzen}
+\paragraph{Fischer-informatie} Zij een waarneming \(X\) met kansdichtheid
+\(p_{\theta}\), dan is de Fischer-informatie gedefiniëerd als
+\[
+    I_{\theta}=\var_{\theta}\dot{\ell}(X).
+\]
+\subparagraph{Meerdimensionale Fischer-informatie} Als de kansdichtheid afhankelijk is van meerdere parameters \(\theta_{1},\dots,\theta_{n}\), dan is de Fischer-informatie een matrix gegeven door
+\[
+    (I_{\theta})_{i,j}=\cov_{\theta}\left(\frac{\partial}{\partial\theta_{i}}\ell_{\theta}(X),\frac{\partial}{\partial\theta_{j}}\ell_{\theta}(X)\right).
+\]
+
+\paragraph{Cramér-Rao ongelijkheid} Als \(\theta\mapsto p_{\theta}(x)\) differentiëerbaar is voor elke \(x\). Onder regulariteitsvoorwaarden geldt voor elke zuivere schatter \(T\) van \(g(\theta)\in\r\) dat
+\[
+    \var_{\theta}T\geq\frac{g'(\theta)^{2}}{I_{\theta}}.
+\]
+
+\subparagraph{Meerdimensionale Cramér-Rao ongelijkheid} Voor een meerdimensionale parameter \(\theta\) geldt dat
+\[
+    \var_{\theta}T\geq g'(\theta)I_{\theta}^{-1}g'(\theta)^{T}.
+\]
+
+\paragraph{Fischer-informatie van onafhankelijke waarnemingen} Gegeven twee onafhankelijke waarnemingen \(X,Y\), dan is de Fischer-informatie van \((X,Y)\) gelijk aan de som van de informaties onafhankelijk.
