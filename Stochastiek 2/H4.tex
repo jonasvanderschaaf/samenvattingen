@@ -1,0 +1,168 @@
+\section{Toetsen}
+\subsection{Hypotheses en toetsingsgrootheid}
+\paragraph{Nul en alternatieve hypothese} Zij \(X\) een waarneming afhankelijk
+van parameter \(\theta\in\Theta\), en \(H_{0},H_{1}\) een disjuncte partitie van
+\(\Theta\). Dan heet \(H_{0}:\theta\in\Theta_{0}\) de nulhypothese, en
+\(H_{1}:\theta\in\Theta_{1}\) de alternatieve hypothese.
+
+\paragraph{Statistische toets} Gegeven een waarneming en nulhypothese \(H_{0}\),
+en een verzameling \(K\subseteq\mathcal{X}\) met \(\mathcal{X}\) de
+uitkomstenruimte van \(X\). Als \(H_{0}\) verworpen wordt precies als \(x\in K\),
+dan noemen we \(K\) het kritieke gebied. Dan zeggen we dat \(K\) een statistische
+toets bij \(H_{0}\) is.
+
+\subparagraph{Toetsingsgrootheid} Vaak wordt een kritiek gebied gegeven door een
+toetsingsgrootheid \(T=T(X)\) en een verzameling \(K_{T}\), dan wordt het
+kritieke gebied gegeven door de deelverzameling van \(\mathcal{X}\):
+\(K=\{X\in\mathcal{X}\mid T(X)\in K_{T}\}\).
+
+\subsection{Onderscheidend vermogen van een toets}
+\paragraph{Onderscheidend vermogen} Gegeven een nulhypothese
+\(H_{0}:\theta\in\Theta_{0}\) en een kritiek gebied \(K\), is het
+onderscheidend vermogen van de toets \(K\) gegeven door de functie
+\[
+    \theta\mapsto P_{\theta}(X\in K)=\pi(\theta;K).
+\]
+
+\paragraph{Onbetrouwbaarheid} De onbetrouwbaarheid van een toets \(K\) wordt
+gegeven door
+\[
+    \alpha=\sup_{\theta\in\Theta_{0}}\pi(\theta;K).
+\]
+Een toets is van niveau \(\alpha_{0}\) als \(\alpha\leq\alpha_{0}\).
+
+\subparagraph{Onbetrouwbaarheidsdrempel} Gegeven een vast getal \(\alpha_{0}\),
+genaamd de onbetrouwbaarheidsdrempel, worden alleen toetsen \(K\) geaccepteerd
+zodat \(\sup_{\theta\in\Theta_{0}}\pi(\theta;K)\leq\alpha_{0}\).
+
+\subparagraph{Toets kiezen} Gegeven een onbetrouwbaarheidsdrempel \(\alpha_{0}\),
+wordt de voorkeur gegeven aan een toets \(K\) zodat \(\pi(\theta;K)\) maximaal
+is onder \(\theta\in\Theta_{1}\).
+
+\subsection{Overschrijdingskansen}
+De vorm van een kritiek gebied bepaalt ook de definitie van de
+overschrijdingskans. Als \(K\) van de vorm \(\{x\mid T(X)\geq d\}\) is dan is de
+overschrijdingskans gegeven door
+\[
+    \sup_{\theta\in\Theta_{0}}\p_{\theta}(T\geq t).
+\]
+Als \(K\) van de vorm \(\{x\mid T(X)\leq d\}\) is dan is de
+overschrijdingskans gegeven door
+\[
+    \sup_{\theta\in\Theta_{0}}\p_{\theta}(T\leq t).
+\]
+Als \(K\) van de vorm \(\{x\mid T(X)\leq d\}\cup\{x\mid T(X)\geq d\}\) is dan is
+de overschrijdingskans gegeven door
+\[
+    2\min\left(\sup_{\theta\in\Theta(0)}\p_{\theta}(T\leq t),
+    \sup_{\theta\in\Theta(0)}\p_{\theta}(T\geq t)\right)
+\]
+
+\subsection{Standaard toetsen}
+\subsubsection{Gauss toets}
+Gegeven een steekproef \(X_{1},\dots,X_{n}\sim \mathcal{N}(\mu,\sigma^{2})\)
+i.i.d., \(\mu\) onbekend en nulhypothese \(H_{0}:\mu\leq\mu_{0}\), geeft de
+toetsingsgrootheid \(T(X)=\sqrt{n}\frac{\avg{X}-\mu_{0}}{\sigma}\) samen met
+\(K_{T}=[\xi_{1-\alpha_{0}},\infty)\) het kritieke gebied dat een toets vormt
+met onbetrouwebaarheid \(\alpha_{0}\).
+
+\subsubsection{Chikwadraat en \texorpdfstring{\(t\)}{t}-verdeling}
+\paragraph{Chikwadraat verdeling} Een stochast \(W\) heet \(\chi^{2}_{n}\)
+verdeeld als \(W\sim\sum_{i=1}^{n}Z_{i}^{2}\) met \(Z_{i}\) een steekproef
+uit \(\mathcal{N}(0,1)\). Dit wordt ook een Chikwadraat verdeling met \(n\)
+vrijheidsgraden genoemd.
+
+\paragraph{\texorpdfstring{\(t\)}{t}-verdeling} Zij \(Z\sim\mathcal{N}(0,1)\) en
+\(W\sim\chi^{2}_{n}\) onafhankelijk, dan heeft \(\frac{Z}{\sqrt{\frac{W}{n}}}\)
+een \(t_{n}\)-verdeling.
+
+\paragraph{Normaalverdelingen en toetsen} Zij \(X_{1},\dots,X_{n}\) een
+steekproef uit \(\mathcal{N}(\mu,\sigma^{2})\) dan geldt dat
+\begin{enumerate}
+    \item \(\avg{X}\sim\mathcal{N}(\mu,\frac{\sigma}{n})\),
+    \item \(\frac{(n-1)S_{X}^{2}}{\sigma^{2}}\sim\chi^{2}_{n-1}\),
+    \item \(\avg{X}\) en \(S_{X}^{2}\) zijn onafhankelijk,
+    \item \(\sqrt{n}\frac{\avg{X}-\mu}{S_{X}}\sim t_{n-1}\).
+\end{enumerate}
+
+\subsubsection{Eensteekproeftoetsen}
+\paragraph{\texorpdfstring{\(t\)}{t}-Toets} Zij \(X_{1},\dots,X_{n}\) een
+steekproef uit \(\mathcal{N}(\mu,\sigma^{2})\), met \(\mu,\sigma^{2}\) onbekend.
+Voor een nulhypothese \(H_{0}:\mu\leq\mu_{0}\), vormt de toetsingsgrootheid
+\(T(X)=\sqrt{n}\frac{\avg{X}-\mu_{0}}{S_{X}}\) samen met het kritieke gebied
+\([t_{n-1,1-\alpha_{0}},\infty)\) een toets van niveau \(\alpha_{0}\).
+
+\paragraph{Toetsen voor \texorpdfstring{\(\sigma^{2}\)}{s^2}} Gegeven een
+steekproef \(X_{1},\dots,X_{n}\) uit \(\mathcal{N}(\mu,\sigma^{2})\) en een
+nulhypothese \(H_{0}:\sigma\leq\sigma_{0}\). Dan geldt dat de toetsingsgrootheid
+\(T(X)=\frac{(n-1)S_{X}}{\sigma_{0}^{2}}\) en het kritieke gebied
+\([\chi^{2}_{n-1,1-\alpha_{0}})\) eent toets van niveau \(\alpha_{0}\) vormt.
+
+\subsubsection{Tweesteekproeftoetsen}
+\paragraph{Gepaarde waarnemingen en \texorpdfstring{\(t\)}{t}-toetsen}
+Gegeven gepaarde steekproeven \((X_{1},Y_{1}),\dots,(X_{n},Y_{n})\). Met
+\(X_{1},\dots,X_{n}\) een steekproef uit \(\mathcal{N}(\mu,\sigma_{1}^{2})\) en
+\(Y_{1},\dots,Y_{n}\) uit \(\mathcal{N}(\mu-\Delta,\sigma_{2}^{2})\).
+
+Dan is \(Z_{i}=X_{i}-Y_{i}\) verdeeld met
+\(\mathcal{N}(\Delta,\sigma_{1}^{2}+\sigma_{2}^{2})\). Hier kan dan de
+\(t\)-toets op toegepast worden.
+
+\paragraph{Twee steekproeven \texorpdfstring{\(t\)}{t}-toets} Gegeven twee
+steekproeven \(X_{1},\dots,X_{m}\) en \(X_{1},\dots,X_{n}\) uit de verdelingen
+\(\mathcal{N}(\mu,\sigma^{2})\) en \(\mathcal{N}(\nu,\sigma^{2})\), neem de
+nulhypothese als \(H_{0}:\mu-\nu\leq0\), dan is de toetsingsgrootheid
+\[
+    T(X,Y)=\frac{\avg{X}-\avg{Y}}{S_{X,Y}\sqrt{\frac{1}{m}+\frac{1}{n}}},
+\]
+met
+\[
+    S_{X,Y}=\frac{1}{m+n-2}\left(\sum_{i=1}^{m}(X_{I}-\avg{X})^{2}
+    +\sum_{j=1}^{n}(Y_{j}-\avg{Y})^{2}\right),
+\]
+samen met het kritieke gebied \([t_{m+n-2,1-\alpha_{0}},\infty)\) een toets van
+niveau \(\alpha_{0}\). De schatter \(S_{X,Y}^{2}\sim\chi^{2}_{n+m-2}\) is een zuivere schatter voor
+\(\sigma^{2}\)
+
+\subsubsection{Aanpassingstoetsen}
+Een aanpassingstoets is een type toets dat aangeeft of een kansverdeling lijkt
+op een andere kansverdeling.
+
+\paragraph{Kolmogorov-Smirnov-toets}
+Gegeven een steekproef \(X_{1},\dots,X_{n}\) uit een onbekende verdeling \(F\).
+Neem de nulhypothese \(H_{0}:F=F_{0}\). Dan is de Kolmogorov-Smirnov-toets
+gebaseerd op de empirische verdelingsfunctie
+\[
+    \mathbb{F}_{n}(x)=\frac{1}{n}\#(X_{i}\leq x)=
+    \frac{1}{n}\sum_{i=1}^{n}\mathbbm{1}_{X_{i}<x}
+\]
+Dan wordt de Kolmogorov-Smirnov-statistiek gegeven door
+\[
+    T=\sup_{x\in\r}\left\|\mathbb{F}_{n}(x)-F_{0}(x)\right\|.
+\]
+De nulhypothese wordt verworpen voor grote waarden van \(T\).
+
+\subsection{Likelihood-ratiotoetsen}
+Gegeven een kansdichtheid \(p_{\theta}\) van een stochastische vector \(X\) is
+de likelihood ratiostatistiek gegeven een nulhypothese \(H_{0}:\theta\in\Theta_{0}\)
+gedefinieerd als
+\[
+    \lambda(X)=\frac{\sup_{\theta\in\Theta}p_{\theta}(X)}
+    {\sup_{\theta_{0}\in\Theta_{0}}p_{\theta_{0}}(X)}=
+    \frac{p_{\hat{\theta}}(X)}{p_{\hat{\theta}_{0}}(X)},
+\]
+met \(\hat{\theta}\) de maximum likelihood schatter en \(\hat{\theta}_{0}\) de
+maximum likelihood schatter beperkt tot \(\Theta_{0}\).
+
+\subsection{Verdeling van \texorpdfstring{\(\lambda\)}{ll}} Onder
+regulariteitsvoorwaarden geldt dat
+\[
+    2\log\lambda_{n}(X_{1},\dots,X_{n})\rightsquigarrow\chi^{2}_{k-k_{0}}
+\]
+met \(k\) de dimensie van \(\sqrt{n}(\Theta-\theta_{0})\) en \(k_{0}\) de
+dimensie van \(\sqrt{n}(\Theta_{0}-\theta_{0})\) in een omgeving van
+\(\theta_{0}\).
+
+Als aan deze voorwaarden voldaan wordt dan geeft het verwerpen van \(H_{0}\) als
+\(2\log\lambda\geq\chi^{2}_{k-k_{0},1-\alpha_{0}}\) een toets van niveau
+\(\alpha_{0}\).
